@@ -38,6 +38,11 @@ body {
     align-items: center;
 }
 
+.logo img{
+    width:25%;
+    align-items: center;
+}
+
 .card-body img {
     max-width: 100%;
     height: auto;
