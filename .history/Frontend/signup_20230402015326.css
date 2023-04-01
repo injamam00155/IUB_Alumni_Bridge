@@ -54,7 +54,7 @@ body {
 }
 
 @media screen and (max-width: 800px){
-    .card-logo{
+    .card-img-top{
         display: none;
     }
     .card-img-overlay{
