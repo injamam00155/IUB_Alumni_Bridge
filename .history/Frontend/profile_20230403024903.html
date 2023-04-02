@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Events</title>
+    <title>Profile</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="events.css" />
+    <link rel="stylesheet" href="profile.css" />
     <!-- JS -->
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
     <!-- BOOTSTRAP CS-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -39,7 +39,7 @@
           >
             <!-- LOGO -->
 
-            <a href="home.html" class="my-3 ms-4">
+            <a href="index.html" class="my-3 ms-4">
               <img
                 src="/Frontend/img/iubalumnibridgelogo.png"
                 alt="logo"
@@ -60,8 +60,8 @@
               <span class="fs-6 d-none d-xl-inline ms-2">Notification</span>
             </a>
             <a href="event.html" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-calendar-check fs-4"></i>
-              <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Events</span>
+              <i class="fa-solid fa-calendar-check fs-5"></i>
+              <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
             <a href="awards.html" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-trophy fs-5"></i>
@@ -72,8 +72,8 @@
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
             <a href="profile.html" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-user fs-5"></i>
-              <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
+              <i class="fa-solid fa-user fs-4"></i>
+              <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Profile</span>
             </a>
             <a href="bookmarked.html" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bookmark fs-5"></i>
@@ -98,114 +98,149 @@
         <div class="col-10 col-lg-8 col-xl-7 border-end">
           <div class="row align-items-center mt-3">
             <div class="col">
-              <strong class="fs-4 p-2 ms-5">Events</strong>
+              <strong class="fs-4 p-2 ms-5">Profile</strong>
             </div>
           </div>
           <!-- What's on your mind section -->
 
           <!-- POST section -->
           <div class="row">
-            <div class="col-12">
-              <!-- EVENTS LIST -->
-              <section class="light mt-5">
-                <div class="p-3">
-                  <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="/Frontend/img/event1.jpg"
-                        alt="Image Title"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#">Alumni Networking Event</h3>
-                      </h1>
-                      <div class="postcard__subtitle small">
-                        <i class="fas fa-calendar-alt me-2"></i>May 15, 2023
-                        <br />
-                        <i class="fa-solid fa-clock fa-sm me-2"></i> 6:00 PM -
-                        8:00 PM <br />
-                        <i class="fa-solid fa-location-dot fa-sm me-2"></i> IUB
-                        auditorium
-                      </div>
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        Join us for our annual Alumni Networking Event where
-                        you'll have the opportunity to connect with fellow
-                        Alumni, current students, and industry professionals.
-                        This year's event features keynote speaker Jane Smith,
-                        CEO of ABC Company, who will share insights into the
-                        latest trends in the industry. Light refreshments will
-                        be served. Register now to secure your spot!
+            <div class="col-12 px-5 mt-5">
+              <!-- PROFILE -->
+
+              <!-- Profile widget -->
+              <link
+                href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+                rel="stylesheet"
+                id="bootstrap-css"
+              />
+              <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+              <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+              <!------ Include the above in your HEAD tag ---------->
+
+              <div class="container emp-profile">
+                <form method="post">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="profile-img">
+                        <img src="/Frontend/img/profile_img.jpg" alt="" />
+                        <div class="file btn btn-lg btn-primary">
+                          Change Photo
+                          <input type="file" name="file" />
+                        </div>
                       </div>
                     </div>
-                  </article>
-                  <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="/Frontend/img/event2.jpg"
-                        alt="Image Title"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#">Career Fair 2023</h3>
-                      </h1>
-                      <div class="postcard__subtitle small">
-                        <i class="fas fa-calendar-alt me-2"></i>June 15, 2023
-                        <br />
-                        <i class="fa-solid fa-clock fa-sm me-2"></i> 5:00 PM -
-                        8:00 PM <br />
-                        <i class="fa-solid fa-location-dot fa-sm me-2"></i> IUB
-                        auditorium
-                      </div>
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        Our annual Career Fair is back and bigger than ever!
-                        This event is a great opportunity for Alumni and current
-                        students to meet with top employers from various
-                        industries. Dress to impress and bring plenty of copies
-                        of your resume. Don't miss out on this chance to
-                        kick-start your career!
-                      </div>
-                    </div>
-                  </article>
-                  <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="/Frontend/img/event3.jpg"
-                        alt="Image Title"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#">Alumni Networking Event</h3>
-                      </h1>
-                      <div class="postcard__subtitle small">
-                        <i class="fas fa-calendar-alt me-2"></i>May 15, 2023
-                        <br />
-                        <i class="fa-solid fa-clock fa-sm me-2"></i> 6:00 PM -
-                        8:00 PM <br />
-                        <i class="fa-solid fa-location-dot fa-sm me-2"></i> IUB
-                        auditorium
-                      </div>
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        Join us for our annual Alumni Networking Event where
-                        you'll have the opportunity to connect with fellow
-                        Alumni, current students, and industry professionals.
-                        This year's event features keynote speaker Jane Smith,
-                        CEO of ABC Company, who will share insights into the
-                        latest trends in the industry. Light refreshments will
-                        be served. Register now to secure your spot!
+                    <div class="col-md-6">
+                      <div class="profile-head">
+                        <h5>Rashid Shabab</h5>
+                        <h6>Web Developer and Designer</h6>
+                        <p class="text-muted">
+                          Socials :
+
+                          <a href="#" class="me-2"
+                            ><i class="fa-brands fa-linkedin"></i
+                          ></a>
+                          <a href="#" class="me-2"
+                            ><i class="fa-brands fa-facebook"></i
+                          ></a>
+                          <a href="#" class="me-2"
+                            ><i class="fa-brands fa-github"></i
+                          ></a>
+                        </p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item">
+                            <a
+                              class="nav-link active"
+                              id="home-tab"
+                              data-toggle="tab"
+                              href="#home"
+                              role="tab"
+                              aria-controls="home"
+                              aria-selected="true"
+                              >About</a
+                            >
+                          </li>
+                        </ul>
                       </div>
                     </div>
-                  </article>
-                </div>
-              </section>
+                    <div class="col-md-2">
+                      <input
+                        type="submit"
+                        class="profile-edit-btn"
+                        name="btnAddMore"
+                        value="Edit Profile"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="profile-work">
+                        <p>WORK LINK</p>
+                        <a href="">Website Link</a><br />
+                        <a href="">Bootsnipp Profile</a><br />
+                        <a href="">Bootply Profile</a>
+                        <p>SKILLS</p>
+                        <a href="">Web Designer</a><br />
+                        <a href="">Web Developer</a><br />
+                        <a href="">WordPress</a><br />
+                        <a href="">WooCommerce</a><br />
+                        <a href="">PHP, .Net</a><br />
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="tab-content profile-tab" id="myTabContent">
+                        <div
+                          class="tab-pane fade show active"
+                          id="home"
+                          role="tabpanel"
+                          aria-labelledby="home-tab"
+                        >
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label>User Id</label>
+                            </div>
+                            <div class="col-md-6">
+                              <p>rShabab</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                              <p>Rashid Shabab</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                              <p>1910282@iub.edu.bd</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label>Phone</label>
+                            </div>
+                            <div class="col-md-6">
+                              <p>123 456 7890</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label>Profession</label>
+                            </div>
+                            <div class="col-md-6">
+                              <p>Web Developer and Designer</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
