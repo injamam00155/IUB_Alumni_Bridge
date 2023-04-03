@@ -36,7 +36,7 @@
             />
           </div>
           <br />
-          <form>
+          <form id="loginForm" action="alumni/home.html" method="post">
             <div class="form-group">
               <label for="inputEmail">Email address</label>
               <input
@@ -70,9 +70,11 @@
             </div>
             <div class="text-center">
               <a
-                href="home.html"
+                href=""
                 class="btn btn-primary px-5"
                 style="text-decoration: none"
+                id="submit"
+                onclick="login()"
               >
                 Log In
               </a>
@@ -85,5 +87,6 @@
         </div>
       </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
