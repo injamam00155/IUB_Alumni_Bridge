@@ -33,7 +33,7 @@
     <div class="container-fluid">
       <div class="row">
         <!-- ---NAVBAR--- -->
-        <div class="col-2 col-lg-1 col-xl-2 border-end">
+        <div class="col-2 col-lg-1 col-xl-2 border-end" id="navbar">
           <div
             class="left_nav d-flex flex-column position-sticky align-items-center align-items-end align-items-xl-start"
           >
@@ -51,11 +51,7 @@
               <i class="fa-solid fa-house fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Home</span>
             </a>
-            <a
-              href="notification.html"
-              class="btn my-3 nav_link"
-              type="button"
-            >
+            <a href="notification.html" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bell fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Notification</span>
             </a>
@@ -117,7 +113,12 @@
                 placeholder="Ask a question and start a discussion..."
                 style="border-radius: 20px"
               ></textarea>
-              <button id="post-btn" type="button" class="btn btn-primary my-2">
+              <button
+                id="post-btn"
+                type="button"
+                class="btn my-2"
+                style="background-color: #015ea0; color: #fff"
+              >
                 Post
               </button>
             </div>
@@ -153,11 +154,16 @@
                       class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
                     >
                       <div class="d-flex">
-                        <button class="btn border-0 btn-sm me-3">
-                          <i class="fa-solid fa-comment me-1"></i>Comment
+                        <button class="btn border-0 btn me-3">
+                          <i class="far fa-comment me-1"></i>Comment
                         </button>
-                        <button class="btn border-0 btn-sm">
-                          <i class="fa-solid fa-bookmark me-1"></i>Bookmark
+                        <button
+                          class="btn border-0 btn bookmark-btn"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Bookmark"
+                        >
+                          <i class="far fa-bookmark me-1"></i> Bookmark
                         </button>
                       </div>
                       <a href="#" style="text-decoration: none">
@@ -520,6 +526,7 @@
     </div>
 
     <!-- BOOTSTRAP JS -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
