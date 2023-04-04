@@ -11,6 +11,10 @@
     top: 0px;
 }
 
+#navbar {
+    background-color: #F5F5F5;
+}
+
 .profile_icon {
     bottom: 20px;
 }
