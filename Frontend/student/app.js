@@ -5,3 +5,4 @@ const bookmarkBtn = document.getElementById("bookmark-btn");
     bookmarkIcon.classList.toggle("fas");
     
   });
+

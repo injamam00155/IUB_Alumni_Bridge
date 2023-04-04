@@ -52,10 +52,7 @@
               <i class="fa-solid fa-house fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Home</span>
             </a>
-            <a href="notification.html" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-bell fs-5"></i>
-              <span class="fs-6 d-none d-xl-inline ms-2">Notification</span>
-            </a>
+
             <a href="event.html" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-5"></i>
               <span class="fs-6 fw-bold d-none d-xl-inline ms-2">Events</span>
@@ -94,8 +91,77 @@
         <!-- ---HOME FEED--- -->
         <div class="col-10 col-lg-8 col-xl-7 border-end">
           <div class="row align-items-center mt-3">
-            <div class="col">
-              <strong class="fs-4 p-2 ms-5">Awards</strong>
+            <div class="col-10 col-lg-11">
+              <strong class="fs-4 p-2 ms-5">Home</strong>
+            </div>
+            <!-- NOTIFICATION -->
+            <div class="col-2 col-lg-1">
+              <div class="dropdown">
+                <button
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell fa-xl"></i>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li class="my-3">
+                    <a class="dropdown-item" href="#">
+                      <img
+                        src="img/profile_img.jpg"
+                        alt="User Image"
+                        class="img-fluid me-2"
+                        style="width: 40px; border-radius: 50%"
+                      />
+                      <span class="notification-text"
+                        ><strong>Shabab</strong> commented on your post
+                        <span class="text-muted ms-5">2m ago</span></span
+                      >
+                    </a>
+                  </li>
+                  <li class="my-3">
+                    <a class="dropdown-item" href="#">
+                      <img
+                        src="img/profile_img2.jpg"
+                        alt="User Image"
+                        class="img-fluid me-2"
+                        style="width: 40px; border-radius: 50%"
+                      />
+                      <span class="notification-text"
+                        ><strong>Injamam</strong> commented on your post<span
+                          class="text-muted ms-5"
+                          >5m ago</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li class="my-3">
+                    <a class="dropdown-item" href="#">
+                      <img
+                        src="img/profile_img3.jpg"
+                        alt="User Image"
+                        class="img-fluid me-2"
+                        style="width: 40px; border-radius: 50%"
+                      />
+                      <span class="notification-text"
+                        ><strong>Dilan</strong> commented on your post<span
+                          class="text-muted ms-5"
+                          >10m ago</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">See all notifications</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <!-- What's on your mind section -->
