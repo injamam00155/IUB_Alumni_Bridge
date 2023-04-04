@@ -4,3 +4,4 @@ bookmarkBtn.addEventListener("click", function() {
   bookmarkIcon.classList.toggle("far");
   bookmarkIcon.classList.toggle("fas");
 });
+
