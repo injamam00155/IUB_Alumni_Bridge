@@ -1,11 +1,18 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+.dropdown-menu {
+    width: 500px;
+}
 
 .left_nav {
     height: 100vh;
     align-items: center;
     top: 0px;
+}
+
+#navbar {
+    background-color: #F5F5F5;
 }
 
 .profile_icon {
@@ -113,7 +120,6 @@
 
 .profile-edit-btn {
     border: none;
-    border-radius: 1.5rem;
     width: 70%;
     padding: 2%;
     font-weight: 600;

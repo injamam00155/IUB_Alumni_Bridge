@@ -1,14 +1,18 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+.dropdown-menu{
+    width: 500px;
+}
 
 .left_nav {
     height: 100vh;
     align-items: center;
     top: 0px;
 }
+
 #navbar{
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
 }
 
 .profile_icon {

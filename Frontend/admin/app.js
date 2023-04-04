@@ -1,5 +1,7 @@
-let bookmarkBtn = document.querySelector(".bookmark-btn");
-  bookmarkBtn.addEventListener("click", function () {
-    bookmarkBtn.classList.toggle("far");
-    bookmarkBtn.classList.toggle("fas");
-  });
+const bookmarkBtn = document.querySelector(".bookmark-btn");
+bookmarkBtn.addEventListener("click", function() {
+  const bookmarkIcon = bookmarkBtn.querySelector("i");
+  bookmarkIcon.classList.toggle("far");
+  bookmarkIcon.classList.toggle("fas");
+});
+
