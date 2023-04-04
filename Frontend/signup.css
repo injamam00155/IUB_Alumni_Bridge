@@ -2,7 +2,7 @@ body{
     color: #000;
     overflow: hidden;
     height: 100vh;
-    background-image: url("/Frontend/img/loginBackgroundImage.jpg");
+    background-image: url("alumni/img/loginBackgroundImage.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
