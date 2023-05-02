@@ -1,12 +1,11 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Query extends Model
 {
-    protected $primaryKey = 'postID';
-    public $timestamps = false;
-
-    public function post()
-    {
-        return $this->belongsTo(Post::class, 'postID');
-    }
+    use HasFactory;
 }
