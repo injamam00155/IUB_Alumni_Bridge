@@ -64,9 +64,8 @@
               <div class="p-2">
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="check" />
-                  <label class="form-check-label" for="check"
-                    >Remember Me</label
-                  >
+                  <label class="form-check-label" for="check">
+                    Remember Me</label>
                 </div>
               </div>
               <div class="ml-auto p-2">

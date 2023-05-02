@@ -31,31 +31,37 @@
                 alt="logo"
               />
             </div>
-            <form class="form-card">
+            <form class="form-card" action="{{route('/store')}}" method="post">
+
+              @csrf
+              
               <div class="row justify-content-between text-left">
                 <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3" for="inputName">
-                    Name
+                  <label class="form-control-label px-3" for="firstName">
+                    First Name
                     <span class="text-danger"> * </span>
                   </label>
                   <input
                     type="text"
-                    id="inputName"
-                    name="inputName"
-                    placeholder="Enter Name"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Enter First Name"
                   />
+                  
                 </div>
+
                 <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3">
-                    Password
+                  <label class="form-control-label px-3" for="lastName">
+                    Last Name
                     <span class="text-danger"> * </span>
                   </label>
                   <input
-                    type="password"
-                    id="inputPassword"
-                    name="inputPassword"
-                    placeholder="Password"
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Enter Last Name"
                   />
+
                 </div>
               </div>
               <div class="row justify-content-between text-left">
@@ -73,15 +79,16 @@
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
                   <label class="form-control-label px-3">
-                    Confirm Password
+                    Password
                     <span class="text-danger"> * </span>
                   </label>
                   <input
                     type="password"
-                    id="inputConfirmPassword"
-                    name="inputConfirmPassword"
-                    placeholder="Confirm Password"
+                    id="inputPassword"
+                    name="inputPassword"
+                    placeholder="Password"
                   />
+                  
                 </div>
               </div>
               <div class="row justify-content-between text-left">
@@ -97,11 +104,23 @@
                     placeholder="Enter Student ID"
                   />
                 </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">
+                    Confirm Password
+                    <span class="text-danger"> * </span>
+                  </label>
+                  <input
+                    type="password"
+                    id="inputConfirmPassword"
+                    name="inputConfirmPassword"
+                    placeholder="Confirm Password"
+                  />
+                </div>
               </div>
               <div class="row justify-content-center">
                 <div class="form-group col-sm-4">
                   <a
-                    href="index.html"
+                    href="#"
                     class="btn btn-primary px-5"
                     style="text-decoration: none"
                   >
