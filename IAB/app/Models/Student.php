@@ -1,20 +1,15 @@
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Student extends Model
 {
     protected $primaryKey = 'userEmail';
     public $incrementing = false;
     protected $keyType = 'string';
     public $timestamps = false;
 
-    public function admin()
+    public function user()
     {
-        return $this->hasOne(Admin::class, 'userEmail');
-    }
-
-    public function student()
-    {
-        return $this->hasOne(Student::class, 'userEmail');
+        return $this->belongsTo(User::class, 'userEmail');
     }
 
     public function alumni()
