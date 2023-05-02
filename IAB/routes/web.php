@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\indexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [indexController::class, 'index']);
+Route::get('/forgotPassword', [indexController::class, 'forgotPassword']);
+Route::get('/signup', [indexController::class, 'signUp']);
