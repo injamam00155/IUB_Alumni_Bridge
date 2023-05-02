@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string('userEmail')->primary();
             $table->string('password');
             // $table->timestamps();
+
+            
         });
     }
 
