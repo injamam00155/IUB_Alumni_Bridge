@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('commentID');
-            $table->dateTime('commentDateTime');
+            // $table->dateTime('commentDateTime');
             $table->string('description');
             $table->string('userEmail');
             $table->string('postID');
+            $table->timestamps();
 
-            $table->foreign('userEmail')->references('userEmail')->on('users');
-            $table->foreign('postID')->references('postID')->on('posts');
-            // $table->timestamps();
+            $table->foreign('userEmail')->references('userEmail')->on('students')->onDelete('cascade');
+            $table->foreign('postID')->references('postID')->on('posts')->onDelete('cascade');
+            
         });
     }
 

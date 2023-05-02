@@ -20,7 +20,7 @@ return new class extends Migration
             // $table->timestamps();
 
             // Add foreign key constraint to link with students table
-            $table->foreign('userEmail')->references('userEmail')->on('students');
+            $table->foreign('userEmail')->references('userEmail')->on('students')->onDelete('cascade');
         });
     }
 

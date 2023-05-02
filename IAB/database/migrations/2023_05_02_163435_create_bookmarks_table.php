@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->increments('bookmarkID');
-            $table->dateTime('bookmarkDateTime');
             $table->string('userEmail');
             $table->string('postID');
-
-            $table->foreign('userEmail')->references('userEmail')->on('users');
-            $table->foreign('postID')->references('postID')->on('posts');
             $table->timestamps();
+
+            $table->foreign('userEmail')->references('userEmail')->on('students')->onDelete('cascade');
+            $table->foreign('postID')->references('postID')->on('posts')->onDelete('cascade');
+            
         });
     }
 

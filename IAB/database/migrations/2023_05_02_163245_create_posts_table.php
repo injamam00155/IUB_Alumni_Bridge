@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->string('postID')->primary();
-            $table->timestamps('postDateTime');
+            $table->dateTime('postDateTime');
             // Add any other columns you need for the posts table
             // $table->timestamps();
         });

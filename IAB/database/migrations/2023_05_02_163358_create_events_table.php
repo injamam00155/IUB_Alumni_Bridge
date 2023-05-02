@@ -22,7 +22,7 @@ return new class extends Migration
             // $table->timestamps();
 
             // Add foreign key constraint to link with posts table
-            $table->foreign('postID')->references('postID')->on('posts');
+            $table->foreign('postID')->references('postID')->on('posts')->onDelete('cascade');
         });
     }
 
