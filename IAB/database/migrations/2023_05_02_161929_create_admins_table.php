@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('userEmail')->primary();
 
             $table->foreign('userEmail')->references('userEmail')->on('users')->onDelete('cascade');
+            
         });
     }
 
