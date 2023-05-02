@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('alumni', function (Blueprint $table) {
             $table->string('userEmail')->primary();
-            $table->string('designation');
-            $table->string('currentWorkPlace');
-            $table->year('graduationYear');
+            $table->string('designation')->nullable();
+            $table->string('currentWorkPlace')->nullable();
+            $table->year('graduationYear')->nullable();
             // Add any other columns you need for the alumni table
             // $table->timestamps();
 

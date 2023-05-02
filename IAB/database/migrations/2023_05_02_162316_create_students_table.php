@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('userEmail')->primary();
             $table->string('firstName');
             $table->string('lastName');
-            $table->string('iubId');
-            $table->string('school');
+            $table->string('iubId')->nullable();
+            $table->string('school')->nullable();
             $table->string('linkedIn')->nullable();
             $table->string('facebook')->nullable();
             $table->string('contactNo')->nullable();

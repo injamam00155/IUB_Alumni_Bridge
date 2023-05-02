@@ -17,8 +17,20 @@
       type="image/x-icon"
     />
     <title>IUB Alumni Bridge</title>
+    <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+    </script>
   </head>
+  
   <body>
+    
     <div class="container">
       <div class="card">
         <img src="alumni/img/alumni.jpg" class="card-img-top" alt="Alumni" />
@@ -91,6 +103,12 @@
         </div>
       </div>
     </div>
+    
+
+    @if(session('msg'))
+      <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
+
     <script src="index.js"></script>
   </body>
 </html>

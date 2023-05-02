@@ -17,9 +17,23 @@
       type="image/x-icon"
     />
     <title>Sign Up</title>
+    <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+    </script>
   </head>
 
   <body>
+    @if(session('msg'))
+    <div class="alert alert-danger" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
+    <script src="index.js"></script>
     <div class="container-fluid px-1 py-1 mx-auto">
       <div class="row d-flex justify-content-center">
         <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
@@ -31,7 +45,7 @@
                 alt="logo"
               />
             </div>
-            <form class="form-card" action="{{route('/store')}}" method="post">
+            <form class="form-card" action="{{route('alumni.store')}}" method="post">
 
               @csrf
               
@@ -47,7 +61,7 @@
                     name="firstName"
                     placeholder="Enter First Name"
                   />
-                  
+                  @error('firstName') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
 
                 <div class="form-group col-sm-6 flex-column d-flex">
@@ -61,7 +75,7 @@
                     name="lastName"
                     placeholder="Enter Last Name"
                   />
-
+                  @error('lastName') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
               </div>
               <div class="row justify-content-between text-left">
@@ -76,6 +90,7 @@
                     name="inputEmail"
                     placeholder="Enter Email"
                   />
+                  @error('inputEmail') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
                   <label class="form-control-label px-3">
@@ -88,7 +103,7 @@
                     name="inputPassword"
                     placeholder="Password"
                   />
-                  
+                  @error('inputPassword') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
               </div>
               <div class="row justify-content-between text-left">
@@ -103,6 +118,7 @@
                     name="iubId"
                     placeholder="Enter Student ID"
                   />
+                  @error('iubId') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
                   <label class="form-control-label px-3">
@@ -115,20 +131,21 @@
                     name="inputConfirmPassword"
                     placeholder="Confirm Password"
                   />
+                  @error('inputConfirmPassword') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
               </div>
               <div class="row justify-content-center">
                 <div class="form-group col-sm-4">
-                  <a
-                    href="#"
+                  {{-- <a
+                    href="/"
                     class="btn btn-primary px-5"
                     style="text-decoration: none"
                   >
                     Sign Up
-                  </a>
-                  <!-- <button type="submit" class="btn-block btn-primary">
+                  </a> --}}
+                  <button type="submit" class="btn-block btn-primary">
                                     Sign Up
-                                </button> -->
+                  </button>
                   <br />
                   <br />
                   <a href="/">Back to login</a>
@@ -139,5 +156,6 @@
         </div>
       </div>
     </div>
+
   </body>
 </html>
