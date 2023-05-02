@@ -12,7 +12,7 @@ class indexController extends Controller
     public function forgotPassword() {
         return view('forgotPassword');
     }
-    public function signUp() {
+    public function signup() {
         return view('signup');
     }
 }
