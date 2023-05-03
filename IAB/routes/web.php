@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [routingController::class, 'index'])->name('index');
 Route::get('/forgotPassword', [routingController::class, 'forgotPassword'])->name('forgotPassword');
 Route::get('/signup', [routingController::class, 'signup'])->name('signup');
-Route::post('/store', [routingController::class, 'store'])->name('alumni.store');
+Route::post('/store', [signupController::class, 'store'])->name('alumni.store');
 Route::post('/validate', [loginController::class, 'loginCheck'])->name('validate.acc');
 
 Route::get('/admin/dashboard', [routingController::class, 'adminDashboard'])->name('admin.dash');
