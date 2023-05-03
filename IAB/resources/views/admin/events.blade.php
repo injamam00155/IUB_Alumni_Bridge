@@ -180,7 +180,7 @@
             </div>
             <div class="col-10 col-lg-11 pe-5">
               <form>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="eventTitle">Title</label>
                   <input
                     type="text"
@@ -189,27 +189,29 @@
                     placeholder="Enter event title"
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="StartEventTime">Event Start Time</label>
-                  <input
-                    type="text"
+                  {{-- <input
+                    type="time"
                     class="form-control"
                     id="StartEventTime"
                     name="StartEventTime"
                     placeholder="Enter event start time"
-                  />
+                  /> --}}
+                  <input type="time" name="event_start" id="event_start" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="endEventTime">Event End Time</label>
-                  <input
+                  {{-- <input
                     type="text"
                     class="form-control"
                     id="endEventTime"
                     name="endEventTime"
                     placeholder="Enter event end time"
-                  />
+                  /> --}}
+                  <input type="time" name="event_start" id="event_start" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="startEventDate">Event Start Date</label>
                   <input
                     type="date"
@@ -219,7 +221,7 @@
                     placeholder="Enter event start date"
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="endEventDate">Event End Date</label>
                   <input
                     type="date"
@@ -229,7 +231,7 @@
                     placeholder="Enter event end date"
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="eventLocation">Location</label>
                   <input
                     type="text"
@@ -238,7 +240,7 @@
                     placeholder="Enter event location"
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="eventDescription">Description</label>
                   <textarea
                     class="form-control"
@@ -248,7 +250,7 @@
                     rows="3"
                   ></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="EventPosterImage">Poster Image</label>
                   <input
                     type="file"
