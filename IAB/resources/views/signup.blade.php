@@ -31,8 +31,8 @@
                 alt="logo"
               />
             </div>
-            <form class="form-card" action="{{route('/store')}}" method="post">
-
+            <form class="form-card"  method="post">
+              {{-- action="{{route('/store')}" --}}
               @csrf
               
               <div class="row justify-content-between text-left">
