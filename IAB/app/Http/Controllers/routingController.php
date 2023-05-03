@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 
 class routingController extends Controller
 {
-    //Login, Signup and forgotPassword routing
+    //Login, Signup and forgotPassword routing functions
     public function index() {
         return view('index');
     }
@@ -23,7 +23,7 @@ class routingController extends Controller
         return view('signup');
     }
 
-    //admin routing
+    //admin routing functions
     public function adminDashboard() {
         return view('admin/home');
     }
@@ -43,7 +43,7 @@ class routingController extends Controller
         return view('admin/awards');
     }
     
-    //currentStudent routing
+    //currentStudent routing functions
     public function currentStudentDashboard() {
         return view('student/home');
     }
@@ -63,7 +63,7 @@ class routingController extends Controller
         return view('student/awards');
     }
     
-    //alumni routing
+    //alumni routing functions
     public function alumniDashboard() {
         return view('alumni/home');
     }
