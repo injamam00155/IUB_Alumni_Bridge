@@ -9,6 +9,7 @@ use App\Models\Student;
 use App\Models\CurrentStudent;
 use App\Models\Alumni;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 
@@ -53,21 +54,35 @@ class loginController extends Controller
             ->where('password', $validatedData['inputPassword'])
             ->first();
 
-        if ($user) {
-            if ($user->isAdmin()) {
-                return redirect()->route('admin.dash');
-            } elseif ($user->isCurrentStudent()) {
+        // if ($user) {
+        //     if ($user->isAdmin()) {
+        //         return redirect()->route('admin.dash');
+        //     } elseif ($user->isCurrentStudent()) {
 
-                // $postViewController = new postViewController();        
-                // Call the viewPosts method
-                // $posts = $postViewController->viewPost();
-                // return view('currentStudent.dash');
-                // , ['posts' => $posts]);
-                return redirect()->route('currentStudent.dash');
+        //         // $postViewController = new postViewController();        
+        //         // Call the viewPosts method
+        //         // $posts = $postViewController->viewPost();
+        //         // return view('currentStudent.dash');
+        //         // , ['posts' => $posts]);
+        //         return redirect()->route('currentStudent.dash');
+        //     } elseif ($user->isAlumni()) {
+        //         return redirect()->route('alumni.dash');
+        //     }
+        // }
+
+    
+        if ($user) {
+            $postViewController = new postViewController();
+            $posts = $postViewController->viewPost();
+            if ($user->isAdmin()) {
+                return view('admin/home', ['posts' => $posts]);
+            } elseif ($user->isCurrentStudent()) {
+                return view('student/home', ['posts' => $posts]);
             } elseif ($user->isAlumni()) {
-                return redirect()->route('alumni.dash');
+                return view('alumni/home', ['posts' => $posts]);
             }
         }
+        
 
         return redirect()->route('index')->with('failMsg', 'Invalid email or password');
     }

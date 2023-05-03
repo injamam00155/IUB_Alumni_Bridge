@@ -94,9 +94,8 @@
         </div>
         <!-- ---HOME FEED--- -->
 
-      {{-- <div>
-        Check: {{$posts}}
-      </div> --}}
+
+        
         <div class="col-10 col-lg-8 col-xl-7 border-end">
           <div class="row align-items-center mt-3 bg-white sticky-top py-3">
             <div class="col-5 col-lg-11">
@@ -115,66 +114,66 @@
             <div class="col-2 col-lg-1">
               <div class="dropdown">
                 <button
-                  class="btn"
-                  type="button"
-                  id="dropdownMenuButton1"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                class="btn"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
                 >
-                  <i class="fas fa-bell fa-xl"></i>
-                </button>
-                <ul
-                  class="dropdown-menu dropdown-menu-end"
+                <i class="fas fa-bell fa-xl"></i>
+              </button>
+              <ul
+              class="dropdown-menu dropdown-menu-end"
                   aria-labelledby="dropdownMenuButton1"
                 >
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="{{asset('student/img/Akib Raihan .jpeg')}}"
-                        alt="User Display Picture"
-                        class="img-fluid me-2"
-                        style="width: 40px; border-radius: 50%"
+                      src="{{asset('student/img/Akib Raihan .jpeg')}}"
+                      alt="User Display Picture"
+                      class="img-fluid me-2"
+                      style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Akib</strong> commented on your post
-                        <span class="text-muted ms-5">2m ago</span></span
+                      ><strong>Akib</strong> commented on your post
+                      <span class="text-muted ms-5">2m ago</span></span
                       >
                     </a>
                   </li>
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="{{asset('student/img/profile_img2.jpg')}}"
-                        alt="User Image"
-                        class="img-fluid me-2"
-                        style="width: 40px; border-radius: 50%"
+                      src="{{asset('student/img/profile_img2.jpg')}}"
+                      alt="User Image"
+                      class="img-fluid me-2"
+                      style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Injamam</strong> commented on your post<span
-                          class="text-muted ms-5"
-                          >5m ago</span
-                        ></span
+                      ><strong>Injamam</strong> commented on your post<span
+                      class="text-muted ms-5"
+                      >5m ago</span
+                      ></span
                       >
                     </a>
                   </li>
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="{{asset('student/img/profile_img3.jpg')}}"
-                        alt="User Image"
-                        class="img-fluid me-2"
-                        style="width: 40px; border-radius: 50%"
+                      src="{{asset('student/img/profile_img3.jpg')}}"
+                      alt="User Image"
+                      class="img-fluid me-2"
+                      style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Mushfiqur</strong> commented on your post<span
-                          class="text-muted ms-5"
-                          >10m ago</span
-                        ></span
+                      ><strong>Mushfiqur</strong> commented on your post<span
+                      class="text-muted ms-5"
+                      >10m ago</span
+                      ></span
                       >
                     </a>
                   </li>
                   <li><hr class="dropdown-divider" /></li>
-                  <li>
+                  <li>                    
                     <a class="dropdown-item" href="#">See all notifications</a>
                   </li>
                 </ul>
@@ -182,6 +181,7 @@
             </div>
           </div>
           <!-- What's on your mind section -->
+          Check: {{$posts}}
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
               <img
