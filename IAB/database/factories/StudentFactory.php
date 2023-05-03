@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Student>
  */
-class UserFactory extends Factory
+class StudentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,8 +18,9 @@ class UserFactory extends Factory
     {
         return [
             'userEmail' => fake()->unique()->safeEmail(),
-            'password' => 12345, // password
+            'firstName' => $this->faker->text, 
+            'lastName' => $this->faker->text, 
+            'iubID'=> $this->faker->randomDigit
         ];
     }
-
 }

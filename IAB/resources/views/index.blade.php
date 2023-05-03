@@ -17,8 +17,20 @@
       type="image/x-icon"
     />
     <title>IUB Alumni Bridge</title>
+    <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+    </script>
   </head>
+  
   <body>
+    
     <div class="container">
       <div class="card">
         <img src="alumni/img/alumni.jpg" class="card-img-top" alt="Alumni" />
@@ -41,7 +53,9 @@
             />
           </div>
           <br />
-          <form id="loginForm" action="alumni/home.html" method="post">
+          <form id="loginForm" action="{{route('validate.acc')}}" method="post">
+            
+            @csrf
             <div class="form-group">
               <label for="inputEmail">Email address</label>
               <input
@@ -73,7 +87,7 @@
               </div>
             </div>
             <div class="text-center">
-              <a
+              {{-- <a
                 href=""
                 class="btn btn-primary px-5"
                 style="text-decoration: none"
@@ -81,8 +95,8 @@
                 onclick="login()"
               >
                 Log In
-              </a>
-              <!-- <button type="submit" class="btn btn-primary text-center">Log In</button> -->
+              </a> --}}
+              <button type="submit" class="btn btn-primary text-center px-5">Log In</button>
               <br />
               <br />
               <p>Need an account?<a href="/signup">Sign Up</a></p>
@@ -91,6 +105,15 @@
         </div>
       </div>
     </div>
+    
+
+    @if(session('msg'))
+      <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
+    @if(session('failMsg'))
+      <div class="alert alert-danger" id="alert-div" role="alert">{{session('failMsg')}}</div>
+    @endif
+
     <script src="index.js"></script>
   </body>
 </html>
