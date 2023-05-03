@@ -190,21 +190,43 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="eventTime">Time</label>
+                  <label for="StartEventTime">Event Start Time</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="eventTime"
-                    placeholder="Enter event time"
+                    id="StartEventTime"
+                    name="StartEventTime"
+                    placeholder="Enter event start time"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="eventDate">Date</label>
+                  <label for="endEventTime">Event End Time</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="endEventTime"
+                    name="endEventTime"
+                    placeholder="Enter event end time"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="startEventDate">Event Start Date</label>
                   <input
                     type="date"
                     class="form-control"
-                    id="eventDate"
-                    placeholder="Enter event date"
+                    id="startEventDate"
+                    name="startEventDate"
+                    placeholder="Enter event start date"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="endEventDate">Event End Date</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="endEventDate"
+                    name="endEventDate"
+                    placeholder="Enter event end date"
                   />
                 </div>
                 <div class="form-group">
@@ -221,16 +243,18 @@
                   <textarea
                     class="form-control"
                     id="eventDescription"
+                    name="eventDescription"
                     placeholder="Enter event description"
                     rows="3"
                   ></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="posterImage">Poster Image</label>
+                  <label for="EventPosterImage">Poster Image</label>
                   <input
                     type="file"
                     class="form-control-file"
-                    id="posterImage"
+                    id="EventPosterImage"
+                    name="EventPosterImage"
                   />
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

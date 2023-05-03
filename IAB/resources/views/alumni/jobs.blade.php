@@ -189,6 +189,7 @@
                     type="text"
                     class="form-control"
                     id="jobTitle"
+                    name="jobTitle"
                     placeholder="Enter job title"
                   />
                 </div>
@@ -208,6 +209,7 @@
                     type="text"
                     class="form-control"
                     id="jobLocation"
+                    name="jobLocation"
                     placeholder="Enter job location"
                   />
                 </div>
@@ -221,10 +223,11 @@
                   ></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="eventResponsibility">Responsibility</label>
+                  <label for="jobResponsibility">Responsibility</label>
                   <textarea
                     class="form-control"
-                    id="eventResponsibility"
+                    id="jobResponsibility"
+                    name="jobResponsibility"
                     placeholder="Enter job responsibility"
                     rows="3"
                   ></textarea>
@@ -244,6 +247,7 @@
                     type="text"
                     class="form-control"
                     id="contactMail"
+                    name="contactMail"
                     placeholder="Enter contact mail"
                   />
                 </div>

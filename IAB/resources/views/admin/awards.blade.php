@@ -184,56 +184,70 @@
             <div class="col-10 col-lg-11 pe-5">
               <form>
                 <div class="form-group">
-                  <label for="eventTitle">Title</label>
+                  <label for="awardTitle">Title</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="eventTitle"
+                    id="awardTitle"
+                    name="awardTitle"
                     placeholder="Enter award title"
                   />
                 </div>
-                <div class="form-group">
-                  <label for="eventTime">Time</label>
+                {{-- <div class="form-group">
+                  <label for="eventTime1">Time</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="eventTime"
+                    id="eventTime1"
                     placeholder="Enter award time"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="eventDate">Date</label>
+                  <label for="eventTime2">Time</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eventTime2"
+                    placeholder="Enter award time"
+                  />
+                </div> --}}
+                <div class="form-group">
+                  <label for="awardDate">Date</label>
                   <input
                     type="date"
                     class="form-control"
-                    id="eventDate"
+                    id="awardDate"
+                    name="awardDate"
                     placeholder="Enter award date"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="eventLocation">Location</label>
+                  <label for="awardLocation">Location</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="eventLocation"
+                    id="awardLocation"
+                    name="awardLocation"
                     placeholder="Enter award location"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="eventDescription">Description</label>
+                  <label for="awardDescription">Description</label>
                   <textarea
                     class="form-control"
-                    id="eventDescription"
+                    id="awardDescription"
+                    name="awardDescription"
                     placeholder="Enter award description"
                     rows="3"
                   ></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="posterImage">Poster Image</label>
+                  <label for="AwardPosterImage">Poster Image</label>
                   <input
                     type="file"
                     class="form-control-file"
-                    id="posterImage"
+                    id="AwardPosterImage"
+                    name="AwardPosterImage"
                   />
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

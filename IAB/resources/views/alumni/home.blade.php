@@ -187,21 +187,24 @@
                 style="width: 50px; height: 50px; border-radius: 50%"
               />
             </div>
-            <div class="col-10 col-lg-11 pe-5">
-              <textarea
-                class="form-control bg-gray p-3"
-                placeholder="Ask a question and start a discussion..."
-                style="border-radius: 20px"
-              ></textarea>
-              <button
-                id="post-btn"
-                type="button"
-                class="btn my-2"
-                style="background-color: #015ea0; color: #fff"
-              >
-                Post
-              </button>
-            </div>
+            <form action="#">
+              <div class="col-10 col-lg-11 pe-5">
+                <textarea
+                  class="form-control bg-gray p-3"
+                  name="postQuery"
+                  placeholder="Ask a question and start a discussion..."
+                  style="border-radius: 20px"
+                ></textarea>
+                <button
+                  id="post-btn"
+                  type="submit"
+                  class="btn my-2"
+                  style="background-color: #015ea0; color: #fff"
+                >
+                  Post
+                </button>
+              </div>
+            </form>
           </div>
           <!-- POST section -->
           <div class="row">
