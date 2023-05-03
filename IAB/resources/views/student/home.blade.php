@@ -40,7 +40,7 @@
           >
             <!-- LOGO -->
 
-            <a href="currentStudent.dash" class="my-3 ms-4">
+            <a href="/currentStudent/dashboard" class="my-3 ms-4">
               <img
                 src="{{asset('student/img/iubalumnibridgelogo.png')}}"
                 alt="logo"
@@ -48,28 +48,28 @@
               />
             </a>
             <!-- NAV LINKS -->
-            <a href="currentStudent.dash" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/dashboard" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-house fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Home</span>
             </a>
 
-            <a href="currentStudent.events" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/events" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
-            <a href="awards.html" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/awards" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-trophy fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Award</span>
             </a>
-            <a href="currentStudent.jobs" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
-            <a href="currentStudent.profile" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/profile" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-user fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
             </a>
-            <a href="currentStudent.bookmarks" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/bookmarks" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bookmark fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
@@ -79,7 +79,7 @@
             </a>
 
             <a
-              href="currentStudent.profile"
+              href="/currentStudent/profile"
               class="btn profile_icon position-absolute"
               type="button"
             >
@@ -587,7 +587,7 @@
             </div>
             <div class="p-3 d-flex justify-content-end me-5">
               <a
-                href="currentStudent.events"
+                href="/currentStudent/events"
                 style="color: black"
                 class="btn btn-outline-primary me-5"
                 >View all events</a

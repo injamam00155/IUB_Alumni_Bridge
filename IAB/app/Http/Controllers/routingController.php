@@ -67,7 +67,7 @@ class routingController extends Controller
     public function alumniDashboard() {
         return view('alumni/home');
     }
-    public function alumnniBookmarks() {
+    public function alumniBookmarks() {
         return view('alumni/bookmarks');
     }
     public function alumniEvents() {

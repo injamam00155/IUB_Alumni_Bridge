@@ -41,7 +41,7 @@
           >
             <!-- LOGO -->
 
-            <a href="alumni.dash" class="my-3 ms-4">
+            <a href="/admin/dashboard" class="my-3 ms-4">
               <img
                 src="img/iubalumnibridgelogo.png"
                 alt="logo"
@@ -49,20 +49,20 @@
               />
             </a>
             <!-- NAV LINKS -->
-            <a href="alumni.dash" class="btn my-3 nav_link" type="button">
+            <a href="/admin/dashboard" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-house fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Home</span>
             </a>
 
-            <a href="alumni.events" class="btn my-3 nav_link" type="button">
+            <a href="/admin/events" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
-            <a href="alumni.awards" class="btn my-3 nav_link" type="button">
+            <a href="/admin/awards" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-trophy fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Award</span>
             </a>
-            <a href="alumni.jobs" class="btn my-3 nav_link" type="button">
+            <a href="/admin/jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
@@ -70,7 +70,7 @@
               <i class="fa-solid fa-user fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
             </a> -->
-            <a href="alumni.bookmarks" class="btn my-3 nav_link" type="button">
+            <a href="/admin/bookmarks" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bookmark fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Bookmark</span>
             </a>
@@ -374,7 +374,7 @@
             </div>
             <div class="p-3 d-flex justify-content-end me-5">
               <a
-                href="alumni.events"
+                href="/admin/events"
                 style="color: black"
                 class="btn btn-outline-primary me-5"
                 >View all events</a
