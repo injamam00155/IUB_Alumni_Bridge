@@ -42,7 +42,7 @@
           >
             <!-- LOGO -->
 
-            <a href="home.html" class="my-3 ms-4">
+            <a href="alumni.dash" class="my-3 ms-4">
               <img
                 src="img/iubalumnibridgelogo.png"
                 alt="logo"
@@ -50,20 +50,20 @@
               />
             </a>
             <!-- NAV LINKS -->
-            <a href="home.html" class="btn my-3 nav_link" type="button">
+            <a href="alumni.dash" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-house fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Home</span>
             </a>
 
-            <a href="event.html" class="btn my-3 nav_link" type="button">
+            <a href="alumni.events" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
-            <a href="awards.html" class="btn my-3 nav_link" type="button">
+            <a href="alumni.awards" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-trophy fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Award</span>
             </a>
-            <a href="jobs.html" class="btn my-3 nav_link" type="button">
+            <a href="alumni.jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
@@ -71,11 +71,11 @@
               <i class="fa-solid fa-user fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Profile</span>
             </a>
-            <a href="bookmarked.html" class="btn my-3 nav_link" type="button">
+            <a href="alumni.bookmarks" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bookmark fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
-            <a href="../index.html" class="btn my-3 nav_link" type="button">
+            <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Log out</span>
             </a>
@@ -366,7 +366,7 @@
             </div>
             <div class="p-3 d-flex justify-content-end me-5">
               <a
-                href="event.html"
+                href="alumni.events"
                 style="color: black"
                 class="btn btn-outline-primary me-5"
                 >View all events</a

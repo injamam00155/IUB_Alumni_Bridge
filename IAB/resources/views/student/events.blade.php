@@ -40,7 +40,7 @@
           >
             <!-- LOGO -->
 
-            <a href="home.html" class="my-3 ms-4">
+            <a href="currentStudent.dash" class="my-3 ms-4">
               <img
                 src="img/iubalumnibridgelogo.png"
                 alt="logo"
@@ -48,12 +48,12 @@
               />
             </a>
             <!-- NAV LINKS -->
-            <a href="home.html" class="btn my-3 nav_link" type="button">
+            <a href="currentStudent.dash" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-house fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Home</span>
             </a>
 
-            <a href="event.html" class="btn my-3 nav_link" type="button">
+            <a href="currentStudent.events" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Events</span>
             </a>
@@ -61,25 +61,25 @@
               <i class="fa-solid fa-trophy fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Award</span>
             </a>
-            <a href="jobs.html" class="btn my-3 nav_link" type="button">
+            <a href="currentStudent.jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
-            <a href="profile.html" class="btn my-3 nav_link" type="button">
+            <a href="currentStudent.profile" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-user fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
             </a>
-            <a href="bookmarked.html" class="btn my-3 nav_link" type="button">
+            <a href="currentStudent.bookmarks" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bookmark fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
-            <a href="../index.html" class="btn my-3 nav_link" type="button">
+            <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Log out</span>
             </a>
 
             <a
-              href="profile.html"
+              href="currentStudent.profile"
               class="btn profile_icon position-absolute"
               type="button"
             >
@@ -420,7 +420,7 @@
             </div>
             <div class="p-3 d-flex justify-content-end me-5">
               <a
-                href="event.html"
+                href="currentStudent.events"
                 style="color: black"
                 class="btn btn-outline-primary me-5"
                 >View all events</a
