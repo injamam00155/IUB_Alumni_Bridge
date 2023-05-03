@@ -187,8 +187,8 @@
                 style="width: 50px; height: 50px; border-radius: 50%"
               />
             </div>
-            <form action="#">
-              <div class="col-10 col-lg-11 pe-5">
+            <div class="col-10 col-lg-11 pe-5">
+                <form action="#">
                 <textarea
                   class="form-control bg-gray p-3"
                   name="postQuery"
@@ -203,8 +203,8 @@
                 >
                   Post
                 </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
           <!-- POST section -->
           <div class="row">
