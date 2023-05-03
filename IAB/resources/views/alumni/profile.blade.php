@@ -195,19 +195,23 @@
                         <h5>Injamam Ul Haque</h5>
 
                         <h6>back-end Developer</h6>
-                        <p class="text-muted">
-                          Socials :
+                        <div class="mb-2">
+                            <span class="fw-bold mb-2">
+                              Socials
+                            </span> 
+                          <div class="mt-2">
 
-                          <a href="#" class="me-2"
-                            ><i class="fa-brands fa-linkedin"></i
-                          ></a>
-                          <a href="#" class="me-2"
-                            ><i class="fa-brands fa-facebook"></i
-                          ></a>
-                          <a href="#" class="me-2"
-                            ><i class="fa-brands fa-github"></i
-                          ></a>
-                        </p>
+                            <a href="#" class="btn rounded-pill border border-secondary me-2"
+                              ><i class="fa-brands fa-xl fa-linkedin"></i
+                            > LinkedIn</a>
+                            <a href="#" class="btn rounded-pill border border-secondary me-2"
+                              ><i class="fa-brands fa-xl fa-facebook"></i
+                            > Facebook</a>
+                            <a href="#" class="btn rounded-pill border border-secondary me-2"
+                              ><i class="fa-brands fa-xl fa-github"></i
+                            > Github</a>
+                          </div>
+                        </div>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                           <li class="nav-item">
                             <a
@@ -256,14 +260,7 @@
                           role="tabpanel"
                           aria-labelledby="home-tab"
                         >
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>User Id</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>Injamam00155</p>
-                            </div>
-                          </div>
+                          
                           <div class="row">
                             <div class="col-md-6">
                               <label>Name</label>
@@ -285,7 +282,7 @@
                               <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                              <p>123 456 7890</p>
+                              <p>+8801709090909</p>
                             </div>
                           </div>
                           <div class="row">

@@ -1,10 +1,14 @@
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 .dropdown-menu {
     width: 500px;
 }
-
+.btn-transparent {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+}
 .left_nav {
     height: 100vh;
     align-items: center;
@@ -12,7 +16,7 @@
 }
 
 #navbar {
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
 }
 
 .profile_icon {
@@ -58,7 +62,6 @@
 .card:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s ease-in-out;
-
 }
 
 .card-body {

@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="forgotPassword.css" />
     <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
-    <title>Forgot Password</title>
+    <title>Confirm Password</title>
   </head>
 
   <body>
@@ -28,38 +28,34 @@
               />
               <br />
               <br />
-              <h3><strong>Reset Your Password</strong></h3>
+              <h3><strong>Reset Password</strong></h3>
             </div>
             <form class="form-card">
-              <div class="row justify-content-center text-left">
-                <div class="form-group col-sm-8 flex-column d-flex">
-                  <label class="form-control-label px-2">
-                    Please enter your email address to send a verification code.
-                    <!-- <span class="text-danger">
-                                        *
-                                    </span> -->
-                  </label>
+              
+                <div class="row justify-content-center text-left">
+                  <div class="form-group mb-2">
+                  <label for="newPassword">Password</label>
                   <input
-                    type="text"
-                    id="inputEmail"
-                    name="inputEmail"
-                    placeholder="Enter Email Address"
+                    type="password"
+                    class="form-control"
+                    id="newPassword"
+                    placeholder="New Password"
                   />
                 </div>
               </div>
-              <div class="row justify-content-center">
-                <div class="form-group col-sm-6">
-                  <a
-                    href="confirmPassword"
-                    class="btn btn-primary px-5"
-                    style="text-decoration: none"
-                  >
-                    Send Code
-                  </a>
-                  <br />
-                  <a href="/">Back to login</a>
+                <div class="row justify-content-center text-left">
+                  <div class="form-group mb-2">
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    placeholder="Confirm Password"
+                  />
                 </div>
               </div>
+              <button type="submit" class="btn btn-warning mt-2">Reset Password</button>
+              
             </form>
           </div>
         </div>
