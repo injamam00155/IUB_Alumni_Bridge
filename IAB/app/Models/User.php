@@ -10,6 +10,7 @@ class User extends Model
 {
     use HasFactory;
     public $timestamps=false;
+    protected $fillable = ['userEmail', 'password'];
 
     public function isAdmin()
     {
