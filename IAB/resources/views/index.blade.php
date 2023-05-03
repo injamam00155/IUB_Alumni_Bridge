@@ -53,7 +53,8 @@
             />
           </div>
           <br />
-          <form id="loginForm" action="alumni/home.html" method="post">
+          <form id="loginForm" action="{{route('validate.acc')}}" method="post">
+            
             @csrf
             <div class="form-group">
               <label for="inputEmail">Email address</label>
@@ -108,6 +109,9 @@
 
     @if(session('msg'))
       <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
+    @if(session('failMsg'))
+      <div class="alert alert-danger" id="alert-div" role="alert">{{session('failMsg')}}</div>
     @endif
 
     <script src="index.js"></script>

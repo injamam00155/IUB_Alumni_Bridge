@@ -44,7 +44,7 @@ class indexController extends Controller
             'inputEmail' => 'required|email',
             'inputPassword' => 'required',
             'inputConfirmPassword' => 'required|same:inputPassword',
-            'iubId' => 'required|digits:7',
+            'iubId' => 'required|digits_between:5,7',
         ]);
         
         $users = user::all();
