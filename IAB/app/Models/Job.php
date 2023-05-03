@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Job extends Post
 {
     use HasFactory;
-    protected $timestamps=false;
+    public $timestamps=false;
     protected $fillable = ['postID', 'jobTitle', 'companyName', 'location', 'jobDescription', 'responsibility', 'requirement', 'contactEmail', 'userEmail'];
     public function isJob()
     {

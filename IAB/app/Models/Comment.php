@@ -9,6 +9,6 @@ use Illuminate\Support\Facades\DB;
 class Comment extends Model
 {
     use HasFactory;
-    // protected $timestamps=false;
+    // public $timestamps=false;
     protected $fillable = ['commentID', 'description', 'userEmail', 'postID'];
 }

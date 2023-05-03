@@ -9,6 +9,6 @@ use Illuminate\Support\Facades\DB;
 class Award extends Post
 {
     use HasFactory;
-    protected $timestamps=false;
+    public $timestamps=false;
     protected $fillable = ['postID', 'awardTitle', 'awardDescription', 'awardDate', 'awardImageURL'];
 }

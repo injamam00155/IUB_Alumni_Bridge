@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Post extends Model
 {
     use HasFactory;
-    protected $timestamps=false;
+    public $timestamps=false;
     protected $fillable = ['postID', 'postDateTime'];
     public function isPost()
     {

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Event extends Post
 {
     use HasFactory;
-    protected $timestamps=false;
+    public $timestamps=false;
     protected $fillable = ['postID', 'eventTitle', 'eventDescription', 'eventDate'. 'eventImageURL', 'eventLocation'];
     public function isEvent()
     {

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class Query extends Post
 {
     use HasFactory;
-    protected $timestamps=false;
+    public $timestamps=false;
     protected $fillable = ['postID', 'postDescription', 'userEmail'];
     public function isQuery()
     {

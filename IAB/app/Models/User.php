@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class User extends Model
 {
     use HasFactory;
-    protected $timestamps=false;
+    public $timestamps=false;
     protected $fillable = ['userEmail', 'password'];
 
     public function isAdmin()
