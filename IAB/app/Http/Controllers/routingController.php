@@ -25,9 +25,39 @@ class routingController extends Controller
     public function adminDashboard() {
         return view('admin/home');
     }
+    public function adminBookmarks() {
+        return view('admin/bookmarks');
+    }
+    public function adminEvents() {
+        return view('admin/events');
+    }
+    public function adminJobs() {
+        return view('admin/jobs');
+    }
+    public function adminProfile() {
+        return view('admin/profile');
+    }
+    public function adminAwards() {
+        return view('admin/awards');
+    }
     
     public function currentStudentDashboard() {
         return view('student/home');
+    }
+    public function currentStudentBookmarks() {
+        return view('student/bookmarks');
+    }
+    public function currentStudentEvents() {
+        return view('student/events');
+    }
+    public function currentStudentJobs() {
+        return view('student/jobs');
+    }
+    public function currentStudentProfile() {
+        return view('student/profile');
+    }
+    public function currentStudentAwards() {
+        return view('student/awards');
     }
     
     public function alumniDashboard() {
