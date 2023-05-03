@@ -12,6 +12,6 @@ Route::post('/store', [indexController::class, 'store'])->name('alumni.store');
 Route::post('/validate', [loginController::class, 'loginCheck'])->name('validate.acc');
 
 Route::get('/admin/dashboard', [indexController::class, 'adminDashboard'])->name('admin.dash');
-Route::get('/current-student/dashboard', [indexController::class, 'currentStudentDashboard'])->name('currStudent.dash');
+Route::get('/current-student/dashboard', [indexController::class, 'currentStudentDashboard'])->name('currentStudent.dash');
 Route::get('/alumni/dashboard', [indexController::class, 'alumniDashboard'])->name('alumni.dash');
 

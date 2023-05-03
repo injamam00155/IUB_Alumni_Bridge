@@ -114,6 +114,6 @@
       <div class="alert alert-danger" id="alert-div" role="alert">{{session('failMsg')}}</div>
     @endif
 
-    <script src="index.js"></script>
+    {{-- <script src="index.js"></script> --}}
   </body>
 </html>

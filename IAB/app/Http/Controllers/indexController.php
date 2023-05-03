@@ -72,6 +72,7 @@ class indexController extends Controller
         // Redirect or return a response
         return redirect()->route('index')->with('msg','Account Created Successfully');
     }
+    
 }
 
 
