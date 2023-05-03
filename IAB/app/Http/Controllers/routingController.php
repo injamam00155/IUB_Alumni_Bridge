@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 
 class routingController extends Controller
 {
-    //Login, Signup and forgotPassword routing functions
+    //login, signup and forgotPassword routing functions
     public function index() {
         return view('index');
     }

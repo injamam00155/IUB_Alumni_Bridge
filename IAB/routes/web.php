@@ -4,7 +4,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\routingController;
 use Illuminate\Support\Facades\Route;
 
-//Login, Signup and forgotPassword routes
+//login, signup and forgotPassword routes
 Route::get('/', [routingController::class, 'index'])->name('index');
 Route::get('/forgotPassword', [routingController::class, 'forgotPassword'])->name('forgotPassword');
 Route::get('/signup', [routingController::class, 'signup'])->name('signup');
