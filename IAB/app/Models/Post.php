@@ -23,10 +23,12 @@ class Post extends Model
     {
         return DB::table('jobs')->where('postID', $this->postID)->exists();
     }
+
     public function isEvent()
     {
         return DB::table('events')->where('postID', $this->postID)->exists();
     }
+    
     public function isAward()
     {
         return DB::table('awards')->where('postID', $this->postID)->exists();
