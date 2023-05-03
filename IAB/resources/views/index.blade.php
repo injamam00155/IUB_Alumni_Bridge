@@ -61,6 +61,7 @@
               <input
                 type="email"
                 class="form-control"
+                name="inputEmail"
                 id="inputEmail"
                 placeholder="Enter email"
               />
@@ -70,6 +71,7 @@
               <input
                 type="password"
                 class="form-control"
+                name="inputPassword"
                 id="inputPassword"
                 placeholder="Password"
               />
@@ -114,6 +116,6 @@
       <div class="alert alert-danger" id="alert-div" role="alert">{{session('failMsg')}}</div>
     @endif
 
-    <script src="index.js"></script>
+    {{-- <script src="index.js"></script> --}}
   </body>
 </html>
