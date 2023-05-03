@@ -73,7 +73,7 @@ class loginController extends Controller
     
         if ($user) {
             $postViewController = new postViewController();
-            $posts = $postViewController->viewPost();
+            $posts = $postViewController->viewPosts();
             if ($user->isAdmin()) {
                 return view('admin/home', ['posts' => $posts]);
             } elseif ($user->isCurrentStudent()) {

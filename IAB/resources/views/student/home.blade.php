@@ -181,7 +181,30 @@
             </div>
           </div>
           <!-- What's on your mind section -->
-          Check: {{$posts}}
+      {{-- @if(isset($posts))
+          @foreach($posts as $post)
+          {
+            @if ($post->isQuery())
+            {
+              <div>Query post goes here</div>
+            }
+            @elseif($post->isJobs())
+            {
+              <div>Job post goes here</div>
+            }
+            @elseif($post->isEvent())
+            {
+              <div>Event post goes here</div>
+            }
+            @else
+            {
+              <div>Query post goes here</div>
+            }
+          }
+            
+          @endforeach
+      @endif --}}
+
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
               <img
