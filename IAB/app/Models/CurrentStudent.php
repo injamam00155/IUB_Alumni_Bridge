@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\DB;
 class CurrentStudent extends Student
 {
     use HasFactory;
-
+    protected $timestamps=false;
+    protected $fillable = ['userEmail', 'program', 'major', 'minor'];
 
     public function isCurrentStudent()
     {
