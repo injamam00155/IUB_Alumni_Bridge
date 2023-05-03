@@ -15,5 +15,9 @@ use Illuminate\Http\Request;
 
 class postViewController extends Controller
 {
-    //
+
+    public function viewPost(){
+        return Post::latest('postDateTime')->get();
+    }
+    
 }

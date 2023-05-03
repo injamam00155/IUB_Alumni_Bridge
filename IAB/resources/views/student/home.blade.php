@@ -93,6 +93,10 @@
           </div>
         </div>
         <!-- ---HOME FEED--- -->
+
+      {{-- <div>
+        Check: {{$posts}}
+      </div> --}}
         <div class="col-10 col-lg-8 col-xl-7 border-end">
           <div class="row align-items-center mt-3 bg-white sticky-top py-3">
             <div class="col-5 col-lg-11">

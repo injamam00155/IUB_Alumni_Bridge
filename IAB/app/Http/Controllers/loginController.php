@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\postViewController;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Student;
@@ -56,6 +57,12 @@ class loginController extends Controller
             if ($user->isAdmin()) {
                 return redirect()->route('admin.dash');
             } elseif ($user->isCurrentStudent()) {
+
+                // $postViewController = new postViewController();        
+                // Call the viewPosts method
+                // $posts = $postViewController->viewPost();
+                // return view('currentStudent.dash');
+                // , ['posts' => $posts]);
                 return redirect()->route('currentStudent.dash');
             } elseif ($user->isAlumni()) {
                 return redirect()->route('alumni.dash');
