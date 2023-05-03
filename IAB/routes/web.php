@@ -15,4 +15,10 @@ Route::get('/admin/dashboard', [routingController::class, 'adminDashboard'])->na
 Route::get('/current-student/dashboard', [routingController::class, 'currentStudentDashboard'])->name('currentStudent.dash');
 Route::get('/alumni/dashboard', [routingController::class, 'alumniDashboard'])->name('alumni.dash');
 
+Route::get('/alumni/awards', [routingController::class, 'alumniAwards'])->name('alumni.awards');
+Route::get('/alumni/bookmarks', [routingController::class, 'alumniBookmarks'])->name('alumni.bookmarks');
+Route::get('/alumni/events', [routingController::class, 'alumniEvents'])->name('alumni.events');
+Route::get('/alumni/jobs', [routingController::class, 'alumniJobs'])->name('alumni.jobs');
+Route::get('/alumni/profile', [routingController::class, 'alumniProfile'])->name('alumni.profile');
+
  

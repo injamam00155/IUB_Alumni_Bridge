@@ -33,6 +33,21 @@ class routingController extends Controller
     public function alumniDashboard() {
         return view('alumni/home');
     }
+    public function alumnniBookmarks() {
+        return view('alumni/bookmarks');
+    }
+    public function alumniEvents() {
+        return view('alumni/events');
+    }
+    public function alumniJobs() {
+        return view('alumni/jobs');
+    }
+    public function alumniProfile() {
+        return view('alumni/profile');
+    }
+    public function alumniAwards() {
+        return view('alumni/awards');
+    }
 
     public function store(Request $request)
     {

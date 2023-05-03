@@ -9,4 +9,6 @@ use Illuminate\Support\Facades\DB;
 class Bookmark extends Model
 {
     use HasFactory;
+    // protected $timestamps=false;
+    protected $fillable = ['bookmarkID', 'userEmail'];
 }
