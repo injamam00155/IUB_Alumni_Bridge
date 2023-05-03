@@ -183,7 +183,7 @@
             </div>
             <div class="col-10 col-lg-11 pe-5">
               <form>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="awardTitle">Title</label>
                   <input
                     type="text"
@@ -211,7 +211,7 @@
                     placeholder="Enter award time"
                   />
                 </div> --}}
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="awardDate">Date</label>
                   <input
                     type="date"
@@ -221,7 +221,7 @@
                     placeholder="Enter award date"
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="awardLocation">Location</label>
                   <input
                     type="text"
@@ -231,7 +231,7 @@
                     placeholder="Enter award location"
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="awardDescription">Description</label>
                   <textarea
                     class="form-control"
@@ -241,7 +241,7 @@
                     rows="3"
                   ></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-2">
                   <label for="AwardPosterImage">Poster Image</label>
                   <input
                     type="file"
