@@ -9,4 +9,21 @@ class User extends Model
 {
     use HasFactory;
     public $timestamps=false;
+
+    public function isAdmin()
+    {
+        return DB::table('admins')->where('userEmail', $this->userEmail)->exists();
+    }
+
+    public function isAlumni()
+    {
+        return DB::table('alumni')->where('userEmail', $this->userEmail)->exists();
+    }
+    
+    public function isCurrentStudent()
+    {
+        
+        return DB::table('current_students')->where('userEmail', $this->userEmail)->exists();
+    }
+
 }

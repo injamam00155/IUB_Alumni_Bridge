@@ -54,6 +54,7 @@
           </div>
           <br />
           <form id="loginForm" action="alumni/home.html" method="post">
+            @csrf
             <div class="form-group">
               <label for="inputEmail">Email address</label>
               <input
@@ -85,7 +86,7 @@
               </div>
             </div>
             <div class="text-center">
-              <a
+              {{-- <a
                 href=""
                 class="btn btn-primary px-5"
                 style="text-decoration: none"
@@ -93,8 +94,8 @@
                 onclick="login()"
               >
                 Log In
-              </a>
-              <!-- <button type="submit" class="btn btn-primary text-center">Log In</button> -->
+              </a> --}}
+              <button type="submit" class="btn btn-primary text-center px-5">Log In</button>
               <br />
               <br />
               <p>Need an account?<a href="/signup">Sign Up</a></p>
