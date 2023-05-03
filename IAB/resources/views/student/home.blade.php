@@ -42,7 +42,7 @@
 
             <a href="home.html" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('student/img/iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
@@ -73,7 +73,7 @@
               <i class="fa-solid fa-bookmark fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
-            <a href="../index.html" class="btn my-3 nav_link" type="button">
+            <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Log out</span>
             </a>
@@ -85,7 +85,7 @@
             >
               <img
                 class="img-fluid ms-2"
-                src="img/profile_img.jpg"
+                src="{{asset('student/img/profile_img.jpg')}}"
                 alt="profile img"
                 style="width: 40px; border-radius: 50%"
               />
@@ -126,7 +126,7 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/Akib Raihan .jpeg"
+                        src="{{asset('student/img/Akib Raihan .jpeg')}}"
                         alt="User Display Picture"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
@@ -140,7 +140,7 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/profile_img2.jpg"
+                        src="{{asset('student/img/profile_img2.jpg')}}"
                         alt="User Image"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
@@ -156,7 +156,7 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/profile_img3.jpg"
+                        src="{{asset('student/img/profile_img3.jpg')}}"
                         alt="User Image"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
@@ -181,7 +181,7 @@
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
               <img
-                src="img/profile_img.jpg"
+                src="{{asset('student/img/profile_img.jpg')}}"
                 alt="profile img"
                 class="img-fluid ms-2"
                 style="width: 50px; height: 50px; border-radius: 50%"
@@ -211,7 +211,7 @@
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
-                      src="img/Sarah_Student.jpg"
+                      src="{{asset('student/img/Sarah_Student.jpg')}}"
                       alt="user Display Picture"
                       class="img-fluid ms-2"
                       style="width: 50px; height: 50px; border-radius: 50%"
@@ -256,7 +256,7 @@
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
-                      src="img/IUBLogo.png"
+                      src="{{asset('student/img/IUBLogo.png')}}"
                       alt="User Display Picture"
                       class="img-fluid ms-2"
                       style="width: 50px; height: 50px; border-radius: 50%"
@@ -273,7 +273,7 @@
                         <a class="postcard__img_link" href="#">
                           <img
                             class="postcard__img"
-                            src="img/event1.jpg"
+                            src="{{asset('student/img/event1.jpg')}}"
                             alt="League of Enghineers poster picture"
                           />
                         </a>
@@ -347,7 +347,7 @@
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
-                      src="img/IUBLogo.png"
+                      src="{{asset('student/img/IUBLogo.png')}}"
                       alt="User Display Picture"
                       class="img-fluid ms-2"
                       style="width: 50px; height: 50px; border-radius: 50%"
@@ -364,7 +364,7 @@
                         <a class="postcard__img_link" href="#">
                           <img
                             class="postcard__img"
-                            src="img/Career_Fair_2023.jpg"
+                            src="{{asset('student/img/Career_Fair_2023.jpg')}}"
                             alt="Career and Networking Day 2023 Poster"
                           />
                         </a>
@@ -431,7 +431,7 @@
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
-                      src="img/profile_img2.jpg"
+                      src="{{asset('student/img/profile_img2.jpg')}}"
                       alt="User profile picture"
                       class="img-fluid ms-2"
                       style="width: 50px; height: 50px; border-radius: 50%"
@@ -557,7 +557,7 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="img/TechFest2023.jpg"
+                        src="{{asset('student/img/TechFest2023.jpg')}}"
                         class="card-img-top"
                         alt="Tech Fest 2023 poster"
                       />

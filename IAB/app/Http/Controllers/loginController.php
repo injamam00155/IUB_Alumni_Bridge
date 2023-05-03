@@ -40,27 +40,28 @@ use Illuminate\Http\Request;
 
 class loginController extends Controller
 {
-public function loginCheck(Request $request)
-{
-    $validatedData = $request->validate([
-        'inputEmail' => 'required|email',
-        'inputPassword' => 'required',
-    ]);
+    public function loginCheck(Request $request)
+    {
+        $validatedData = $request->validate([
+            'inputEmail' => 'required|email',
+            'inputPassword' => 'required',
+        ]);
+        
 
-    $user = User::where('userEmail', $validatedData['inputEmail'])
-        ->where('password', $validatedData['inputPassword'])
-        ->first();
+        $user = User::where('userEmail', $validatedData['inputEmail'])
+            ->where('password', $validatedData['inputPassword'])
+            ->first();
 
-    if ($user) {
-        if ($user->isAdmin()) {
-            return redirect()->route('admin.dash');
-        } elseif ($user->isCurrentStudent()) {
-            return redirect()->route('currentStudent.dash');
-        } elseif ($user->isAlumni()) {
-            return redirect()->route('alumni.dash');
+        if ($user) {
+            if ($user->isAdmin()) {
+                return redirect()->route('admin.dash');
+            } elseif ($user->isCurrentStudent()) {
+                return redirect()->route('currentStudent.dash');
+            } elseif ($user->isAlumni()) {
+                return redirect()->route('alumni.dash');
+            }
         }
-    }
 
-    return redirect()->route('index')->with('failMsg', 'Invalid email or password');
-}
+        return redirect()->route('index')->with('failMsg', 'Invalid email or password');
+    }
 }

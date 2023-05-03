@@ -77,13 +77,13 @@
               />
             </div>
             <div class="d-flex">
-              <div class="p-2">
+              {{-- <div class="p-2">
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="check" />
-                  <label class="form-check-label" for="check">
+                  <input type="checkbox" class="form-check-input" name="rememberMe" id="rememberMe" />
+                  <label class="form-check-label" for="rememberMe">
                     Remember Me</label>
                 </div>
-              </div>
+              </div> --}}
               <div class="ml-auto p-2">
                 <a href="/forgotPassword">Forgot Password?</a>
               </div>

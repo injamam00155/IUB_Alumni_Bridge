@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
+    <link rel="icon" href="{{asset('admin/img/iubalumnibridgelogo.png')}}" type="image/x-icon" />
     <title>IUB Alumni Bridge</title>
     <!-- CSS -->
     <link rel="stylesheet" href={{asset('home.css')}} />
@@ -73,7 +73,7 @@
               <i class="fa-solid fa-bookmark fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
-            <a href="../index.html" class="btn my-3 nav_link" type="button">
+            <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Log out</span>
             </a>
