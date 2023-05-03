@@ -7,7 +7,7 @@
     <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
     <title>IUB Alumni Bridge</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href={{asset('profile.css')}} />
     <!-- JS -->
     <script src="app.js"></script>
     <!-- BOOTSTRAP CS-->

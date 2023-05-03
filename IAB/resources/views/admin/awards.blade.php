@@ -7,7 +7,7 @@
     <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
     <title>Awards</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="events.css" />
+    <link rel="stylesheet" href={{asset('events.css')}} />
     <!-- JS -->
     <script src="app.js"></script>
     <!-- BOOTSTRAP CS-->

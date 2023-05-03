@@ -8,7 +8,7 @@
     <title>Profile</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href={{asset('profile.css')}} />
     <!-- JS -->
     <script src="app.js"></script>
     <!-- BOOTSTRAP CS-->
