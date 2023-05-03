@@ -1,18 +1,18 @@
 <?php
 
 use App\Http\Controllers\loginController;
-use App\Http\Controllers\indexController;
+use App\Http\Controllers\routingController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [indexController::class, 'index'])->name('index');
-Route::get('/forgotPassword', [indexController::class, 'forgotPassword'])->name('forgotPassword');
-Route::get('/signup', [indexController::class, 'signup'])->name('signup');
-Route::post('/store', [indexController::class, 'store'])->name('alumni.store');
+Route::get('/', [routingController::class, 'index'])->name('index');
+Route::get('/forgotPassword', [routingController::class, 'forgotPassword'])->name('forgotPassword');
+Route::get('/signup', [routingController::class, 'signup'])->name('signup');
+Route::post('/store', [routingController::class, 'store'])->name('alumni.store');
 Route::post('/validate', [loginController::class, 'loginCheck'])->name('validate.acc');
 
-Route::get('/admin/dashboard', [indexController::class, 'adminDashboard'])->name('admin.dash');
-Route::get('/current-student/dashboard', [indexController::class, 'currentStudentDashboard'])->name('currentStudent.dash');
-Route::get('/alumni/dashboard', [indexController::class, 'alumniDashboard'])->name('alumni.dash');
+Route::get('/admin/dashboard', [routingController::class, 'adminDashboard'])->name('admin.dash');
+Route::get('/current-student/dashboard', [routingController::class, 'currentStudentDashboard'])->name('currentStudent.dash');
+Route::get('/alumni/dashboard', [routingController::class, 'alumniDashboard'])->name('alumni.dash');
 
  

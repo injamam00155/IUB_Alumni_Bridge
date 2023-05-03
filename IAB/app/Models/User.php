@@ -16,6 +16,11 @@ class User extends Model
         return DB::table('admins')->where('userEmail', $this->userEmail)->exists();
     }
 
+    public function isStudent()
+    {
+        return DB::table('students')->where('userEmail', $this->userEmail)->exists();
+    }
+    
     public function isAlumni()
     {
         return DB::table('alumni')->where('userEmail', $this->userEmail)->exists();

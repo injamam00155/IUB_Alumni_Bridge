@@ -9,6 +9,11 @@ class Post extends Model
 {
     use HasFactory;
 
+    public function isPost()
+    {
+        return DB::table('posts')->where('postID', $this->postID)->exists();
+    }
+
     public function isQuery()
     {
         return DB::table('queries')->where('postID', $this->postID)->exists();
