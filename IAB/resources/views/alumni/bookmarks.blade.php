@@ -199,7 +199,7 @@
                       class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
                     >
                       <div class="d-flex">
-                        <button class="btn border-0 btn me-3" id="comment-btn">
+                        <button class="btn border-0 btn me-3 comment-btn">
                           <i class="far fa-comment me-1"></i>Comment
                         </button>
                         <button
@@ -216,10 +216,10 @@
                         <small class="text-muted">3 comments</small>
                       </a>
                     </div>
-                    {{-- COMMENTS --}}
-                    <div class="mt-3 comments-section d-none">
+                    {{-- COMMENT SECTION START --}}
+                    <div class="mt-1 comments-section d-none">
                       <div>
-                        <div class="row p-3" style="background-color: #F0F0F0 ; border-top-left-radius: 30px; border-top-right-radius: 30px">
+                        <div class="row p-3" style="background-color: #F0F0F0">
                             <div class="col-2 col-lg-1 d-flex justify-content-end">
                               <img
                                 src="img/Sarah_Student.jpg"
@@ -239,7 +239,7 @@
                           </div>
                       </div>
                     <div>
-                      <div class="row p-2"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
                             <div class="col-2 col-lg-1 d-flex justify-content-end">
                               <img
                                 src="img/Sarah_Student.jpg"
@@ -268,6 +268,7 @@
                           </div>
                       </div>
                       </div>
+                      {{-- COMMENT SECTION END --}}
                   </div>
                 </div>
               </div>
@@ -352,7 +353,7 @@
                       class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
                     >
                       <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
+                        <button class="btn border-0 btn me-3 comment-btn">
                           <i class="far fa-comment me-1"></i>Comment
                         </button>
                         <button
@@ -369,6 +370,59 @@
                         <small class="text-muted">3 comments</small>
                       </a>
                     </div>
+                    {{-- COMMENT SECTION START --}}
+                    <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Anika</strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Sarah Binte Mahbub</strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                      {{-- COMMENT SECTION END --}}
                   </div>
                 </div>
               </div>
@@ -445,17 +499,31 @@
       crossorigin="anonymous"
     ></script>
     <script>
-                  // Get a reference to the comment button
-            const commentBtn = document.getElementById('comment-btn');
+            const commentBtns = document.getElementsByClassName('comment-btn');
+              Array.from(commentBtns).forEach(btn => {
+                btn.addEventListener('click', () => {
+                  const commentSection = btn.parentNode.parentNode.nextElementSibling;
+                  commentSection.classList.toggle('d-none');
+                });
+              });
 
-            // Get a reference to the comments section
-            const commentsSection = document.querySelector('.comments-section');
+                            
+                          // Get all the bookmark buttons
+              const bookmarkBtns = document.querySelectorAll('.bookmark-btn');
 
-            // Add a click event listener to the comment button
-            commentBtn.addEventListener('click', function() {
-              // Toggle the 'd-none' class on the comments section
-              commentsSection.classList.toggle('d-none');
-            });
+              // Loop through each bookmark button and add a click event listener to it
+              bookmarkBtns.forEach(bookmarkBtn => {
+                bookmarkBtn.addEventListener('click', () => {
+                  // Get the font icon inside the bookmark button
+                  const icon = bookmarkBtn.querySelector('i');
+                  
+                  // Toggle the font icon weight
+                  icon.classList.toggle('far');
+                  icon.classList.toggle('fas');
+                });
+              });
+
+
 
     </script>
   </body>
