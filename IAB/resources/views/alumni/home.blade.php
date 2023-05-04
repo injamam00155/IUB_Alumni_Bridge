@@ -575,7 +575,7 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
-
+            {{-- @include('layouts.upcoming') --}}
             
             <div class="p-3 d-flex justify-content-end me-5">
               <a

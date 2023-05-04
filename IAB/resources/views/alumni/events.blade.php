@@ -393,8 +393,8 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
-            @include('layouts.upcoming')
-            {{-- <div class="mt-5">
+            
+            <div class="mt-5">
               <h3 class="upcoming">Upcoming Events</h3>
               <div class="row g-4 mt-3">
                 <div class="col-12">
@@ -428,7 +428,9 @@
                   </a>
                 </div>
               </div>
-            </div> --}}
+            </div>
+
+            
             <div class="p-3 d-flex justify-content-end me-5">
               <a
                 href="/alumni/events"
