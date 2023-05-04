@@ -36,5 +36,4 @@ Route::get('/currentStudent/profile', [routingController::class, 'currentStudent
 //functional routing
 Route::post('/store', [signupController::class, 'store'])->name('alumni.store');
 Route::post('/validate', [loginController::class, 'loginCheck'])->name('validate.acc');
-// Route::get('/viewPost', [postViewController::class, 'viewPost'])->name('view.allPost');
-Route::match(['GET', 'POST'], '/viewPost', [postViewController::class, 'viewPost'])->name('viewPost');
+

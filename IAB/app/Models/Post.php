@@ -12,7 +12,7 @@ class Post extends Model
     public $timestamps=false;
     protected $fillable = ['postID', 'postDateTime'];
     
-    //Functions for Relations
+        //Functions for Relations
     public function queryPost()
     {
         return $this->hasMany(QueryPost::class, 'postID');
@@ -28,7 +28,8 @@ class Post extends Model
         return $this->hasMany(EventPost::class, 'postID');
     }
 
-    public function job()
+
+    public function jobPost()
     {
         return $this->hasMany(Job::class, 'postID');
     }

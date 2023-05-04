@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\EventPost;
 
 class routingController extends Controller
 {
@@ -78,13 +79,22 @@ class routingController extends Controller
     
     //alumni routing functions
     public function alumniDashboard() {
-        $posts = Post::all();
-        $data = [
-            'name' => 'John Doe',
-            'age' => 25,
-            'email' => 'johndoe@example.com'
-        ];
-        return view('alumni/home', ['data' => $data]);
+        $data = [];
+        $posts = Post::where('postID', 3)->get();
+        // foreach($posts as $post)
+        // { 
+        //     if($post->queryPost){$data[]=['post'=>$post->queryPost];}
+        //     if($post->jobPost){$data[]=['post'=>$post->jobPost];}
+        //     if($post->awardPost){$data[]=['post'=>$post->awardPost];}
+        //     if($post->eventPost){$data[]=['post'=>$post->eventPost];}
+        // }
+        // $data[]=$posts;
+        // dd($data[0][2]->eventPost);
+        $events=$posts->eventPost;
+        dd($events);
+        
+        // var_dump($data);
+        return view('alumni/home', ['data' => $events]);
     }
     public function alumniBookmarks() {
         return view('alumni/bookmarks');

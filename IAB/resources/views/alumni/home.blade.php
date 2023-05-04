@@ -178,7 +178,15 @@
             </div>
           </div>
 
-          <h1>Check:   {{$data['name']}}</h1>
+          {{-- @foreach ($data as $item)
+              <p>{{ $item['post'] }}</p>
+          @endforeach --}}
+
+          <p>{{ $data[0][0]->queryPost }}</p>
+          <p>{{ $data[0][0]->jobPost }}</p>
+          <p>{{ $data[0][0]->eventPost }}</p>
+          <p>{{ $data[0][0]->awardPost }}</p>
+          
           <!-- What's on your mind section -->
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
