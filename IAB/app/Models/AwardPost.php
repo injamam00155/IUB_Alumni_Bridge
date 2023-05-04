@@ -10,6 +10,7 @@ class AwardPost extends Post
 {
     use HasFactory;
     public $timestamps=false;
+    protected $table = 'award_posts';
     protected $fillable = ['postID', 'awardTitle', 'awardDescription', 'awardDate', 'awardImageURL'];
 
     //Functions for Relations

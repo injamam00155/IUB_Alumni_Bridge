@@ -10,6 +10,7 @@ class EventPost extends Post
 {
     use HasFactory;
     public $timestamps=false;
+    protected $table = 'event_posts';
     protected $fillable = ['postID', 'eventTitle', 'eventDescription', 'eventDate'. 'eventImageURL', 'eventLocation'];
     
     //Functions for Relations

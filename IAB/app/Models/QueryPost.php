@@ -11,6 +11,7 @@ class QueryPost extends Post
 {
     use HasFactory;
     public $timestamps=false;
+    protected $table = 'query_posts';
     protected $fillable = ['postID', 'postDescription', 'userEmail'];
     
     //Functions for Relations

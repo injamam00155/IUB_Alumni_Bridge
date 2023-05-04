@@ -182,11 +182,11 @@
               <p>{{ $item['post'] }}</p>
           @endforeach --}}
 
-          <p>{{ $data[0][0]->queryPost }}</p>
+          {{-- <p>{{ $data[0][0]->queryPost }}</p>
           <p>{{ $data[0][0]->jobPost }}</p>
           <p>{{ $data[0][0]->eventPost }}</p>
-          <p>{{ $data[0][0]->awardPost }}</p>
-          
+          <p>{{ $data[0][0]->awardPost }}</p> --}}
+
           <!-- What's on your mind section -->
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
@@ -221,6 +221,7 @@
             <div class="col-12">
               <!-- POST/QUERIES -->
               <div class="post mt-5">
+                @foreach($data as $query)
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
@@ -235,10 +236,11 @@
                       <strong class="fs-5">Sarah Binte Mahbub</strong>
                     </div>
                     <p class="mt-3 fs-5 p-1 post_body">
-                      Hey everyone, I'm a current student majoring in computer
+                      {{-- Hey everyone, I'm a current student majoring in computer
                       science and I'm looking for advice on how to break into
                       the tech industry. Any Alumni in the tech field who have
-                      tips or advice to share? Thanks in advance!
+                      tips or advice to share? Thanks in advance! --}}
+                      {{$query->postDescription}}
                     </p>
                     <div
                       class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
@@ -263,6 +265,7 @@
                     </div>
                   </div>
                 </div>
+                @endforeach
               </div>
               <!-- EVENT 1 -->
               <div class="event mt-5">

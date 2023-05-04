@@ -10,6 +10,7 @@ class JobPost extends Post
 {
     use HasFactory;
     public $timestamps=false;
+    protected $table = 'job_posts';
     protected $fillable = ['postID', 'jobTitle', 'companyName', 'location', 'jobDescription', 'responsibility', 'requirement', 'contactEmail', 'userEmail'];
     
     //Functions for Relations

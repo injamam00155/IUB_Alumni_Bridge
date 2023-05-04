@@ -5,6 +5,7 @@ use App\Models\Post;
 use App\Models\Alumni;
 use App\Models\User;
 use App\Models\Student;
+use App\Models\QueryPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\EventPost;
@@ -80,7 +81,8 @@ class routingController extends Controller
     //alumni routing functions
     public function alumniDashboard() {
         $data = [];
-        $posts = Post::where('postID', 3)->get();
+        $query= QueryPost::all();
+        // $posts = Post::where('postID', 3)->get();
         // foreach($posts as $post)
         // { 
         //     if($post->queryPost){$data[]=['post'=>$post->queryPost];}
@@ -90,11 +92,13 @@ class routingController extends Controller
         // }
         // $data[]=$posts;
         // dd($data[0][2]->eventPost);
-        $events=$posts->eventPost;
-        dd($events);
+        // $events=$posts->eventPost;
+        // dd($events);
         
         // var_dump($data);
-        return view('alumni/home', ['data' => $events]);
+
+        // dd($query[0]);
+        return view('alumni/home', ['data' => $query]);
     }
     public function alumniBookmarks() {
         return view('alumni/bookmarks');
