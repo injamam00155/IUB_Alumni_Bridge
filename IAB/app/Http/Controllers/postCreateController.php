@@ -71,7 +71,7 @@ class postCreateController extends Controller
         $jobPost->userEmail = session('userEmail');
         $jobPost->postID = post::latest('postID')->first()->postID; 
         // dd($post);
-        dd($jobPost);
+        // dd($jobPost);
         $jobPost->save();
         return redirect()->route('alumni.jobs')->with('msg','Job Posted Successfully');
     }

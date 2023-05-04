@@ -29,6 +29,16 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Poppins:wght@400;500;600&family=Trispace&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+      </script>
   </head>
 
   <body>
@@ -248,11 +258,11 @@
                   <textarea
                     class="form-control"
                     id="jobRequiremnt"
-                    name="jobRequiremnt"
+                    name="jobRequirement"
                     placeholder="Enter job requirement"
                     rows="3"
                   ></textarea>
-                  @error('jobRequiremnt') <span style="color: red;">{{$message}}</span> @enderror
+                  @error('jobRequirement') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="contactMail">Contact</label>
