@@ -1,16 +1,18 @@
 <?php
+
 namespace Database\Seeders;
 
-use App\Models\Student;
+use App\Models\Alumni;
 use Illuminate\Database\Seeder;
 
-class StudentSeeder extends Seeder
+class AlumniSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Student::factory()->count(10)->create();
+        // Create 10 alumni using the AlumniFactory
+        Alumni::factory()->count(10)->create();
     }
 }
