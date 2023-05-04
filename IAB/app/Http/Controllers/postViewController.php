@@ -87,6 +87,7 @@ class postViewController extends Controller
     public function upcomingEvents() {
         $data = EventPost::where('eventStartDate', '>=', now()->toDateString())
             ->orderBy('eventStartDate', 'asc')->first();
+        // dd($data);
         return $data;
     }
     // public function viewJobs() {

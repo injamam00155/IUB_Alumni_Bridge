@@ -95,6 +95,7 @@ class routingController extends Controller
         // $data= EventPost::all();
         $pvc=new postViewController;
         $data= $pvc->viewPosts();
+        // $data = $pvc->viewEvents(); 
         // dd($data);
         // dd(session()->all());
         return view('alumni/home', ['data' => $data]);
@@ -106,6 +107,7 @@ class routingController extends Controller
     public function alumniEvents() {
         $pvc = new postViewController;
         $data = $pvc->viewEvents(); 
+        // dd($data);
         return view('alumni/events', ['data' => $data]);
     }
 
@@ -115,6 +117,13 @@ class routingController extends Controller
         // return view('alumni/jobs', ['data' => $data]);
         return view('alumni/jobs');
     }
+    // public function upcomingEvents() {
+    //     $pvc = new postViewController;
+    //     $data = $pvc->upcomingEvents(); 
+        
+    //     // return view('alumni/jobs', ['data' => $data]);
+    //     return view('layouts.upcomingEvents', $data);
+    // }
     public function alumniProfile() {
         return view('alumni/profile');
     }

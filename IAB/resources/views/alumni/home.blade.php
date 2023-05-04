@@ -575,41 +575,8 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
-            <div class="mt-5">
-              <h3 class="upcoming">Upcoming Events</h3>
-              <div class="row g-4 mt-3">
-                <div class="col-12">
-                  <a href="event-details.html" style="text-decoration: none">
-                    <div class="card h-100 w-75 border-0">
-                      <img
-                        src="img/TechFest2023.jpg"
-                        class="card-img-top"
-                        alt="Tech Fest 2023 poster"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
-                        <p class="card-text">
-                          Event Date:
-                          <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
-                          >
-                        </p>
-                        <p class="card-text">
-                          Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
-                        </p>
-                        <p class="card-text">
-                          Event Location:
-                          <span class="text-muted"
-                            >Independent University, Bangladesh</span
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+
+            
             <div class="p-3 d-flex justify-content-end me-5">
               <a
                 href="/alumni/events"
