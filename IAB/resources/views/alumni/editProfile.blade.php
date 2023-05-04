@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
-    <title>Profile</title>
+    <title>Edit Profile</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href={{asset('profile.css')}} />
@@ -192,49 +192,121 @@
                     </div>
                     <div class="col-md-6">
                       <div class="profile-head">
-                        <h5>Injamam Ul Haque</h5>
 
-                        <h6>back-end Developer</h6>
-                        <div class="mb-2">
-                            <span class="fw-bold mb-2">
-                              Socials
-                            </span> 
-                          <div class="mt-2">
-
-                            <a href="#" class="btn rounded-pill border border-secondary me-2"
-                              ><i class="fa-brands fa-xl fa-linkedin"></i
-                            > LinkedIn</a>
-                            <a href="#" class="btn rounded-pill border border-secondary me-2"
-                              ><i class="fa-brands fa-xl fa-facebook"></i
-                            > Facebook</a>
-                            <a href="#" class="btn rounded-pill border border-secondary me-2"
-                              ><i class="fa-brands fa-xl fa-github"></i
-                            > Github</a>
+                        <form>
+                          <div class="form-group mb-2">
+                          <label for="editFirstName">First Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editFirstName"
+                            placeholder="Enter First Name"
+                          />
                           </div>
-                        </div>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                          <li class="nav-item">
-                            <a
-                              class="nav-link active"
-                              id="home-tab"
-                              data-toggle="tab"
-                              href="#home"
-                              role="tab"
-                              aria-controls="home"
-                              aria-selected="true"
-                              >About</a
-                            >
-                          </li>
-                        </ul>
+                          <div class="form-group mb-2">
+                          <label for="editLastName">Last Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editLastName"
+                            placeholder="Enter Last Name"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editEmail">Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="editEmail"
+                            placeholder="Enter Email"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editContact">Contact Number</label>
+                          <input
+                            type="tel"
+                            class="form-control"
+                            id="editContact"
+                            placeholder="Enter Contact Number"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editDesignation">Designation</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editDesignation"
+                            placeholder="Enter Designation"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editCurrentWorkplace">Current Workplace</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editCurrentWorkplace"
+                            placeholder="Enter Current Workplace"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editGraduationYear">Graduation Year</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editGraduationYear"
+                            placeholder="Enter Graduation Year"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editSchool">School</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editSchool"
+                            placeholder="Enter School"
+                          />
+                          </div>
+                            <div class="form-group mb-2">
+                              <label for="editDob">Date of Birth</label>
+                              <input
+                                type="date"
+                                class="form-control"
+                                id="editDob"
+                                name="editDob"
+                                placeholder="Enter Date of Birth"
+                              />
+                            </div>
+                            <div class="form-group mb-2">
+                              
+                              <label for="editFacebook"><i class="fa-brands fa-facebook"></i> Facebook</label>
+                              <input
+                                type="ulr"
+                                class="form-control"
+                                id="editFacebook"
+                                name="editFacebook"
+                                placeholder="Enter Facebook profile url"
+                              />
+                            </div>
+                            <div class="form-group mb-2">
+                              
+                              <label for="editLinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</label>
+                              <input
+                                type="ulr"
+                                class="form-control"
+                                id="editLinkedIn"
+                                name="editLinkedIn"
+                                placeholder="Enter LinkedIn profile url"
+                              />
+                            </div>
+                           
+                           
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                          </form>
+                        
                       </div>
                     </div>
                     <div class="col-md-2">
-                      <input
-                        type="submit"
-                        class="profile-edit-btn"
-                        name="btnAddMore"
-                        value="Edit Profile"
-                      />
+                      
                     </div>
                   </div>
                   <div class="row">
@@ -250,62 +322,7 @@
                           aria-labelledby="home-tab"
                         >
                           
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Name</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>Injamam Ul Haque</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Email</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>2021397@iub.edu.bd</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Phone</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>+8801709090909</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Designation</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>Back-end Developer</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Current Work Place</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>ADN Telecom</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Graduation Year</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>2022</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>School</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>SETS</p>
-                            </div>
-                          </div>
+                          
                         </div>
                       </div>
                     </div>
