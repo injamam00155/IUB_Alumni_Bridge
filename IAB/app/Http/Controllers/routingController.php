@@ -81,8 +81,8 @@ class routingController extends Controller
     //alumni routing functions
     public function alumniDashboard() {
         $data = [];
-        $query= QueryPost::all();
-        // $posts = Post::where('postID', 3)->get();
+        // $query= QueryPost::all();
+        $posts = Post::where('postID', 3)->get();
         // foreach($posts as $post)
         // { 
         //     if($post->queryPost){$data[]=['post'=>$post->queryPost];}
@@ -96,9 +96,10 @@ class routingController extends Controller
         // dd($events);
         
         // var_dump($data);
-
+            $events=$posts->eventPost;
+        dd($events);
         // dd($query[0]);
-        return view('alumni/home', ['data' => $query]);
+        return view('alumni/home', ['data' => $events]);
     }
     public function alumniBookmarks() {
         return view('alumni/bookmarks');

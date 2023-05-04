@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
+
 class Post extends Model
 {
     use HasFactory;
@@ -31,7 +32,7 @@ class Post extends Model
 
     public function jobPost()
     {
-        return $this->hasOne(Job::class, 'postID');
+        return $this->hasOne(JobPost::class, 'postID');
     }
 
     public function comment()

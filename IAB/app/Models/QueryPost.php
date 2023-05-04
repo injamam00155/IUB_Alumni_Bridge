@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 
-class QueryPost extends Post
+class QueryPost extends Model
 {
     use HasFactory;
     public $timestamps=false;

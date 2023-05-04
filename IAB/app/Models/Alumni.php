@@ -5,7 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Post;
+// use App\Models\Alumni;
+use App\Models\JobPost;
+use App\Models\EventPost;
+use App\Models\AwardPost;
+use App\Models\QueryPost;
 
 class Alumni extends Student
 {
