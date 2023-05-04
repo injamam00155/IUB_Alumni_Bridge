@@ -31,7 +31,7 @@
       rel="stylesheet"
     />
   </head>
-
+{{-- just checking  --}}
   <body>
     <div class="container-fluid">
       <div class="row">
@@ -42,7 +42,7 @@
           >
             <!-- LOGO -->
 
-            <a href="/alumni/dashboard" class="my-3 ms-4">
+            <a href="/currentStudent/dashboard" class="my-3 ms-4">
               <img
                 src="img/iubalumnibridgelogo.png"
                 alt="logo"
@@ -50,28 +50,28 @@
               />
             </a>
             <!-- NAV LINKS -->
-            <a href="/alumni/dashboard" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/dashboard" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-house fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Home</span>
             </a>
 
-            <a href="/alumni/events" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/events" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
-            <a href="/alumni/awards" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/awards" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-trophy fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Award</span>
             </a>
-            <a href="/alumni/jobs" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
-            <a href="/alumni/profile" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/profile" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-user fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Profile</span>
             </a>
-            <a href="/alumni/bookmarks" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/bookmarks" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bookmark fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
@@ -81,13 +81,13 @@
             </a>
 
             <a
-              href="/alumni/profile"
+              href="/currentStudent/profile"
               class="btn profile_icon position-absolute"
               type="button"
             >
               <img
                 class="img-fluid ms-2"
-                src="img/profile_img2.jpg"
+                src="img/profile_img.jpg"
                 alt="profile img"
                 style="width: 40px; border-radius: 50%"
               />
@@ -119,13 +119,13 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/profile_img.jpg"
+                        src="img/Akib Raihan .jpeg"
                         alt="User Image"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Shabab</strong> commented on your post
+                        ><strong>Akib</strong> commented on your post
                         <span class="text-muted ms-5">2m ago</span></span
                       >
                     </a>
@@ -178,12 +178,13 @@
           <div class="row">
             <div class="col-12 px-5 mt-5">
               <!-- PROFILE -->
+
               <div class="container emp-profile">
                 <form method="post">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="profile-img">
-                        <img src="img/profile_img2.jpg" alt="" />
+                        <img src="img/profile_img.jpg" alt="" />
                         <div class="file btn btn-lg btn-primary">
                           Change Photo
                           <input type="file" name="file" />
@@ -192,49 +193,111 @@
                     </div>
                     <div class="col-md-6">
                       <div class="profile-head">
-                        <h5>Injamam Ul Haque</h5>
-
-                        <h6>back-end Developer</h6>
-                        <div class="mb-2">
-                            <span class="fw-bold mb-2">
-                              Socials
-                            </span> 
-                          <div class="mt-2">
-
-                            <a href="#" class="btn rounded-pill border border-secondary me-2"
-                              ><i class="fa-brands fa-xl fa-linkedin"></i
-                            > LinkedIn</a>
-                            <a href="#" class="btn rounded-pill border border-secondary me-2"
-                              ><i class="fa-brands fa-xl fa-facebook"></i
-                            > Facebook</a>
-                            <a href="#" class="btn rounded-pill border border-secondary me-2"
-                              ><i class="fa-brands fa-xl fa-github"></i
-                            > Github</a>
+                        <form>
+                          <div class="form-group mb-2">
+                          <label for="editFirstName">First Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editFirstName"
+                            placeholder="Enter First Name"
+                          />
                           </div>
-                        </div>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                          <li class="nav-item">
-                            <a
-                              class="nav-link active"
-                              id="home-tab"
-                              data-toggle="tab"
-                              href="#home"
-                              role="tab"
-                              aria-controls="home"
-                              aria-selected="true"
-                              >About</a
-                            >
-                          </li>
-                        </ul>
+                          <div class="form-group mb-2">
+                          <label for="editLastName">Last Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editLastName"
+                            placeholder="Enter Last Name"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editEmail">Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="editEmail"
+                            placeholder="Enter Email"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editContact">Contact Number</label>
+                          <input
+                            type="tel"
+                            class="form-control"
+                            id="editContact"
+                            placeholder="Enter Contact Number"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editProgram">Program</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editProgram"
+                            placeholder="Enter Program"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editMajor">Major</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editMajor"
+                            placeholder="Enter Major"
+                          />
+                          </div>
+                          <div class="form-group mb-2">
+                          <label for="editMinor">Minor</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="editMinor"
+                            placeholder="Enter Minor"
+                          />
+                          </div>
+                            <div class="form-group mb-2">
+                              <label for="editDob">Date of Birth</label>
+                              <input
+                                type="date"
+                                class="form-control"
+                                id="editDob"
+                                name="editDob"
+                                placeholder="Enter Date of Birth"
+                              />
+                            </div>
+                            <div class="form-group mb-2">
+                              
+                              <label for="editFacebook"><i class="fa-brands fa-facebook"></i> Facebook</label>
+                              <input
+                                type="ulr"
+                                class="form-control"
+                                id="editFacebook"
+                                name="editFacebook"
+                                placeholder="Enter Facebook profile url"
+                              />
+                            </div>
+                            <div class="form-group mb-2">
+                              
+                              <label for="editLinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</label>
+                              <input
+                                type="ulr"
+                                class="form-control"
+                                id="editLinkedIn"
+                                name="editLinkedIn"
+                                placeholder="Enter LinkedIn profile url"
+                              />
+                            </div>
+                           
+                           
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                          </form>
+                        
                       </div>
                     </div>
                     <div class="col-md-2">
-                      <input
-                        type="submit"
-                        class="profile-edit-btn"
-                        name="btnAddMore"
-                        value="Edit Profile"
-                      />
+                      
                     </div>
                   </div>
                   <div class="row">
@@ -250,62 +313,6 @@
                           aria-labelledby="home-tab"
                         >
                           
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Name</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>Injamam Ul Haque</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Email</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>2021397@iub.edu.bd</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Phone</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>+8801709090909</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Designation</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>Back-end Developer</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Current Work Place</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>ADN Telecom</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Graduation Year</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>2022</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>School</label>
-                            </div>
-                            <div class="col-md-6">
-                              <p>SETS</p>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -366,7 +373,7 @@
             </div>
             <div class="p-3 d-flex justify-content-end me-5">
               <a
-                href="/alumni/events"
+                href="/currentStudent/events"
                 style="color: black"
                 class="btn btn-outline-primary me-5"
                 >View all events</a
