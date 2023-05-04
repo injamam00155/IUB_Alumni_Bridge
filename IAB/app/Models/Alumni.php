@@ -13,6 +13,13 @@ class Alumni extends Student
     protected $table = 'alumni'; 
     protected $fillable = ['userEmail',	'designation',	'currentWorkPlace',	'graduationYear'];
 
+    //Functions for Relations
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'userEmail');
+    }
+    
+    //Needed Functions
     public function isCurrentStudent()
     {
         

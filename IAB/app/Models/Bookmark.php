@@ -11,4 +11,17 @@ class Bookmark extends Model
     use HasFactory;
     // public $timestamps=false;
     protected $fillable = ['bookmarkID', 'userEmail'];
+
+    //Functions for Relations
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'userEmail');
+    }
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'postID');
+    }
+    
+    //Needed Functions
 }

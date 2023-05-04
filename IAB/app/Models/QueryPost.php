@@ -7,12 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 
-class Query extends Post
+class QueryPost extends Post
 {
     use HasFactory;
     public $timestamps=false;
     protected $fillable = ['postID', 'postDescription', 'userEmail'];
-    public function isQuery()
+    
+    //Functions for Relations
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'postID');
+    }
+
+    //Needed Functions
+    public function isQueryPost()
     {
         return DB::table('queries')->where('postID', $this->postID)->exists();
     }

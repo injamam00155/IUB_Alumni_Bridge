@@ -13,6 +13,14 @@ class CurrentStudent extends Student
     public $timestamps=false;
     protected $fillable = ['userEmail', 'program', 'major', 'minor'];
 
+    //Functions for Relations
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'userEmail');
+    }
+    
+    //Needed Functions
+
     public function isCurrentStudent()
     {
         
