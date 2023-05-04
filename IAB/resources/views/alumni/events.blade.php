@@ -169,74 +169,7 @@
             </div>
           </div>
           <!-- What's on your mind section -->
-          <!-- <div class="row mt-4">
-            <div class="col-2 col-lg-1 d-flex justify-content-end">
-              <img
-                src="img/profile_img.jpg"
-                alt="profile img"
-                class="img-fluid ms-2"
-                style="width: 50px; height: 50px; border-radius: 50%"
-              />
-            </div>
-            <div class="col-10 col-lg-11 pe-5">
-              <form>
-                <div class="form-group">
-                  <label for="eventTitle">Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventTitle"
-                    placeholder="Enter event title"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventTime">Time</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventTime"
-                    placeholder="Enter event time"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventDate">Date</label>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="eventDate"
-                    placeholder="Enter event date"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventLocation">Location</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventLocation"
-                    placeholder="Enter event location"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventDescription">Description</label>
-                  <textarea
-                    class="form-control"
-                    id="eventDescription"
-                    placeholder="Enter event description"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="posterImage">Poster Image</label>
-                  <input
-                    type="file"
-                    class="form-control-file"
-                    id="posterImage"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </div> -->
+          
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
@@ -250,130 +183,30 @@
                       <img
                         class="postcard__img"
                         src="{{$event->eventImageURL}}"
-                        {{-- "img/event1.jpg" --}}
                         alt="{{$event->eventTitle}} poster picture"
                       />
                     </a>
                     <div class="postcard__text t-dark">
                       <h1 class="postcard__title blue ms-2">
                         <h3 href="#" class="ms-1">
-                          {{-- League of Engineers - Season 1 --}}
                           {{$event->eventTitle}}
                         </h3>
                       </h1>
                       <div class="postcard__subtitle small">
                         <i class="fas fa-calendar-alt me-1"></i>
-                        {{-- March 16, 2023 
-                        - --}}
                         {{$event->eventStartDate}} - {{$event->eventEndDate}}
-                        {{-- March 18, 2023 --}}
-
                         <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
                         {{$event->eventStartTime}} - {{$event->eventEndTime}}
                         <i class="fa-solid fa-location-dot fa-sm ms-2 me-1"></i>
-                        {{-- Offside - Home of Football --}}
                         {{$event->eventLocation}}
                       </div>
                       <div class="postcard__bar"></div>
                       <div class="postcard__preview-txt">
-                        {{-- Welcome to League of Engineers👷! Get ready for an
-                        action-packed tournament🏟️ filled with exciting matches
-                        and fierce competition as teams battle it out to claim
-                        the title of football champions. The tournament will
-                        take place from 16th March to 18th March at Offside from
-                        🕚11 AM to 🕡6.30 PM. This tournament is open to all
-                        students of SETS, regardless of experience or skill
-                        level. It's a great opportunity to get active, meet new
-                        people, and have fun while showcasing your
-                        footballtalents. So what are you waiting for? Gather
-                        your friends, put together a team, register and come
-                        show us what you've got! --}}
                         {{$event->eventDescription}}
                       </div>
                     </div>
                   </article>
                   @endforeach
-                  {{-- <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="img/Career_Fair_2023.jpg"
-                        alt="Career and Networking Day 2023 Poster"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#" class="ms-1">
-                          Career and Networking Day 2023
-                        </h3>
-                      </h1>
-                      <div class="postcard__subtitle small">
-                        <i class="fas fa-calendar-alt me-1"></i>February 08,
-                        2023
-
-                        <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
-                        10:00 AM - 4:00 PM
-                        <i class="fa-solid fa-location-dot fa-sm ms-2 me-1"></i>
-                        Independent University, Bangladesh
-                      </div>
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        Our annual Career Fair is back and bigger than ever!
-                        This event is a great opportunity for Alumni and current
-                        students to meet with top employers from various
-                        industries. Dress to impress and bring plenty of copies
-                        of your resume. Don't miss out on this chance to
-                        kick-start your career!
-                      </div>
-                    </div>
-                  </article>
-                  <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="img/SETS Fest 2022.png"
-                        alt="SETS Fest 2022 Poster"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#" class="ms-2">SETS Fest 2022</h3>
-                      </h1>
-                      <div class="postcard__subtitle small">
-                        <i class="fas fa-calendar-alt me-1"></i>March 30, 2022 -
-                        March 31, 2022
-
-                        <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
-                        11:00 AM - 5:00 PM
-                        <i class="fa-solid fa-location-dot fa-sm ms-2 me-1"></i>
-                        Independent University, Bangladesh
-                      </div>
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        As we emerge from the pandemic and fully reopen our
-                        doors, we are planning to go big with “ SETSFest 2022”,
-                        a grand reopening celebration marking the start of a new
-                        era. <br />
-                        With the initiative by School of Engineering, Technology
-                        and Sciences (SETS) and combined efforts of the
-                        versatile clubs namely “IUB ACM Student Chapter”,
-                        “JUKTI- The Official Club of CSE”, “IEEE Computer
-                        Society IUB Student Branch Chapter”, and “IEEE IUB
-                        Student Branch”, the School of Engineering, Technology
-                        and Sciences (SETS) aims to welcome and reintroduce
-                        themselves with our returning and new students joining
-                        the campus for the first time in 2 years. This event
-                        aims to bridge that gap for the new recruits, bring
-                        together all SETS students under one roof to enjoy their
-                        time together while being relieved of academic strain
-                        for one day through Gaming Segments, Cultural Show, and
-                        speeches from our Guest Speakers. <br />
-                        SETS cordially invites you to attend and participate in
-                        this delightful event, which will be remembered for
-                        years to come.
-                      </div>
-                    </div>
-                  </article> --}}
                 </div>
               </section>
             </div>
@@ -393,7 +226,41 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
-            
+            <div class="mt-5">
+              <h3 class="upcoming">Upcoming Events</h3>
+              <div class="row g-4 mt-3">
+                <div class="col-12">
+                  <a href="event-details.html" style="text-decoration: none">
+                    <div class="card h-100 w-75 border-0">
+                      <img
+                        src="{{$event->eventImageURL}}"
+                        class="card-img-top"
+                        alt="{{$event->eventTitle}} poster"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">{{$event->eventTitle}}</h5>
+                        <p class="card-text">
+                          Event Date:
+                          <span class="text-muted"
+                            >{{$event->eventStartDate}} - {{$event->eventEndDate}}</span
+                          >
+                        </p>
+                        <p class="card-text">
+                          Event Time:
+                          <span class="text-muted">{{$event->eventStartTime}} - {{$event->eventEndTime}}</span>
+                        </p>
+                        <p class="card-text">
+                          Event Location:
+                          <span class="text-muted"
+                            >{{$event->eventLocation}}</span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
             
 
             

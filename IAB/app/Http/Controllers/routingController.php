@@ -118,10 +118,14 @@ class routingController extends Controller
     }
 
     public function alumniJobs() {
-        // $pvc = new postViewController;
-        // $data = $pvc->viewJobs(); 
+        $pvc=new postViewController;
+        $data= $pvc->viewJobs();
+        $upcoming=$pvc->upcomingEvent();
+        $info=  ['data' => $data,
+                'event'=> $upcoming,
+                ];
         // return view('alumni/jobs', ['data' => $data]);
-        return view('alumni/jobs');
+        return view('alumni/jobs', $info);
     }
     public function alumniProfile() {
         return view('alumni/profile');
