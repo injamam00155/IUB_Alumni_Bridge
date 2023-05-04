@@ -16,22 +16,22 @@ class User extends Model
     //Functions for Relations
     public function admin()
     {
-        return $this->hasOne(Admin::class, 'userEmail');
+        return $this->hasMany(Admin::class, 'userEmail');
     }
 
     public function student()
     {
-        return $this->hasOne(Student::class, 'userEmail');
+        return $this->hasMany(Student::class, 'userEmail');
     }
 
     public function alumni()
     {
-        return $this->hasOne(Alumni::class, 'userEmail');
+        return $this->hasMany(Alumni::class, 'userEmail');
     }
 
     public function currentStudent()
     {
-        return $this->hasOne(CurrentStudent::class, 'userEmail');
+        return $this->hasMany(CurrentStudent::class, 'userEmail');
     }
 
     public function comment()

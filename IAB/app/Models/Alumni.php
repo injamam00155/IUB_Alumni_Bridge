@@ -23,6 +23,10 @@ class Alumni extends Student
     {
         return $this->belongsTo(User::class, 'userEmail');
     }
+    public function jobPost()
+    {
+        return $this->hasMany(JobPost::class, 'postID');
+    }
     
     //Needed Functions
     public function isCurrentStudent()

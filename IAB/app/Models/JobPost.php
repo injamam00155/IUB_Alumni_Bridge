@@ -18,7 +18,7 @@ class JobPost extends Post
         return $this->belongsTo(Post::class, 'postID');
     }
 
-    public function admin()
+    public function alumni()
     {
         return $this->belongsTo(Alumni::class, 'userEmail');
     }

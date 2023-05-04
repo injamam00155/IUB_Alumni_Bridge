@@ -15,22 +15,22 @@ class Post extends Model
     //Functions for Relations
     public function queryPost()
     {
-        return $this->hasOne(QueryPost::class, 'postID');
+        return $this->hasMany(QueryPost::class, 'postID');
     }
 
     public function awardPost()
     {
-        return $this->hasOne(AwardPost::class, 'postID');
+        return $this->hasMany(AwardPost::class, 'postID');
     }
 
     public function eventPost()
     {
-        return $this->hasOne(EventPost::class, 'postID');
+        return $this->hasMany(EventPost::class, 'postID');
     }
 
     public function job()
     {
-        return $this->hasOne(Job::class, 'postID');
+        return $this->hasMany(Job::class, 'postID');
     }
 
     public function comment()
@@ -38,7 +38,7 @@ class Post extends Model
         return $this->hasMany(Comment::class, 'postID');
     }
 
-    public function bookmarks()
+    public function bookmark()
     {
         return $this->hasMany(Bookmark::class, 'postID');
     }

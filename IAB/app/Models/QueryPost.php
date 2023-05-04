@@ -14,6 +14,10 @@ class QueryPost extends Post
     protected $fillable = ['postID', 'postDescription', 'userEmail'];
     
     //Functions for Relations
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'userEmail');
+    }
     public function post()
     {
         return $this->belongsTo(Post::class, 'postID');

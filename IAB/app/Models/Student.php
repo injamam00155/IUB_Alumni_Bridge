@@ -22,12 +22,12 @@ class Student extends User
 
     public function alumni()
     {
-        return $this->hasOne(Alumni::class, 'userEmail');
+        return $this->hasMany(Alumni::class, 'userEmail');
     }
 
     public function currentStudent()
     {
-        return $this->hasOne(CurrentStudent::class, 'userEmail');
+        return $this->hasMany(CurrentStudent::class, 'userEmail');
     }
 
     public function comment()
@@ -42,7 +42,7 @@ class Student extends User
 
     public function queryPost()
     {
-        return $this->hasOne(QueryPost::class, 'userEmail');
+        return $this->hasMany(QueryPost::class, 'userEmail');
     }
 
     //Needed Functions
