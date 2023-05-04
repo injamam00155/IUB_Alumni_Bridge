@@ -251,7 +251,7 @@
                         class="postcard__img"
                         src="{{$event->eventImageURL}}"
                         {{-- "img/event1.jpg" --}}
-                        alt="League of Enghineers poster picture"
+                        alt="{{$event->eventTitle}} poster picture"
                       />
                     </a>
                     <div class="postcard__text t-dark">
@@ -265,11 +265,11 @@
                         <i class="fas fa-calendar-alt me-1"></i>
                         {{-- March 16, 2023 
                         - --}}
-                        {{$event->eventDate}}
+                        {{$event->eventStartDate}} - {{$event->eventEndDate}}
                         {{-- March 18, 2023 --}}
 
                         <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
-                        11:00 AM - 6:30 PM
+                        {{$event->eventStartTime}} - {{$event->eventEndTime}}
                         <i class="fa-solid fa-location-dot fa-sm ms-2 me-1"></i>
                         {{-- Offside - Home of Football --}}
                         {{$event->eventLocation}}
@@ -293,7 +293,7 @@
                     </div>
                   </article>
                   @endforeach
-                  <article class="postcard light blue">
+                  {{-- <article class="postcard light blue">
                     <a class="postcard__img_link" href="#">
                       <img
                         class="postcard__img"
@@ -373,7 +373,7 @@
                         years to come.
                       </div>
                     </div>
-                  </article>
+                  </article> --}}
                 </div>
               </section>
             </div>
@@ -400,26 +400,26 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="img/TechFest2023.jpg"
+                        src="{{$event->eventImageURL}}"
                         class="card-img-top"
-                        alt="Tech Fest 2023 poster"
+                        alt="{{$event->eventTitle}} poster"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
+                        <h5 class="card-title">{{$event->eventTitle}}</h5>
                         <p class="card-text">
                           Event Date:
                           <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
+                            >{{$event->eventStartDate}} - {{$event->eventEndDate}}</span
                           >
                         </p>
                         <p class="card-text">
                           Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
+                          <span class="text-muted">{{$event->eventStartTime}} - {{$event->eventEndTime}}</span>
                         </p>
                         <p class="card-text">
                           Event Location:
                           <span class="text-muted"
-                            >Independent University, Bangladesh</span
+                            >{{$event->eventLocation}}</span
                           >
                         </p>
                       </div>
