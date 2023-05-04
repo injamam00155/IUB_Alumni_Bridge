@@ -216,10 +216,10 @@
                         <small class="text-muted">3 comments</small>
                       </a>
                     </div>
-                    {{-- COMMENT SECTION START--}}
-                    <div class="mt-1 comments-section d-none">
+                    {{-- COMMENTS --}}
+                    <div class="mt-3 comments-section d-none">
                       <div>
-                        <div class="row p-3" style="background-color: #F0F0F0 ; ">
+                        <div class="row p-3" style="background-color: #F0F0F0 ; border-top-left-radius: 30px; border-top-right-radius: 30px">
                             <div class="col-2 col-lg-1 d-flex justify-content-end">
                               <img
                                 src="img/Sarah_Student.jpg"
@@ -239,7 +239,7 @@
                           </div>
                       </div>
                     <div>
-                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                      <div class="row p-2"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
                             <div class="col-2 col-lg-1 d-flex justify-content-end">
                               <img
                                 src="img/Sarah_Student.jpg"
@@ -266,9 +266,8 @@
                               </form>
                             </div>
                           </div>
-                        </div>
                       </div>
-                      {{-- COMMENT SECTION END --}}
+                      </div>
                   </div>
                 </div>
               </div>
@@ -446,7 +445,6 @@
       crossorigin="anonymous"
     ></script>
     <script>
-           
                   // Get a reference to the comment button
             const commentBtn = document.getElementById('comment-btn');
 
