@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
-            $table->unsignedInteger('postID')->primary();
+        Schema::create('event_posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('postID');
             $table->string('eventTitle');
             $table->string('eventDescription');
-            $table->date('eventDate');
+            $table->date('eventStartDate');
+            $table->date('eventEndDate');
+            $table->time('eventStartTime');
+            $table->time('eventEndTime');
             $table->string('eventImageURL');
             $table->string('eventLocation');
             // Add any other columns you need for the events table

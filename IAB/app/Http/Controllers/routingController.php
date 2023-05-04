@@ -90,43 +90,24 @@ class routingController extends Controller
     
     //alumni routing functions
     public function alumniDashboard() {
-        $data = [];
-        $query= QueryPost::all();
-        // dd($query= $post[0]->queryPost);
-        // $posts = Post::where('postID', 3)->get();
-        // foreach($posts as $post)
-        // { 
-        //     if($post->queryPost){$data[]=['post'=>$post->queryPost];}
-        //     if($post->jobPost){$data[]=['post'=>$post->jobPost];}
-        //     if($post->awardPost){$data[]=['post'=>$post->awardPost];}
-        //     if($post->eventPost){$data[]=['post'=>$post->eventPost];}
-        // }
-        // $data[]=$posts;
-        // dd($data[0][2]->eventPost);
-        // $events=$posts->eventPost;
-        // dd($events);
-        
-        // var_dump($data);
-
-    
-        // foreach ($posts as $post) {
-        //     $eventPost = $post->jobPost;
-        //     // dd($eventPost);
-        // }
-        // dd($query= $post[1]->eventPost);
-        // dd($query= $post[2]->eventPost);
-        // dd($query= $post[3]->eventPost);
- 
-        // dd($query[0]);
-        return view('alumni/home', ['data' => $query]);
+        $data= QueryPost::all();
+        // dd($data[3]->eventPost);
+        return view('alumni/home', ['data' => $data]);
     }
+    
     public function alumniBookmarks() {
         return view('alumni/bookmarks');
     }
     public function alumniEvents() {
-        return view('alumni/events');
+        $pvc = new postViewController;
+        $data = $pvc->viewEvents(); 
+        return view('alumni/events', ['data' => $data]);
     }
+
     public function alumniJobs() {
+        // $pvc = new postViewController;
+        // $data = $pvc->viewJobs(); 
+        // return view('alumni/jobs', ['data' => $data]);
         return view('alumni/jobs');
     }
     public function alumniProfile() {

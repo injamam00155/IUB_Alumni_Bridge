@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->string('userEmail')->primary();
+            $table->increments('id');
+            $table->string('userEmail');
 
-            $table->foreign('userEmail')->references('userEmail')->on('users')->onUpdate('CASCADE')->onDelete('cascade');
+            $table->foreign('userEmail')->references('userEmail')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
     /**

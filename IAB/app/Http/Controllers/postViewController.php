@@ -69,6 +69,14 @@ class postViewController extends Controller
         return $mergedResults;
         // return $posts;
     }
+    public function viewEvents() {
+        $data= EventPost::orderByDesc('eventDate')->get();;
+        return $data;
+    }
+    // public function viewJobs() {
+    //     $data= JobPost::orderByDesc('eventDate')->get();;
+    //     return $data;
+    // }
 
 //     public function viewQueries()
 //     {

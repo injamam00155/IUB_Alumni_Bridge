@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('queries', function (Blueprint $table) {
-            $table->unsignedInteger('postID')->primary();
+        Schema::create('query_posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('postID');
             $table->string('postDescription');
             $table->string('userEmail');
             // Add any other columns you need for the queries table

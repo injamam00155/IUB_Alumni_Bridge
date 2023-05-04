@@ -241,34 +241,42 @@
           <div class="row">
             <div class="col-12">
               <!-- EVENTS LIST -->
+              
               <section class="light mt-5">
                 <div class="mt-3">
+                  @foreach($data as $event)
                   <article class="postcard light blue">
                     <a class="postcard__img_link" href="#">
                       <img
                         class="postcard__img"
-                        src="img/event1.jpg"
+                        src="{{$event->eventImageURL}}"
+                        {{-- "img/event1.jpg" --}}
                         alt="League of Enghineers poster picture"
                       />
                     </a>
                     <div class="postcard__text t-dark">
                       <h1 class="postcard__title blue ms-2">
                         <h3 href="#" class="ms-1">
-                          League of Engineers - Season 1
+                          {{-- League of Engineers - Season 1 --}}
+                          {{$event->eventTitle}}
                         </h3>
                       </h1>
                       <div class="postcard__subtitle small">
-                        <i class="fas fa-calendar-alt me-1"></i>March 16, 2023 -
-                        March 18, 2023
+                        <i class="fas fa-calendar-alt me-1"></i>
+                        {{-- March 16, 2023 
+                        - --}}
+                        {{$event->eventDate}}
+                        {{-- March 18, 2023 --}}
 
                         <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
                         11:00 AM - 6:30 PM
                         <i class="fa-solid fa-location-dot fa-sm ms-2 me-1"></i>
-                        Offside - Home of Football
+                        {{-- Offside - Home of Football --}}
+                        {{$event->eventLocation}}
                       </div>
                       <div class="postcard__bar"></div>
                       <div class="postcard__preview-txt">
-                        Welcome to League of Engineers👷! Get ready for an
+                        {{-- Welcome to League of Engineers👷! Get ready for an
                         action-packed tournament🏟️ filled with exciting matches
                         and fierce competition as teams battle it out to claim
                         the title of football champions. The tournament will
@@ -279,10 +287,12 @@
                         people, and have fun while showcasing your
                         footballtalents. So what are you waiting for? Gather
                         your friends, put together a team, register and come
-                        show us what you've got!
+                        show us what you've got! --}}
+                        {{$event->eventDescription}}
                       </div>
                     </div>
                   </article>
+                  @endforeach
                   <article class="postcard light blue">
                     <a class="postcard__img_link" href="#">
                       <img

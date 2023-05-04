@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('awards', function (Blueprint $table) {
-            $table->unsignedInteger('postID')->primary();
+        Schema::create('award_posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('postID');
             $table->string('awardTitle');
             $table->string('awardDescription');
             $table->date('awardDate');

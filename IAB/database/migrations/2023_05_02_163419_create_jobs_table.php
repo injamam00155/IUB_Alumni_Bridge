@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jobs', function (Blueprint $table) {
-            $table->unsignedInteger('postID')->primary();
+        Schema::create('job_posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('postID');
             $table->string('jobTitle');
             $table->string('companyName');
             $table->string('location');

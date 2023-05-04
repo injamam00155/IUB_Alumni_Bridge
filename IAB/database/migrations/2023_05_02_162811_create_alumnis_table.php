@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('alumni', function (Blueprint $table) {
-            $table->string('userEmail')->primary();
+            $table->increments('id');
+            $table->string('userEmail');
             $table->string('designation')->nullable();
             $table->string('currentWorkPlace')->nullable();
             $table->year('graduationYear')->nullable();
