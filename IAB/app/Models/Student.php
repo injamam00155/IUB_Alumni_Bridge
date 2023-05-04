@@ -35,9 +35,14 @@ class Student extends User
         return $this->hasMany(Comment::class, 'userEmail');
     }
 
-    public function bookmarks()
+    public function bookmark()
     {
         return $this->hasMany(Bookmark::class, 'userEmail');
+    }
+
+    public function queryPost()
+    {
+        return $this->hasOne(QueryPost::class, 'userEmail');
     }
 
     //Needed Functions

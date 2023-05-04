@@ -18,6 +18,11 @@ class Alumni extends Student
     {
         return $this->belongsTo(Student::class, 'userEmail');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'userEmail');
+    }
     
     //Needed Functions
     public function isCurrentStudent()

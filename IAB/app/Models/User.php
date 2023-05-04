@@ -39,7 +39,7 @@ class User extends Model
         return $this->hasMany(Comment::class, 'userEmail');
     }
 
-    public function bookmarks()
+    public function bookmark()
     {
         return $this->hasMany(Bookmark::class, 'userEmail');
     }

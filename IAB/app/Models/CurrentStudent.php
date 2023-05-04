@@ -18,6 +18,10 @@ class CurrentStudent extends Student
     {
         return $this->belongsTo(Student::class, 'userEmail');
     }
+    public function user()
+    {
+        return $this->belongsTo(Student::class, 'userEmail');
+    }
     
     //Needed Functions
 
