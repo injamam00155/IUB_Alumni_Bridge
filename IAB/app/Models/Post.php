@@ -11,7 +11,7 @@ class Post extends Model
 {
     use HasFactory;
     public $timestamps=false;
-    protected $fillable = ['postID', 'postDateTime'];
+    protected $fillable = ['postID','created_at', 'updated_at'];
     
         //Functions for Relations
     public function queryPost()

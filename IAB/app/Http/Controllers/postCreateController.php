@@ -23,5 +23,24 @@ use Illuminate\Http\Request;
 
 class postCreateController extends Controller
 {
-    //
+
+    public function queryPostCreate(Request $request)
+    {
+        $validatedData = $request->validate([
+            'postQuery' => 'required',
+        ]);
+        $post = new post;
+        $post->created_at = now();
+        $post->updated_at = now();
+        $post->save();
+
+        $queryPost = new queryPost;
+        $queryPost->postDescription = $validatedData['postQuery'];
+        $queryPost->userEmail = session('userEmail');
+        $queryPost->postID = post::latest('postID')->first()->postID; 
+        // dd($post);
+        $queryPost->save();
+        return redirect()->route('currentStudent.dash');
+    }
+
 }

@@ -12,7 +12,7 @@ class QueryPost extends Model
     use HasFactory;
     public $timestamps=false;
     protected $table = 'query_posts';
-    protected $fillable = ['postID', 'postDescription', 'userEmail'];
+    protected $fillable = [ 'postDescription', 'userEmail'];
     
     //Functions for Relations
     public function student()
