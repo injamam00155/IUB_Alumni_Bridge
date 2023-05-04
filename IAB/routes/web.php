@@ -50,4 +50,5 @@ Route::get('/currentStudent/profile', [routingController::class, 'currentStudent
 Route::post('/store', [signupController::class, 'store'])->name('alumni.store');
 Route::post('/validate', [loginController::class, 'loginCheck'])->name('validate.acc');
 Route::post('/createQueryPost', [postCreateController::class, 'queryPostCreate'])->name('create.queryPost');
+Route::post('/createJobPost', [postCreateController::class, 'jobPostCreate'])->name('create.jobPost');
 

@@ -182,7 +182,8 @@
               />
             </div>
             <div class="col-10 col-lg-11 pe-5">
-              <form>
+              <form action="{{route('create.jobPost')}}" method="post">
+                @csrf
                 <div class="form-group">
                   <label for="jobTitle">Title</label>
                   <input
@@ -199,6 +200,7 @@
                     type="text"
                     class="form-control"
                     id="jobCompany"
+                    name="jobCompany"
                     placeholder="Enter company nam"
                   />
                 </div>
@@ -218,6 +220,7 @@
                   <textarea
                     class="form-control"
                     id="jobDescription"
+                    name="jobDescription"
                     placeholder="Enter job description"
                     rows="3"
                   ></textarea>
@@ -233,11 +236,12 @@
                   ></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="eventRequiremnt">Requirement</label>
+                  <label for="jobRequiremnt">Requirement</label>
                   <textarea
                     class="form-control"
-                    id="eventRequiremnt"
-                    placeholder="Enter jon requirement"
+                    id="jobRequiremnt"
+                    name="jobRequiremnt"
+                    placeholder="Enter job requirement"
                     rows="3"
                   ></textarea>
                 </div>
