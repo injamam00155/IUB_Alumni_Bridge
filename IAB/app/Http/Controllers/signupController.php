@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alumni;
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Student;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Models\CurrentStudent;
+use App\Models\Alumni;
+use App\Models\Post;
+use App\Models\JobPost;
+use App\Models\EventPost;
+use App\Models\AwardPost;
+use App\Models\QueryPost;
+use App\Models\Comment;
+use App\Models\Bookmark;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class signupController extends Controller
 {

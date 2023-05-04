@@ -12,6 +12,7 @@ use App\Models\EventPost;
 use App\Models\AwardPost;
 use App\Models\QueryPost;
 
+
 class CurrentStudent extends Student
 {
     use HasFactory;

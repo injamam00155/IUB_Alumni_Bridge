@@ -1,14 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Post;
-use App\Models\Alumni;
+
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Student;
-use App\Models\QueryPost;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Models\CurrentStudent;
+use App\Models\Alumni;
+use App\Models\Post;
+use App\Models\JobPost;
 use App\Models\EventPost;
+use App\Models\AwardPost;
+use App\Models\QueryPost;
+use App\Models\Comment;
+use App\Models\Bookmark;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class routingController extends Controller
 {
@@ -81,8 +91,9 @@ class routingController extends Controller
     //alumni routing functions
     public function alumniDashboard() {
         $data = [];
-        // $query= QueryPost::all();
-        $posts = Post::where('postID', 3)->get();
+        $query= QueryPost::all();
+        // dd($query= $post[0]->queryPost);
+        // $posts = Post::where('postID', 3)->get();
         // foreach($posts as $post)
         // { 
         //     if($post->queryPost){$data[]=['post'=>$post->queryPost];}
@@ -96,10 +107,18 @@ class routingController extends Controller
         // dd($events);
         
         // var_dump($data);
-            $events=$posts->eventPost;
-        dd($events);
+
+    
+        // foreach ($posts as $post) {
+        //     $eventPost = $post->jobPost;
+        //     // dd($eventPost);
+        // }
+        // dd($query= $post[1]->eventPost);
+        // dd($query= $post[2]->eventPost);
+        // dd($query= $post[3]->eventPost);
+ 
         // dd($query[0]);
-        return view('alumni/home', ['data' => $events]);
+        return view('alumni/home', ['data' => $query]);
     }
     public function alumniBookmarks() {
         return view('alumni/bookmarks');
