@@ -26,7 +26,7 @@ return new class extends Migration
             // $table->timestamps();
 
             // Add foreign key constraint to link with users table
-            $table->foreign('userEmail')->references('userEmail')->on('users')->onDelete('cascade');
+            $table->foreign('userEmail')->references('userEmail')->on('users')->onUpdate('CASCADE')->onDelete('cascade');
     });
     }
 

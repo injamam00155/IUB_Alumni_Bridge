@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->string('postID')->primary();
+            $table->unsignedInteger('postID')->primary();
             $table->string('jobTitle');
             $table->string('companyName');
             $table->string('location');
@@ -25,8 +25,8 @@ return new class extends Migration
             // $table->timestamps();
 
             // Add foreign key constraint to link with posts table
-            $table->foreign('postID')->references('postID')->on('posts')->onDelete('cascade');
-            $table->foreign('userEmail')->references('userEmail')->on('alumni')->onDelete('cascade');
+            $table->foreign('postID')->references('postID')->on('posts')->onUpdate('CASCADE')->onUpdate('CASCADE')->onDelete('cascade');
+            $table->foreign('userEmail')->references('userEmail')->on('alumni')->onUpdate('CASCADE')->onUpdate('CASCADE')->onDelete('cascade');
         });
     }
 

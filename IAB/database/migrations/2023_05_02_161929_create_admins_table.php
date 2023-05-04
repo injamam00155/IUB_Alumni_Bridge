@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->string('userEmail')->primary();
 
-            $table->foreign('userEmail')->references('userEmail')->on('users')->onDelete('cascade');
+            $table->foreign('userEmail')->references('userEmail')->on('users')->onUpdate('CASCADE')->onDelete('cascade');
         });
     }
     /**

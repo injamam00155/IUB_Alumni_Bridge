@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->string('postID')->primary();
-            $table->dateTime('postDateTime');
+            $table->increments('postID');
+            // $table->dateTime('postDateTime');
             // Add any other columns you need for the posts table
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 

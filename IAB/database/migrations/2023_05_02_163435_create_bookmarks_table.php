@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->increments('bookmarkID');
             $table->string('userEmail');
-            $table->string('postID');
+            $table->unsignedInteger('postID');
             $table->timestamps();
 
             $table->foreign('userEmail')->references('userEmail')->on('students')->onDelete('cascade');

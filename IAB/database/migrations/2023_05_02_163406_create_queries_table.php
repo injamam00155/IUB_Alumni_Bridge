@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('queries', function (Blueprint $table) {
-            $table->string('postID')->primary();
+            $table->unsignedInteger('postID')->primary();
             $table->string('postDescription');
             $table->string('userEmail');
             // Add any other columns you need for the queries table
             // $table->timestamps();
 
             // Add foreign key constraint to link with posts table
-            $table->foreign('postID')->references('postID')->on('posts')->onDelete('cascade');
-            $table->foreign('userEmail')->references('userEmail')->on('students')->onDelete('cascade');
+            $table->foreign('postID')->references('postID')->on('posts')->onUpdate('CASCADE')->onDelete('cascade');
+            $table->foreign('userEmail')->references('userEmail')->on('students')->onUpdate('CASCADE')->onDelete('cascade');
         });
     }
 

@@ -16,7 +16,7 @@ return new class extends Migration
             // $table->dateTime('commentDateTime');
             $table->string('description');
             $table->string('userEmail');
-            $table->string('postID');
+            $table->unsignedInteger('postID');
             $table->timestamps();
 
             $table->foreign('userEmail')->references('userEmail')->on('students')->onDelete('cascade');

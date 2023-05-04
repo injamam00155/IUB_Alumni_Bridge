@@ -8,6 +8,7 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 class signupController extends Controller
 {
     public function store(Request $request)
