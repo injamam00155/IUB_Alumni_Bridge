@@ -136,13 +136,7 @@
               </div>
               <div class="row justify-content-center">
                 <div class="form-group col-sm-4">
-                  {{-- <a
-                    href="/"
-                    class="btn btn-primary px-5"
-                    style="text-decoration: none"
-                  >
-                    Sign Up
-                  </a> --}}
+
                   <button type="submit" class="btn-block btn-primary">
                                     Sign Up
                   </button>

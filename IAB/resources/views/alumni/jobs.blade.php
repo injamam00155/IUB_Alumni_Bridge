@@ -29,9 +29,22 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Poppins:wght@400;500;600&family=Trispace&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+      </script>
   </head>
 
   <body>
+    @if(session('msg'))
+    <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
     <div class="container-fluid">
       <div class="row">
         <!-- ---NAVBAR--- -->
@@ -182,7 +195,8 @@
               />
             </div>
             <div class="col-10 col-lg-11 pe-5">
-              <form>
+              <form action="{{route('create.jobPost')}}" method="post">
+                @csrf
                 <div class="form-group">
                   <label for="jobTitle">Title</label>
                   <input
@@ -192,6 +206,7 @@
                     name="jobTitle"
                     placeholder="Enter job title"
                   />
+                  @error('jobTitle') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="jobCompany">Company</label>
@@ -199,8 +214,10 @@
                     type="text"
                     class="form-control"
                     id="jobCompany"
+                    name="jobCompany"
                     placeholder="Enter company nam"
                   />
+                  @error('jobCompany') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
 
                 <div class="form-group">
@@ -212,15 +229,18 @@
                     name="jobLocation"
                     placeholder="Enter job location"
                   />
+                  @error('jobLocation') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="jobDescription">Description</label>
                   <textarea
                     class="form-control"
                     id="jobDescription"
+                    name="jobDescription"
                     placeholder="Enter job description"
                     rows="3"
                   ></textarea>
+                  @error('jobDescription') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="jobResponsibility">Responsibility</label>
@@ -231,15 +251,18 @@
                     placeholder="Enter job responsibility"
                     rows="3"
                   ></textarea>
+                  @error('jobResponsibility') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
-                  <label for="eventRequiremnt">Requirement</label>
+                  <label for="jobRequiremnt">Requirement</label>
                   <textarea
                     class="form-control"
-                    id="eventRequiremnt"
-                    placeholder="Enter jon requirement"
+                    id="jobRequiremnt"
+                    name="jobRequirement"
+                    placeholder="Enter job requirement"
                     rows="3"
                   ></textarea>
+                  @error('jobRequirement') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="contactMail">Contact</label>
@@ -250,6 +273,7 @@
                     name="contactMail"
                     placeholder="Enter contact mail"
                   />
+                  @error('contactMail') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-2">

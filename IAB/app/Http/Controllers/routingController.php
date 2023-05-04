@@ -90,12 +90,13 @@ class routingController extends Controller
     
     //alumni routing functions
     public function alumniDashboard() {
-        $data= QueryPost::all();
+        $data= Post::all();
         // dd($data[3]->eventPost);
-        $data= EventPost::all();
+        // $data= EventPost::all();
         $pvc=new postViewController;
         $data= $pvc->viewPosts();
         // dd($data);
+        // dd(session()->all());
         return view('alumni/home', ['data' => $data]);
     }
     

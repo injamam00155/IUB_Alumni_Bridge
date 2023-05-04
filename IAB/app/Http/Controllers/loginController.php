@@ -79,8 +79,10 @@ class loginController extends Controller
 
     
         if ($user) {
+            $userEmail=$validatedData['inputEmail'];
             // $postViewController = new postViewController();
              // $posts = $postViewController->viewPosts();
+             session(['userEmail' => $userEmail]);
             if ($user->isAdmin()) {
                 // return view('admin/home', compact('posts'));
                 return redirect()->route('admin.dash');

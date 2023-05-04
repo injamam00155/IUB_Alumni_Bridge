@@ -178,7 +178,7 @@
             </div>
           </div>
 
-
+          
           <!-- What's on your mind section -->
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
@@ -190,13 +190,16 @@
               />
             </div>
             <div class="col-10 col-lg-11 pe-5">
-                <form action="#">
+                <form action="{{route('create.queryPost')}}" method='POST'>
+                  @csrf
                 <textarea
                   class="form-control bg-gray p-3"
                   name="postQuery"
                   placeholder="Ask a question and start a discussion..."
                   style="border-radius: 20px"
-                ></textarea>
+                  >
+                </textarea>
+                
                 <button
                   id="post-btn"
                   type="submit"
@@ -205,6 +208,7 @@
                 >
                   Post
                 </button>
+                @error('postQuery') <span style="color: red;">Empty post cannot be made</span> @enderror
               </form>
             </div>
           </div>

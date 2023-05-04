@@ -1,7 +1,20 @@
 <?php
+use App\Models\User;
+use App\Models\Admin;
+use App\Models\Student;
+use App\Models\CurrentStudent;
+use App\Models\Alumni;
+use App\Models\Post;
+use App\Models\JobPost;
+use App\Models\EventPost;
+use App\Models\AwardPost;
+use App\Models\QueryPost;
+use App\Models\Comment;
+use App\Models\Bookmark;
 
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\routingController;
+use App\Http\Controllers\postCreateController;
 use Illuminate\Support\Facades\Route;
 
 //login, signup and forgotPassword routes
@@ -36,4 +49,6 @@ Route::get('/currentStudent/profile', [routingController::class, 'currentStudent
 //functional routing
 Route::post('/store', [signupController::class, 'store'])->name('alumni.store');
 Route::post('/validate', [loginController::class, 'loginCheck'])->name('validate.acc');
+Route::post('/createQueryPost', [postCreateController::class, 'queryPostCreate'])->name('create.queryPost');
+Route::post('/createJobPost', [postCreateController::class, 'jobPostCreate'])->name('create.jobPost');
 

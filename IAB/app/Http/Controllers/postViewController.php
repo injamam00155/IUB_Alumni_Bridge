@@ -29,7 +29,17 @@ class postViewController extends Controller
             $mergedResults = [];
 
             foreach ($orderedPostIds as $postId) {
-
+                // $queryData = QueryPost::join('posts', 'query_posts.postID', '=', 'posts.postID')
+                // ->select('query_posts.*', 'posts.*')
+                // ->get();
+                // if ($queryData) {
+                //     $mergedResults[] = [
+                //         'source' => 'query',
+                //         'data' => $queryData,
+                //     ];
+                //     continue;
+                // }
+               //
                 $queryData = QueryPost::where('postID', $postId)->first();
                 if ($queryData) {
                     $mergedResults[] = [
@@ -37,6 +47,7 @@ class postViewController extends Controller
                         'data' => $queryData,
                     ];
                     continue;
+                    // 
                 }
 
                 $jobData = JobPost::where('postID', $postId)->first();
