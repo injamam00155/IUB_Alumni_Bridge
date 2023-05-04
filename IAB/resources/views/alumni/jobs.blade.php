@@ -389,6 +389,7 @@
                         <small class="text-muted">3 comments</small>
                       </a>
                     </div>
+                    
                   </div>
                 </div>
               </div>
