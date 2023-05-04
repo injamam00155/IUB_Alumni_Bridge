@@ -15,23 +15,23 @@ class Post extends Model
         //Functions for Relations
     public function queryPost()
     {
-        return $this->hasMany(QueryPost::class, 'postID');
+        return $this->hasOne(QueryPost::class, 'postID');
     }
 
     public function awardPost()
     {
-        return $this->hasMany(AwardPost::class, 'postID');
+        return $this->hasOne(AwardPost::class, 'postID');
     }
 
     public function eventPost()
     {
-        return $this->hasMany(EventPost::class, 'postID');
+        return $this->hasOne(EventPost::class, 'postID');
     }
 
 
     public function jobPost()
     {
-        return $this->hasMany(Job::class, 'postID');
+        return $this->hasOne(Job::class, 'postID');
     }
 
     public function comment()
