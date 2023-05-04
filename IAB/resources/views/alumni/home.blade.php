@@ -197,7 +197,9 @@
                   name="postQuery"
                   placeholder="Ask a question and start a discussion..."
                   style="border-radius: 20px"
-                ></textarea>
+                  >
+                </textarea>
+                
                 <button
                   id="post-btn"
                   type="submit"
@@ -206,6 +208,7 @@
                 >
                   Post
                 </button>
+                @error('postQuery') <span style="color: red;">Empty post cannot be made</span> @enderror
               </form>
             </div>
           </div>

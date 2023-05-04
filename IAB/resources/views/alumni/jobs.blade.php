@@ -32,6 +32,9 @@
   </head>
 
   <body>
+    @if(session('msg'))
+    <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
     <div class="container-fluid">
       <div class="row">
         <!-- ---NAVBAR--- -->
@@ -193,6 +196,7 @@
                     name="jobTitle"
                     placeholder="Enter job title"
                   />
+                  @error('jobTitle') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="jobCompany">Company</label>
@@ -203,6 +207,7 @@
                     name="jobCompany"
                     placeholder="Enter company nam"
                   />
+                  @error('jobCompany') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
 
                 <div class="form-group">
@@ -214,6 +219,7 @@
                     name="jobLocation"
                     placeholder="Enter job location"
                   />
+                  @error('jobLocation') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="jobDescription">Description</label>
@@ -224,6 +230,7 @@
                     placeholder="Enter job description"
                     rows="3"
                   ></textarea>
+                  @error('jobDescription') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="jobResponsibility">Responsibility</label>
@@ -234,6 +241,7 @@
                     placeholder="Enter job responsibility"
                     rows="3"
                   ></textarea>
+                  @error('jobResponsibility') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="jobRequiremnt">Requirement</label>
@@ -244,6 +252,7 @@
                     placeholder="Enter job requirement"
                     rows="3"
                   ></textarea>
+                  @error('jobRequiremnt') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                   <label for="contactMail">Contact</label>
@@ -254,6 +263,7 @@
                     name="contactMail"
                     placeholder="Enter contact mail"
                   />
+                  @error('contactMail') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-2">

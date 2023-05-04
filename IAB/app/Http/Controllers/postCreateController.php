@@ -73,7 +73,7 @@ class postCreateController extends Controller
         // dd($post);
         dd($jobPost);
         $jobPost->save();
-        return redirect()->route('alumni.jobs');
+        return redirect()->route('alumni.jobs')->with('msg','Job Posted Successfully');
     }
 
 
