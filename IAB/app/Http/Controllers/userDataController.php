@@ -28,7 +28,7 @@ class userDataController extends Controller
         ->select('users.*', 'students.*', 'alumni.*')
         ->first();
     }
-    public function findAdmindRecord($userEmail)
+    public function findAdminRecord($userEmail)
     {
         $data = DB::table('users')
         ->join('admins', 'users.userEmail', '=', 'admins.userEmail')

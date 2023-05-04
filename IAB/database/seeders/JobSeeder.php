@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Job;
+use App\Models\JobPost;
 use Illuminate\Database\Seeder;
 use App\Models\Post;
 
@@ -17,7 +17,7 @@ class JobSeeder extends Seeder
 
 
 
-            Job::factory()->count(10)->create();
+            JobPost::factory()->count(10)->create();
 
     }
 }

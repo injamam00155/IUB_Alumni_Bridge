@@ -177,6 +177,8 @@
               </div>
             </div>
           </div>
+
+          <h1>Check:   {{$data['name']}}</h1>
           <!-- What's on your mind section -->
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">

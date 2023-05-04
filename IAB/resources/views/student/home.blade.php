@@ -180,6 +180,11 @@
               </div>
             </div>
           </div>
+
+      <h1>Check:   {{$data['name']}}</h1>
+
+          {{-- @if(isset($posts)) --}}
+          {{-- @endif  --}}
           <!-- What's on your mind section -->
       {{-- @if(isset($posts))
           @foreach($posts as $post)

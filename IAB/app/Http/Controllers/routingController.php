@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Post;
 use App\Models\Alumni;
 use App\Models\User;
 use App\Models\Student;
@@ -25,7 +25,13 @@ class routingController extends Controller
 
     //admin routing functions
     public function adminDashboard() {
-        return view('admin/home');
+        $posts = Post::all();
+        $data = [
+            'name' => 'John Doe',
+            'age' => 25,
+            'email' => 'johndoe@example.com'
+        ];
+        return view('admin/home', ['data' => $data]);
     }
     public function adminBookmarks() {
         return view('admin/bookmarks');
@@ -45,8 +51,15 @@ class routingController extends Controller
     
     //currentStudent routing functions
     public function currentStudentDashboard() {
-        return view('student/home');
+        $posts = Post::all();
+        $data = [
+            'name' => 'John Doe',
+            'age' => 25,
+            'email' => 'johndoe@example.com'
+        ];
+        return view('student/home', ['data' => $data]);
     }
+
     public function currentStudentBookmarks() {
         return view('student/bookmarks');
     }
@@ -65,7 +78,13 @@ class routingController extends Controller
     
     //alumni routing functions
     public function alumniDashboard() {
-        return view('alumni/home');
+        $posts = Post::all();
+        $data = [
+            'name' => 'John Doe',
+            'age' => 25,
+            'email' => 'johndoe@example.com'
+        ];
+        return view('alumni/home', ['data' => $data]);
     }
     public function alumniBookmarks() {
         return view('alumni/bookmarks');

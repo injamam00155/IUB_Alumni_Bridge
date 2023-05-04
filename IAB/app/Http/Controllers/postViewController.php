@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Session;
 use App\Models\Post;
-use App\Models\Query;
-use App\Models\Job;
-use App\Models\Event;
-use App\Models\Award;
+use App\Models\QueryPost;
+use App\Models\JobPost;
+use App\Models\EventPost;
+use App\Models\AwardPost;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -18,12 +18,13 @@ class postViewController extends Controller
 
     public function viewPosts()
     {
-            $orderedPostIds = Post::orderBy('id')->pluck('id');
+            // $posts=Post::all();
+            $orderedPostIds = Post::orderBy('postID')->pluck('postID');
             $mergedResults = [];
 
             foreach ($orderedPostIds as $postId) {
 
-                $queryData = Query::where('post_id', $postId)->first();
+                $queryData = QueryPost::where('postID', $postId)->first();
                 if ($queryData) {
                     $mergedResults[] = [
                         'source' => 'query',
@@ -32,7 +33,7 @@ class postViewController extends Controller
                     continue;
                 }
 
-                $jobData = Job::where('post_id', $postId)->first();
+                $jobData = JobPost::where('postID', $postId)->first();
                 if ($jobData) {
                     $mergedResults[] = [
                         'source' => 'job',
@@ -41,7 +42,7 @@ class postViewController extends Controller
                     continue;
                 }
 
-                $eventData = Event::where('post_id', $postId)->first();
+                $eventData = EventPost::where('postID', $postId)->first();
                 if ($eventData) {
                     $mergedResults[] = [
                         'source' => 'event',
@@ -50,7 +51,7 @@ class postViewController extends Controller
                     continue;
                 }
                 
-                $awardData = Award::where('post_id', $postId)->first();
+                $awardData = AwardPost::where('postID', $postId)->first();
                 if ($awardData) {
                     $mergedResults[] = [
                         'source' => 'award',
@@ -60,29 +61,30 @@ class postViewController extends Controller
                 }
             }
         return $mergedResults;
+        // return $posts;
     }
 
-    public function viewQueries()
-    {
-        $queries = Query::latest('postDateTime')->get();
-        return $queries;
-    }
+//     public function viewQueries()
+//     {
+//         $queries = Query::latest('postDateTime')->get();
+//         return $queries;
+//     }
     
-    public function viewJobs()
-    {
-        $jobs = Job::latest('postDateTime')->get();
-        return $jobs;
-    }
+//     public function viewJobs()
+//     {
+//         $jobs = Job::latest('postDateTime')->get();
+//         return $jobs;
+//     }
 
-    public function viewEvents()
-    {
-        $events = Event::latest('postDateTime')->get();
-        return $events;
-    }
-    public function viewAwards()
-    {
-        $awards = Award::latest('postDateTime')->get();
-        return $awards;
-    }
+//     public function viewEvents()
+//     {
+//         $events = Event::latest('postDateTime')->get();
+//         return $events;
+//     }
+//     public function viewAwards()
+//     {
+//         $awards = Award::latest('postDateTime')->get();
+//         return $awards;
+//     }
     
 }

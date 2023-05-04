@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Event;
+use App\Models\EventPost;
 use Illuminate\Database\Seeder;
 use App\Models\Post;
 
@@ -17,7 +17,7 @@ class EventSeeder extends Seeder
     {
 
 
-            Event::factory()->count(11)->create();
+            EventPost::factory()->count(11)->create();
 
     }
 }
