@@ -44,22 +44,22 @@ class routingController extends Controller
             'email' => 'johndoe@example.com'
         ];
         return view('admin/home', ['data' => $data]);
-    }
-    public function adminBookmarks() {
-        return view('admin/bookmarks');
-    }
-    public function adminEvents() {
-        return view('admin/events');
-    }
-    public function adminJobs() {
-        return view('admin/jobs');
-    }
-    public function adminProfile() {
-        return view('admin/profile');
-    }
-    public function adminAwards() {
-        return view('admin/awards');
-    }
+        }
+        public function adminBookmarks() {
+            return view('admin/bookmarks');
+        }
+        public function adminEvents() {
+            return view('admin/events');
+        }
+        public function adminJobs() {
+            return view('admin/jobs');
+        }
+        public function adminProfile() {
+            return view('admin/profile');
+        }
+        public function adminAwards() {
+            return view('admin/awards');
+        }
     
     //currentStudent routing functions
     public function currentStudentDashboard() {
@@ -95,10 +95,16 @@ class routingController extends Controller
         // $data= EventPost::all();
         $pvc=new postViewController;
         $data= $pvc->viewPosts();
+        $upcoming=$pvc->upcomingEvent();
+
         // $data = $pvc->viewEvents(); 
         // dd($data);
         // dd(session()->all());
-        return view('alumni/home', ['data' => $data]);
+        $pass=  ['data' => $data,
+                'event'=> $upcoming,
+                ];
+        return view('alumni/home', $pass);
+        // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
     }
     
     public function alumniBookmarks() {
