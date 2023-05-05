@@ -28,9 +28,22 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Poppins:wght@400;500;600&family=Trispace&display=swap"
       rel="stylesheet"
     />
+        <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+      </script>
   </head>
 
   <body>
+    @if(session('msg'))
+    <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
     <div class="container-fluid">
       <div class="row">
         <!-- ---NAVBAR--- -->
@@ -192,7 +205,9 @@
                     name="awardTitle"
                     placeholder="Enter award title"
                   />
+                  @error('awardTitle') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
+
                 {{-- <div class="form-group">
                   <label for="eventTime1">Time</label>
                   <input
@@ -220,6 +235,7 @@
                     name="awardDate"
                     placeholder="Enter award date"
                   />
+                  @error('awardDate') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="awardLocation">Location</label>
@@ -230,6 +246,7 @@
                     name="awardLocation"
                     placeholder="Enter award location"
                   />
+                  @error('awardLocation') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="awardDescription">Description</label>
@@ -240,6 +257,7 @@
                     placeholder="Enter award description"
                     rows="3"
                   ></textarea>
+                  @error('awardDescription') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="awardPosterImage">Poster Image</label>
@@ -250,6 +268,8 @@
                     name="awardPosterImage"
                   />
                 </div>
+                @error('awardPosterImage') <span style="color: red;">{{$message}}</span> @enderror
+                <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
             </div>

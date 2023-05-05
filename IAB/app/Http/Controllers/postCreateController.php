@@ -176,7 +176,7 @@ class postCreateController extends Controller
         // }
         // dd($post);
         // dd($jobPost);
-        return redirect()->route('admin.events')->with('msg','Job Posted Successfully');
+        return redirect()->route('admin.events')->with('msg','Event Posted Successfully');
     }
 
 

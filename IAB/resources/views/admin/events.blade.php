@@ -28,8 +28,21 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Poppins:wght@400;500;600&family=Trispace&display=swap"
       rel="stylesheet"
     />
+      <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+      </script>
   </head>
   <body>
+    @if(session('msg'))
+    <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
     <div class="container-fluid">
       <div class="row">
         <!-- ---NAVBAR--- -->
@@ -189,6 +202,7 @@
                     name="eventTitle"
                     placeholder="Enter event title"
                   />
+                  @error('eventTitle') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="eventStartTime">Event Start Time</label>
@@ -211,6 +225,7 @@
                     placeholder="Enter event end time"
                   /> --}}
                   <input type="time" name="eventEndTime" id="eventEndTime" class="form-control">
+                  @error('eventEndTime') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="eventStartDate">Event Start Date</label>
@@ -231,6 +246,7 @@
                     name="eventEndDate"
                     placeholder="Enter event end date"
                   />
+                @error('eventEndDate') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="eventLocation">Location</label>
@@ -241,6 +257,8 @@
                     name="eventLocation"
                     placeholder="Enter event location"
                   />
+                @error('eventLocation') <span style="color: red;">{{$message}}</span> @enderror
+
                 </div>
                 <div class="form-group mb-2">
                   <label for="eventDescription">Description</label>
@@ -251,6 +269,7 @@
                     placeholder="Enter event description"
                     rows="3"
                   ></textarea>
+                  @error('eventDescription') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="eventPosterImage">Poster Image</label>
@@ -261,6 +280,8 @@
                     name="eventPosterImage"
                   />
                 </div>
+                @error('eventPosterImage') <span style="color: red;">{{$message}}</span> @enderror
+                <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form action="{{route('create.eventPost')}}" method="post">
             </div>

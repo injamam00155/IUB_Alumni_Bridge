@@ -142,8 +142,9 @@ class routingController extends Controller
                 // 'studentComments'=>$studentComments,
                 // 'bookmarks'=>$bookmarks,
                 ];
+        // dd($pass);
         return view('alumni/home', $pass);
-        // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
+        return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
     }
     
     public function alumniBookmarks() {
