@@ -182,6 +182,7 @@
             </div>
             <div class="col-10 col-lg-11 pe-5">
               <form>
+                @csrf
                 <div class="form-group mb-2">
                   <label for="awardTitle">Title</label>
                   <input
@@ -241,12 +242,12 @@
                   ></textarea>
                 </div>
                 <div class="form-group mb-2">
-                  <label for="AwardPosterImage">Poster Image</label>
+                  <label for="awardPosterImage">Poster Image</label>
                   <input
                     type="file"
                     class="form-control-file"
-                    id="AwardPosterImage"
-                    name="AwardPosterImage"
+                    id="awardPosterImage"
+                    name="awardPosterImage"
                   />
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

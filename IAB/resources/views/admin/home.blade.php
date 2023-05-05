@@ -178,7 +178,7 @@
             </div>
           </div>
           <!-- What's on your mind section -->
-          <h1>Check:   {{$data['name']}}</h1>
+          {{-- <h1>Check:   {{$data['name']}}</h1> --}}
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
