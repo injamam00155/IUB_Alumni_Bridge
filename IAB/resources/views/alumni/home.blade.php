@@ -230,7 +230,18 @@
                           </div>
                           <div class="col-10 col-lg-11 pe-5">
                             <div>
-                              <strong class="fs-5">Sarah Binte Mahbub</strong>
+                              <strong class="fs-5">
+                                
+                                {{-- //Loop through the users information  --}}
+                                  {{-- @foreach()  --}}
+                                {{-- //match the userEmail with the userData --}}
+                                    {{-- @if()   --}}
+                                {{-- //Display the Username of the matching userEmail --}}
+                                Post Creator Name
+                                {{-- @endif --}}
+                                {{-- @break --}}
+                                {{-- @endforeach --}}
+                              </strong>
                             </div>
                             <p class="mt-3 fs-5 p-1 post_body">
                               {{-- Hey everyone, I'm a current student majoring in computer
@@ -262,6 +273,73 @@
                             </div>
                           </div>
                         </div>
+                        {{-- //Loop through the users information  --}}
+                        {{-- @foreach()  --}}
+                          {{-- //match the userEmail with the CommentData userEmail--}}
+                          {{-- @if()   --}}
+           
+                      <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  CommenterName
+                                  {{-- //Display the Username of the matching userEmail --}}
+                                </strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                {{-- CommentDescription --}}
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  {{-- // UserName of currentUser goes here --}}
+                                  Current User Name
+                                  
+                                </strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                              {{-- @endif --}}
+                            {{-- @continue(true) --}}
+                          {{-- @endforeach --}}
                         @continue(true)
                     @endif
 
@@ -356,6 +434,75 @@
                         </div>
                       </div>
                     </div>
+                                            {{-- //Loop through the users information  --}}
+                        {{-- @foreach()  --}}
+                          {{-- //match the userEmail with the CommentData userEmail--}}
+                          {{-- @if()   --}}
+           
+                      <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  CommenterName
+                                  {{-- //Display the Username of the matching userEmail --}}
+                                </strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                {{-- CommentDescription --}}
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  {{-- // UserName of currentUser goes here --}}
+                                  Current User Name
+                                  
+                                </strong>
+                              </div>
+                              <form action="">
+                                @csrf
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                    @error('postComment') <span style="color: red;">{{$message}}</span> @enderror
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                              {{-- @endif --}}
+                            {{-- @continue(true) --}}
+                          {{-- @endforeach --}}
                       @continue(true)
                     @endif
                     
@@ -373,7 +520,17 @@
                         <div class="col-10 col-lg-11 pe-5 fs-5">
                           <div>
                             <h4>
-                              <strong class="fs-5">Injamam Ul Haque</strong>
+                              <strong class="fs-5">
+                                                                {{-- //Loop through the users information  --}}
+                                  {{-- @foreach()  --}}
+                                {{-- //match the userEmail with the userData --}}
+                                    {{-- @if()   --}}
+                                {{-- //Display the Username of the matching userEmail --}}
+                                Post Creator Name
+                                {{-- @endif --}}
+                                {{-- @break --}}
+                                {{-- @endforeach --}}
+                              </strong>
                               <i class="fa-solid fa-graduation-cap fa-sm"></i>
                             </h4>
                           </div>
@@ -466,6 +623,73 @@
                         </div>
                       </div>
                     </div>
+                                            {{-- //Loop through the users information  --}}
+                        {{-- @foreach()  --}}
+                          {{-- //match the userEmail with the CommentData userEmail--}}
+                          {{-- @if()   --}}
+           
+                      <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  CommenterName
+                                  {{-- //Display the Username of the matching userEmail --}}
+                                </strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                {{-- CommentDescription --}}
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  {{-- // UserName of currentUser goes here --}}
+                                  Current User Name
+                                  
+                                </strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                              {{-- @endif --}}
+                            {{-- @continue(true) --}}
+                          {{-- @endforeach --}}
                     @continue(true)
                     @endif
                     @if($post["source"]=='award')
@@ -553,6 +777,73 @@
                         </div>
                       </article>
                     </div>
+                        {{-- //Loop through the users information  --}}
+                        {{-- @foreach()  --}}
+                          {{-- //match the userEmail with the CommentData userEmail--}}
+                          {{-- @if()   --}}
+           
+                      <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  CommenterName
+                                  {{-- //Display the Username of the matching userEmail --}}
+                                </strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                {{-- CommentDescription --}}
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  {{-- // UserName of currentUser goes here --}}
+                                  Current User Name
+                                  
+                                </strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                              {{-- @endif --}}
+                            {{-- @continue(true) --}}
+                          {{-- @endforeach --}}
                     @continue(true)
                     @endif
                 @endforeach

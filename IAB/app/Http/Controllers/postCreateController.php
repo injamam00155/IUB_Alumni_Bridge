@@ -23,7 +23,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class postCreateController extends Controller
-{
+{   
+
+    public function commentCreate(Request $request){
+        $validatedData = $request->validate([
+            'postComment' => 'required',
+        ]);
+        $comment = new comment;
+        $comment->created_at = now();
+        $comment->updated_at = now();
+        $comment->description = $validatedData['postComment'];
+        $comment->userEmail = session('userEmail');
+        $comment->save();
+    }
 
     public function queryPostCreate(Request $request)
     {
