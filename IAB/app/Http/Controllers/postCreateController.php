@@ -35,6 +35,17 @@ class postCreateController extends Controller
         $comment->description = $validatedData['postComment'];
         $comment->userEmail = session('userEmail');
         $comment->save();
+        return redirect()->back();
+    }
+    
+    public function bookmakCreate(Request $request){
+
+        $bookmark = new bookmark;
+        $bookmark->created_at = now();
+        $bookmark->updated_at = now();
+        $bookmark->userEmail = session('userEmail');
+        $bookmark->save();
+        return redirect()->back();
     }
 
     public function queryPostCreate(Request $request)
