@@ -105,27 +105,4 @@ class postViewController extends Controller
         return $data;
     }
 
-//     public function viewQueries()
-//     {
-//         $queries = Query::latest('postDateTime')->get();
-//         return $queries;
-//     }
-    
-//     public function viewJobs()
-//     {
-//         $jobs = Job::latest('postDateTime')->get();
-//         return $jobs;
-//     }
-
-//     public function viewEvents()
-//     {
-//         $events = Event::latest('postDateTime')->get();
-//         return $events;
-//     }
-//     public function viewAwards()
-//     {
-//         $awards = Award::latest('postDateTime')->get();
-//         return $awards;
-//     }
-    
 }
