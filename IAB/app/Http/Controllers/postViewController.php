@@ -100,10 +100,10 @@ class postViewController extends Controller
         ->get();
     }
 
-    // public function viewJobs() {
-    //     $data= JobPost::orderByDesc('eventDate')->get();;
-    //     return $data;
-    // }
+    public function viewJobs() {
+        $data= JobPost::orderByDesc('postID')->get();
+        return $data;
+    }
 
 //     public function viewQueries()
 //     {
