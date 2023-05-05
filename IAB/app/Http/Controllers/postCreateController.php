@@ -33,11 +33,11 @@ class postCreateController extends Controller
         $post = new post;
         $post->created_at = now();
         $post->updated_at = now();
+        $post->userEmail = session('userEmail');
         $post->save();
 
         $queryPost = new queryPost;
         $queryPost->postDescription = $validatedData['postQuery'];
-        $queryPost->userEmail = session('userEmail');
         $queryPost->postID = post::latest('postID')->first()->postID; 
         // dd($post);
         $queryPost->save();
@@ -59,6 +59,7 @@ class postCreateController extends Controller
         $post = new post;
         $post->created_at = now();
         $post->updated_at = now();
+        $post->userEmail = session('userEmail');
         $post->save();
 
         $jobPost = new jobPost;
@@ -69,7 +70,6 @@ class postCreateController extends Controller
         $jobPost->requirement = $validatedData['jobRequirement'];
         $jobPost->location = $validatedData['jobLocation'];
         $jobPost->contactEmail = $validatedData['contactMail'];
-        $jobPost->userEmail = session('userEmail');
         $jobPost->postID = post::latest('postID')->first()->postID; 
         // dd($post);
         // dd($jobPost);
@@ -134,6 +134,7 @@ class postCreateController extends Controller
         Post::create([
             'created_at' => now(),
             'updated_at' => now(),
+
         ]);
         // $post = new post;
         // $post->created_at = now();

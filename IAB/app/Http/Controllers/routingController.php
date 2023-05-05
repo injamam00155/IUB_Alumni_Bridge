@@ -137,14 +137,14 @@ class routingController extends Controller
         // dd($data);
         // dd(session()->all());
         $pass=  ['data' => $data,
-                'event'=> $upcoming,
+                'upcoming'=> $upcoming,
                 // 'studentPosts'=>$studentPosts,
                 // 'studentComments'=>$studentComments,
                 // 'bookmarks'=>$bookmarks,
                 ];
         // dd($pass);
         return view('alumni/home', $pass);
-        return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
+        // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
     }
     
     public function alumniBookmarks() {
@@ -154,13 +154,21 @@ class routingController extends Controller
         return view('alumni/bookmarks',['data' => $pass]);
     }
     public function alumniEvents() {
-        $pvc = new postViewController;
-        $data = $pvc->viewEvents(); 
-        // dd($data);
-        $pass=  [   
-
+        $pvc=new postViewController;
+        $data= $pvc->viewEvents();
+        $upcoming=$pvc->upcomingEvent();
+        $pass=  ['data' => $data,
+                'upcoming'=> $upcoming,
                 ];
-        return view('alumni/events', ['data' => $data]);
+        // return view('alumni/jobs', ['data' => $data]);
+        return view('alumni/events',$pass);
+        // $pvc = new postViewController;
+        // $data = $pvc->viewEvents(); 
+        // // dd($data);
+        // $pass=  [   
+
+        //         ];
+        // return view('alumni/events', ['data' => $data]);
     }
 
     public function alumniJobs() {
@@ -168,7 +176,7 @@ class routingController extends Controller
         $data= $pvc->viewJobs();
         $upcoming=$pvc->upcomingEvent();
         $pass=  ['data' => $data,
-                'event'=> $upcoming,
+                'upcoming'=> $upcoming,
                 ];
         // return view('alumni/jobs', ['data' => $data]);
         return view('alumni/jobs',$pass);
@@ -185,7 +193,7 @@ class routingController extends Controller
         $upcoming=$pvc->upcomingEvent();
         $pass=  [
             'data' => $data,
-            'event'=> $upcoming,
+            'upcoming'=> $upcoming,
             ];
         return view('alumni/awards',$pass);
         // return view('alumni/awards');
