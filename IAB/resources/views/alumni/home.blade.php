@@ -183,34 +183,30 @@
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
             @foreach($allStudent as $student) 
-                @if($student->userEmail==session('userEmail'))
-                {{-- <img
-                    src="{{asset('images/' . ($student->profilePictureURL ? $student->profilePictureURL : 'defaultDisplayPicture.jpg'))}}"
+                {{-- @if($student->userEmail==session('userEmail'))
+                <img
+                    src="{{asset('images/' . ($student->profilePictureURL ? $student->profilePictureURL : 'defaultProfilePicture.jpg'))}}"
                     alt="user Display Picture"
                     class="img-fluid ms-2"
                     style="width: 50px; height: 50px; border-radius: 50%"
-                /> --}}
-                @endif
+                />
+                @endif --}}
                 @if($student->userEmail==session('userEmail'))
                   <img
-                  {{-- {{asset('images/'.$upcoming->eventImageURL)}} --}}
-                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    src="{{asset('images/defaultProfilePicture.jpg')}}"
                     alt="user Display Picture"
                     class="img-fluid ms-2"
                     style="width: 50px; height: 50px; border-radius: 50%"
                 />
                 @else 
                 <img
-                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
-                    {{-- src="{{asset('images/'.$student->profilePictureURL)}}" --}}
+                    src="{{asset('images/' . $student->profilePictureURL)}}"
                     alt="user Display Picture"
                     class="img-fluid ms-2"
                     style="width: 50px; height: 50px; border-radius: 50%"
                 />
-
                 @endif
-                @break
-
+              {{-- @break --}}
             @endforeach
             </div>
             <div class="col-10 col-lg-11 pe-5">
@@ -255,9 +251,8 @@
                           <div class="col-10 col-lg-11 pe-5">
                             <div>
                               <strong class="fs-5">
-
                                 @foreach($studentPosts as $studentPost)
-                                    @if($studentPost->postID)
+                                    @if($studentPost->postID==$post["data"]->postID)
                                         {{$studentPost->fullName}}
                                       @break
                                     @endif
@@ -494,8 +489,9 @@
                           <div>
                             <h4>
                               <strong class="fs-5">
+
                                 @foreach($studentPosts as $studentPost)
-                                    @if($studentPost->postID)
+                                    @if($studentPost->postID==$post["data"]->postID)
                                         {{$studentPost->fullName}}
                                       @break
                                     @endif
