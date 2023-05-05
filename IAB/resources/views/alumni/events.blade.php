@@ -180,7 +180,7 @@
                     <a class="postcard__img_link" href="#">
                       <img
                         class="postcard__img"
-                        src="{{$event->eventImageURL}}"
+                        src="{{asset('images/'.$event->eventImageURL)}}"
                         alt="{{$event->eventTitle}} poster picture"
                       />
                     </a>
