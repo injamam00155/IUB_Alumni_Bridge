@@ -49,38 +49,48 @@ class routingController extends Controller
         $pass=  [   
 
                 ];
-        return view('admin/home', ['data' => $pass]);
-        }
-        public function adminBookmarks() {
-            $pass=  [   
-
-                    ];
-            return view('admin/bookmarks', ['data' => $pass]);
-        }
-        public function adminEvents() {
-            $pass=  [   
-
-                    ];
-            return view('admin/events', ['data' => $pass]);
-        }
-        public function adminJobs() {
-            $pass=  [   
-
-                    ];
-            return view('admin/jobs', ['data' => $pass]);
-        }
-        public function adminProfile() {
-            $pass=  [   
-
-                    ];
-            return view('admin/profile', ['data' => $pass]);
-        }
-        public function adminAwards() {
-            $pass=  [   
-
-                    ];
-            return view('admin/awards', ['data' => $pass]);
-        }
+    return view('admin/home', ['data' => $pass]);
+    }
+    public function adminBookmarks() {
+        $pass=  [   
+                ];
+        return view('admin/bookmarks', ['data' => $pass]);
+    }
+    public function adminEvents() {
+        $pvc=new postViewController;
+        $data= $pvc->viewEvents();
+        $upcoming=$pvc->upcomingEvent();
+        $pass=  [   
+            'data' => $data,
+            'upcoming'=> $upcoming,
+                ];
+        return view('admin/events', $pass);
+    }
+    public function adminJobs() {
+        $pvc=new postViewController;
+        $data= $pvc->viewJobs();
+        $upcoming=$pvc->upcomingEvent();
+        $pass=  [  
+            'data' => $data,
+            'upcoming'=> $upcoming,
+                ];
+        return view('admin/jobs', $pass);
+    }
+    public function adminProfile() {
+        $pass=  [   
+                ];
+        return view('admin/profile', ['data' => $pass]);
+    }
+    public function adminAwards() {
+        $pvc=new postViewController;
+        $data= $pvc->viewAwards();
+        $upcoming=$pvc->upcomingEvent();
+        $pass=  [   
+            'data' => $data,
+            'upcoming'=> $upcoming,
+                ];
+        return view('admin/awards', $pass);
+    }
     
     //currentStudent routing functions
     public function currentStudentDashboard() {
@@ -98,16 +108,24 @@ class routingController extends Controller
         return view('student/bookmarks', ['data' => $pass]);
     }
     public function currentStudentEvents() {
+        $pvc=new postViewController;
+        $data= $pvc->viewEvents();
+        $upcoming=$pvc->upcomingEvent();
         $pass=  [   
-
+            'data' => $data,
+            'upcoming'=> $upcoming,
                 ];
-        return view('student/events', ['data' => $pass]);
+        return view('student/events', $pass);
     }
     public function currentStudentJobs() {
+        $pvc=new postViewController;
+        $data= $pvc->viewJobs();
+        $upcoming=$pvc->upcomingEvent();
         $pass=  [   
-
+            'data' => $data,
+            'upcoming'=> $upcoming,
                 ];
-        return view('student/jobs',['data' => $pass]);
+        return view('student/jobs',$pass);
     }
     public function currentStudentProfile() {
         $pass=  [   
@@ -116,10 +134,14 @@ class routingController extends Controller
         return view('student/profile',['data' => $pass]);
     }
     public function currentStudentAwards() {
+        $pvc=new postViewController;
+        $data= $pvc->viewAwards();
+        $upcoming=$pvc->upcomingEvent();
         $pass=  [   
-
+            'data' => $data,
+            'upcoming'=> $upcoming,
                 ];
-        return view('student/awards',['data' => $pass]);
+        return view('student/awards',$pass);
     }
     
     //alumni routing functions
@@ -160,15 +182,7 @@ class routingController extends Controller
         $pass=  ['data' => $data,
                 'upcoming'=> $upcoming,
                 ];
-        // return view('alumni/jobs', ['data' => $data]);
         return view('alumni/events',$pass);
-        // $pvc = new postViewController;
-        // $data = $pvc->viewEvents(); 
-        // // dd($data);
-        // $pass=  [   
-
-        //         ];
-        // return view('alumni/events', ['data' => $data]);
     }
 
     public function alumniJobs() {

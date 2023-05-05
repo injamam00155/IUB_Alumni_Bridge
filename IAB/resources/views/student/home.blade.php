@@ -181,7 +181,6 @@
             </div>
           </div>
 
-      <h1>Check:   {{$data['name']}}</h1>
 
           {{-- @if(isset($posts)) --}}
           {{-- @endif  --}}

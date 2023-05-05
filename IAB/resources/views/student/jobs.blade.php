@@ -256,13 +256,9 @@
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
-              <!-- POST/QUERIES -->
 
-              <!-- EVENT 1 -->
-
-              <!-- EVENT 2 -->
-
-              <!-- JOB OFFER 1 -->
+              <!-- JOB OFFERS -->
+              @foreach($data as $job)
               <div class="job_post mt-5">
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
@@ -287,56 +283,46 @@
                         <div
                           class="job-header d-flex justify-content-between mt-3"
                         >
-                          <strong>Software Engineer</strong>
+                          <strong>{{ $job->jobTitle }}</strong>
                           <p>Full-time</p>
                         </div>
-                        <p class="company">Acme Corp</p>
-                        <p class="location">San Francisco, CA</p>
-                        <p class="date">Posted 2 days ago</p>
+                        <p class="company">{{ $job->companyName }}</p>
+                        <p class="location">{{ $job->location }}</p>
                         <hr />
                         <h4>Job Description:</h4>
                         <p>
-                          We are seeking a talented software engineer to join
-                          our team at Acme Corp. You will work on a variety of
-                          projects and collaborate with cross-functional teams
-                          to deliver high-quality software products.
+                          {{ $job->jobDescription }}
                         </p>
                         <h4>Responsibilities:</h4>
+                        @php
+                        $delimiter = "-";
+                        $string = "$job->responsibility";
+                        $result = explode($delimiter, $string);
+                      
+                        @endphp
                         <ul>
-                          <li>Design and develop software applications</li>
-                          <li>
-                            Collaborate with cross-functional teams to identify
-                            and solve complex problems
-                          </li>
-                          <li>
-                            Write clean, maintainable, and well-documented code
-                          </li>
-                          <li>
-                            Conduct code reviews and provide constructive
-                            feedback to other team members
-                          </li>
+                          @foreach ($result as $index => $substring)
+                            @if ($index == 0)
+                              @continue
+                            @endif
+                            <li>{{ $substring }}</li>
+                          @endforeach
                         </ul>
                         <h4>Requirements:</h4>
+                        @php
+                        $delimiter = "-";
+                        $string = "$job->requirement";
+                        $result = explode($delimiter, $string);
+                        @endphp
                         <ul>
-                          <li>
-                            Bachelor's or Master's degree in Computer Science or
-                            related field
-                          </li>
-                          <li>
-                            Minimum of 3 years of experience in software
-                            engineering
-                          </li>
-                          <li>
-                            Proficient in at least one programming language such
-                            as Java, Python, or JavaScript
-                          </li>
-                          <li>
-                            Experience with web development frameworks such as
-                            React or Angular
-                          </li>
-                          <li>Strong problem-solving and analytical skills</li>
+                          @foreach ($result as $index => $substring)
+                            @if ($index == 0)
+                              @continue
+                            @endif
+                            <li>{{ $substring }}</li>
+                          @endforeach
                         </ul>
-                        <p><strong>Email: </strong> Injamam00155@gmail.com</p>
+                        <p><strong>Email: </strong> {{ $job->contactEmail }}</p>
                       </div>
                     </div>
                     <div
@@ -360,226 +346,11 @@
                         <small class="text-muted">3 comments</small>
                       </a>
                     </div>
+                    
                   </div>
                 </div>
               </div>
-              <!-- JOB OFFER 2 -->
-              <div class="job_post mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="img/profile_img3.jpg"
-                      alt="profile img"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5">
-                    <div>
-                      <h4>
-                        Mushfiqur Alam Bhuiyan<i
-                          class="fa-solid fa-graduation-cap fa-sm ms-2"
-                        ></i>
-                      </h4>
-                    </div>
-
-                    <div class="job-post">
-                      <div class="post_body fs-5">
-                        <div
-                          class="job-header d-flex justify-content-between mt-3"
-                        >
-                          <strong>Front-End Developer</strong>
-                          <p>Full-time</p>
-                        </div>
-                        <p class="company">XYZ Inc.</p>
-                        <p class="location">New York, NY</p>
-                        <p class="date">Posted 4 days ago</p>
-                        <hr />
-                        <h4>Job Description:</h4>
-                        <p>
-                          We are looking for a skilled front-end developer to
-                          join our team at XYZ Inc. You will work on designing
-                          and developing interactive user interfaces and
-                          collaborate with designers, back-end developers, and
-                          project managers to deliver high-quality web
-                          applications.
-                        </p>
-                        <h4>Responsibilities:</h4>
-                        <ul>
-                          <li>
-                            Develop and maintain user-facing features using
-                            HTML, CSS, and JavaScript
-                          </li>
-                          <li>
-                            Collaborate with cross-functional teams to identify
-                            and solve complex problems
-                          </li>
-                          <li>
-                            Optimize applications for maximum speed and
-                            scalability
-                          </li>
-                          <li>
-                            Optimize applications for maximum speed and
-                            scalability
-                          </li>
-                          <li>
-                            Stay up-to-date with emerging trends and
-                            technologies in front-end development
-                          </li>
-                        </ul>
-                        <h4>Requirements:</h4>
-                        <ul>
-                          <li>
-                            Bachelor's or Master's degree in Computer Science or
-                            related field
-                          </li>
-                          <li>
-                            Minimum of 2 years of experience in front-end
-                            development
-                          </li>
-                          <li>Proficient in HTML, CSS, and JavaScript</li>
-                          <li>
-                            Experience with modern front-end frameworks such as
-                            React, Vue, or Angular
-                          </li>
-                          <li>Strong problem-solving and analytical skills</li>
-                        </ul>
-                        <p><strong>Email: </strong> mushfiqur55@gmail.com</p>
-                      </div>
-                    </div>
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
-                      </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- JOB OFFER 3 -->
-              <div class="job_post mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="img/Akib Raihan .jpeg"
-                      alt="profile img"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5">
-                    <div>
-                      <h4>
-                        Akib Raihan Popeye<i
-                          class="fa-solid fa-graduation-cap fa-sm ms-2"
-                        ></i>
-                      </h4>
-                    </div>
-
-                    <div class="job-post">
-                      <div class="post_body fs-5">
-                        <div
-                          class="job-header d-flex justify-content-between mt-3"
-                        >
-                          <strong>Data Scientist</strong>
-                          <p>Full-time</p>
-                        </div>
-                        <p class="company">ABC Analytics</p>
-                        <p class="location">Chicago, IL</p>
-                        <p class="date">Posted 7 days ago</p>
-                        <hr />
-                        <h4>Job Description:</h4>
-                        <p>
-                          We are seeking a skilled data scientist to join our
-                          team at ABC Analytics. You will work on developing and
-                          implementing data-driven solutions to help our clients
-                          make better business decisions.
-                        </p>
-                        <h4>Responsibilities:</h4>
-                        <ul>
-                          <li>
-                            Collect, clean, and analyze large datasets using
-                            statistical and machine learning techniques
-                          </li>
-                          <li>
-                            Develop predictive models and algorithms to identify
-                            patterns and trends in data
-                          </li>
-                          <li>
-                            Collaborate with cross-functional teams to identify
-                            business problems and opportunities
-                          </li>
-                          <li>
-                            Communicate complex findings to technical and
-                            non-technical stakeholders
-                          </li>
-                          <li>
-                            Stay up-to-date with emerging trends and
-                            technologies in data science and analytics
-                          </li>
-                        </ul>
-                        <h4>Requirements:</h4>
-                        <ul>
-                          <li>
-                            Bachelor's or Master's degree in Computer Science,
-                            Mathematics, Statistics, or related field
-                          </li>
-                          <li>
-                            Minimum of 3 years of experience in data science or
-                            analytics
-                          </li>
-                          <li>
-                            Proficient in statistical analysis and machine
-                            learning techniques
-                          </li>
-                          <li>
-                            Experience with programming languages such as Python
-                            or R
-                          </li>
-                          <li>Strong problem-solving and analytical skills</li>
-                        </ul>
-                        <p><strong>Email: </strong> Injamam00155@gmail.com</p>
-                      </div>
-                    </div>
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
-                      </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
         </div>
@@ -597,6 +368,9 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
+            @if($upcoming == null)
+            <h3 class="upcoming">No Upcoming Events</h3>                  
+            @else
             <div class="mt-5">
               <h3 class="upcoming">Upcoming Events</h3>
               <div class="row g-4 mt-3">
@@ -604,26 +378,26 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="img/TechFest2023.jpg"
+                        src="{{asset('images/'.$upcoming->eventImageURL)}}"
                         class="card-img-top"
-                        alt="Tech Fest 2023 poster"
+                        alt="{{$upcoming->eventTitle}} poster"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
+                        <h5 class="card-title">{{$upcoming->eventTitle}}</h5>
                         <p class="card-text">
                           Event Date:
                           <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
+                            >{{$upcoming->eventStartDate}} - {{$upcoming->eventEndDate}}</span
                           >
                         </p>
                         <p class="card-text">
                           Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
+                          <span class="text-muted">{{$upcoming->eventStartTime}} - {{$upcoming->eventEndTime}}</span>
                         </p>
                         <p class="card-text">
                           Event Location:
                           <span class="text-muted"
-                            >Independent University, Bangladesh</span
+                            >{{$upcoming->eventLocation}}</span
                           >
                         </p>
                       </div>
@@ -632,6 +406,7 @@
                 </div>
               </div>
             </div>
+            @endif
             <div class="p-3 d-flex justify-content-end me-5">
               <a
                 href="/currentStudent/events"
