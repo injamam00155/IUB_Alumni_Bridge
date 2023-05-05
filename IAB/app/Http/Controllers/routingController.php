@@ -166,23 +166,23 @@ class routingController extends Controller
         $pvc=new postViewController;
         $data= $pvc->viewJobs();
         $upcoming=$pvc->upcomingEvent();
-        $info=  ['data' => $data,
+        $pass=  ['data' => $data,
                 'event'=> $upcoming,
                 ];
         // return view('alumni/jobs', ['data' => $data]);
-        return view('alumni/jobs');
+        return view('alumni/jobs',$pass);
     }
     public function alumniProfile() {
         $pass=  [   
 
                 ];
-        return view('alumni/profile');
+        return view('alumni/profile',$pass);
     }
     public function alumniAwards() {
         $pass=  [   
 
                 ];
-        return view('alumni/awards');
+        return view('alumni/awards',$pass);
     }
 }
 
