@@ -40,36 +40,36 @@
           >
             <!-- LOGO -->
 
-            <a href="/currentStudent/dashboard" class="my-3 ms-4">
+            <a href="home.html" class="my-3 ms-4">
               <img
-                src="{{asset('student/img/iubalumnibridgelogo.png')}}"
+                src="img/iubalumnibridgelogo.png"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
             </a>
             <!-- NAV LINKS -->
-            <a href="/currentStudent/dashboard" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/dashboard" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-house fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Home</span>
             </a>
 
-            <a href="/currentStudent/events" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/events" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
-            <a href="/currentStudent/awards" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/awards" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-trophy fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Award</span>
             </a>
-            <a href="/currentStudent/jobs" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
-            <a href="/currentStudent/profile" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/profile" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-user fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
             </a>
-            <a href="/currentStudent/bookmarks" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/bookmarks" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bookmark fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
@@ -79,13 +79,13 @@
             </a>
 
             <a
-              href="/currentStudent/profile"
+              href="/alumni/profile"
               class="btn profile_icon position-absolute"
               type="button"
             >
               <img
                 class="img-fluid ms-2"
-                src="{{asset('student/img/profile_img.jpg')}}"
+                src="img/profile_img2.jpg"
                 alt="profile img"
                 style="width: 40px; border-radius: 50%"
               />
@@ -93,9 +93,6 @@
           </div>
         </div>
         <!-- ---HOME FEED--- -->
-
-
-        
         <div class="col-10 col-lg-8 col-xl-7 border-end">
           <div class="row align-items-center mt-3 bg-white sticky-top py-3">
             <div class="col-5 col-lg-11">
@@ -114,66 +111,66 @@
             <div class="col-2 col-lg-1">
               <div class="dropdown">
                 <button
-                class="btn"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
-                <i class="fas fa-bell fa-xl"></i>
-              </button>
-              <ul
-              class="dropdown-menu dropdown-menu-end"
+                  <i class="fas fa-bell fa-xl"></i>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
                   aria-labelledby="dropdownMenuButton1"
                 >
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                      src="{{asset('student/img/Akib Raihan .jpeg')}}"
-                      alt="User Display Picture"
-                      class="img-fluid me-2"
-                      style="width: 40px; border-radius: 50%"
+                        src="img/profile_img.jpg"
+                        alt="User Display Picture"
+                        class="img-fluid me-2"
+                        style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                      ><strong>Akib</strong> commented on your post
-                      <span class="text-muted ms-5">2m ago</span></span
+                        ><strong>Shabab</strong> commented on your post
+                        <span class="text-muted ms-5">2m ago</span></span
                       >
                     </a>
                   </li>
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                      src="{{asset('student/img/profile_img2.jpg')}}"
-                      alt="User Image"
-                      class="img-fluid me-2"
-                      style="width: 40px; border-radius: 50%"
+                        src="img/profile_img2.jpg"
+                        alt="User Image"
+                        class="img-fluid me-2"
+                        style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                      ><strong>Injamam</strong> commented on your post<span
-                      class="text-muted ms-5"
-                      >5m ago</span
-                      ></span
+                        ><strong>Injamam</strong> commented on your post<span
+                          class="text-muted ms-5"
+                          >5m ago</span
+                        ></span
                       >
                     </a>
                   </li>
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                      src="{{asset('student/img/profile_img3.jpg')}}"
-                      alt="User Image"
-                      class="img-fluid me-2"
-                      style="width: 40px; border-radius: 50%"
+                        src="img/profile_img3.jpg"
+                        alt="User Image"
+                        class="img-fluid me-2"
+                        style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                      ><strong>Mushfiqur</strong> commented on your post<span
-                      class="text-muted ms-5"
-                      >10m ago</span
-                      ></span
+                        ><strong>Mushfiqur</strong> commented on your post<span
+                          class="text-muted ms-5"
+                          >10m ago</span
+                        ></span
                       >
                     </a>
                   </li>
                   <li><hr class="dropdown-divider" /></li>
-                  <li>                    
+                  <li>
                     <a class="dropdown-item" href="#">See all notifications</a>
                   </li>
                 </ul>
@@ -181,52 +178,28 @@
             </div>
           </div>
 
-
-          {{-- @if(isset($posts)) --}}
-          {{-- @endif  --}}
+          
           <!-- What's on your mind section -->
-      {{-- @if(isset($posts))
-          @foreach($posts as $post)
-          {
-            @if ($post->isQuery())
-            {
-              <div>Query post goes here</div>
-            }
-            @elseif($post->isJobs())
-            {
-              <div>Job post goes here</div>
-            }
-            @elseif($post->isEvent())
-            {
-              <div>Event post goes here</div>
-            }
-            @else
-            {
-              <div>Query post goes here</div>
-            }
-          }
-            
-          @endforeach
-      @endif --}}
-
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
               <img
-                src="{{asset('student/img/profile_img.jpg')}}"
+                src="img/profile_img2.jpg"
                 alt="profile img"
                 class="img-fluid ms-2"
                 style="width: 50px; height: 50px; border-radius: 50%"
               />
             </div>
-            
             <div class="col-10 col-lg-11 pe-5">
-                <form action="#">
+                <form action="{{route('create.queryPost')}}" method='POST'>
+                  @csrf
                 <textarea
                   class="form-control bg-gray p-3"
-                  placeholder="Ask a question and start a discussion..."
                   name="postQuery"
+                  placeholder="Ask a question and start a discussion..."
                   style="border-radius: 20px"
-                ></textarea>
+                  >
+                </textarea>
+                
                 <button
                   id="post-btn"
                   type="submit"
@@ -235,340 +208,543 @@
                 >
                   Post
                 </button>
+                @error('postQuery') <span style="color: red;">Empty post cannot be made</span> @enderror
               </form>
             </div>
-            
           </div>
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
               <!-- POST/QUERIES -->
               <div class="post mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="{{asset('student/img/Sarah_Student.jpg')}}"
-                      alt="user Display Picture"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5">
-                    <div>
-                      <strong class="fs-5">Sarah Binte Mahbub</strong>
-                    </div>
-                    <p class="mt-3 fs-5 p-1 post_body">
-                      Hey everyone, I'm a current student majoring in computer
-                      science and I'm looking for advice on how to break into
-                      the tech industry. Any Alumni in the tech field who have
-                      tips or advice to share? Thanks in advance!
-                    </p>
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
+                @foreach($data as $post)
+                    @if($post["source"]=='query')
+                        <div class="row">
+                          <div class="col-2 col-lg-1 d-flex justify-content-end">
+                            <img
+                              src="img/Sarah_Student.jpg"
+                              alt="user Display Picture"
+                              class="img-fluid ms-2"
+                              style="width: 50px; height: 50px; border-radius: 50%"
+                            />
+                          </div>
+                          <div class="col-10 col-lg-11 pe-5">
+                            <div>
+                              <strong class="fs-5">
+                                
+                                {{-- //Loop through the users information  --}}
+                                  {{-- @foreach()  --}}
+                                {{-- //match the userEmail with the userData --}}
+                                    {{-- @if()   --}}
+                                {{-- //Display the Username of the matching userEmail --}}
+                                Post Creator Name
+                                {{-- @endif --}}
+                                {{-- @break --}}
+                                {{-- @endforeach --}}
+                              </strong>
+                            </div>
+                            <p class="mt-3 fs-5 p-1 post_body">
+                              {{-- Hey everyone, I'm a current student majoring in computer
+                              science and I'm looking for advice on how to break into
+                              the tech industry. Any Alumni in the tech field who have
+                              tips or advice to share? Thanks in advance! --}}
+                              {{$post["data"]->postDescription}}
+                            </p>
+                            <div
+                              class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
+                            >
+                              <div class="d-flex">
+                                <button class="btn border-0 btn me-3">
+                                  <i class="far fa-comment me-1"></i>Comment
+                                </button>
+                                <button
+                                  class="btn border-0 btn bookmark-btn"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-placement="top"
+                                  title="Bookmark"
+                                >
+                                  <i class="far fa-bookmark me-1"></i>
+                                  Bookmark
+                                </button>
+                              </div>
+                              <a href="#" style="text-decoration: none">
+                                <small class="text-muted">3 comments</small>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        
+           
+                      <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  CommenterName
+                                  {{-- //Display the Username of the matching userEmail --}}
+                                </strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                {{-- CommentDescription --}}
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
                       </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  {{-- // UserName of currentUser goes here --}}
+                                  Current User Name
+                                  
+                                </strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                              {{-- @endif --}}
+                            {{-- @continue(true) --}}
+                          {{-- @endforeach --}}
+                        @continue(true)
+                    @endif
+
+                    @if($post["source"]=='event')
+                    <div class="event mt-5">
+                      <div class="row">
+                        <div class="col-2 col-lg-1 d-flex justify-content-end">
+                          <img
+                            src="img/IUBLogo.png"
+                            alt="User Display Picture"
+                            class="img-fluid ms-2"
+                            style="width: 50px; height: 50px; border-radius: 50%"
+                          />
+                        </div>
+                        <div class="col-10 col-lg-11 pe-5 fs-5">
+                          <strong class="fs-5">IUB</strong>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <section class="light mt-3">
+                            <article class="postcard light blue">
+                              <a class="postcard__img_link" href="#">
+                                <img
+                                  class="postcard__img"
+                                  src="{{asset('images/'.$post["data"]->eventImageURL)}}" 
+                                  alt="{{$post["data"]->eventTitle}} poster picture"
+                                />
+                              </a>
+                              <div class="postcard__text t-dark">
+                                <h1 class="postcard__title blue ms-2">
+                                  <h3 href="#" class="ms-1">
+                                    {{$post["data"]->eventTitle}}
+                                  </h3>
+                                </h1>
+                                <div class="postcard__subtitle small">
+                                  <i class="fas fa-calendar-alt me-1"></i>
+                                  {{$post["data"]->eventStartDate}} - {{$post["data"]->eventEndDate}}
+                                  <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
+                                  {{$post["data"]->eventStartTime}} - {{$post["data"]->eventEndTime}}
+                                  <i class="fa-solid fa-location-dot fa-sm ms-2 me-1"></i>
+                                  {{$post["data"]->eventLocation}}
+                                </div>
+                                <div class="postcard__bar"></div>
+                                <div class="postcard__preview-txt">
+                                  {{$post["data"]->eventDescription}}
+                                </div>
+                              </div>
+                            </article>
+                          </section>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-2 col-lg-1 d-flex justify-content-end"></div>
+                        <div class="col-10 col-lg-11 pe-5">
+                          
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <!-- EVENT 1 -->
-              <div class="event mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="{{asset('student/img/IUBLogo.png')}}"
-                      alt="User Display Picture"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5 fs-5">
-                    <strong class="fs-5">IUB</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <section class="light mt-3">
+                                            {{-- //Loop through the users information  --}}
+                        {{-- @foreach()  --}}
+                          {{-- //match the userEmail with the CommentData userEmail--}}
+                          {{-- @if()   --}}
+           
+                      <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  CommenterName
+                                  {{-- //Display the Username of the matching userEmail --}}
+                                </strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                {{-- CommentDescription --}}
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  {{-- // UserName of currentUser goes here --}}
+                                  Current User Name
+                                  
+                                </strong>
+                              </div>
+                              <form action="">
+                                @csrf
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                    @error('postComment') <span style="color: red;">{{$message}}</span> @enderror
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                              {{-- @endif --}}
+                            {{-- @continue(true) --}}
+                          {{-- @endforeach --}}
+                      @continue(true)
+                    @endif
+                    
+                    @if($post["source"]=='job')
+                    <div class="job_post mt-5">
+                      <div class="row">
+                        <div class="col-2 col-lg-1 d-flex justify-content-end">
+                          <img
+                            src="img/profile_img2.jpg"
+                            alt="User profile picture"
+                            class="img-fluid ms-2"
+                            style="width: 50px; height: 50px; border-radius: 50%"
+                          />
+                        </div>
+                        <div class="col-10 col-lg-11 pe-5 fs-5">
+                          <div>
+                            <h4>
+                              <strong class="fs-5">
+                                                                {{-- //Loop through the users information  --}}
+                                  {{-- @foreach()  --}}
+                                {{-- //match the userEmail with the userData --}}
+                                    {{-- @if()   --}}
+                                {{-- //Display the Username of the matching userEmail --}}
+                                Post Creator Name
+                                {{-- @endif --}}
+                                {{-- @break --}}
+                                {{-- @endforeach --}}
+                              </strong>
+                              <i class="fa-solid fa-graduation-cap fa-sm"></i>
+                            </h4>
+                          </div>
+      
+                          <div class="job-post">
+                            <div class="post_body fs-5">
+                              <div
+                                class="job-header d-flex justify-content-between mt-3"
+                              >
+                                <strong>{{ $post["data"]->jobTitle }}</strong>
+                                <p>Full-time</p>
+                              </div>
+                              <p class="company">{{ $post["data"]->companyName }}</p>
+                              <p class="location">{{ $post["data"]->location }}</p>
+                              <hr />
+                              <h4>Job Description:</h4>
+                              <p>
+                                {{ $post["data"]->jobDescription }}
+                              </p>
+                              <h4>Responsibilities:</h4>
+                              @php
+                                  $delimiter = '-';
+                                  $postData = $post['data'];
+                                  $string = "$postData->responsibility";
+                                  $result = explode($delimiter, $string);
+                              @endphp
+
+                              <ul>
+                                @foreach ($result as $index => $substring)
+                                  @if ($index == 0)
+                                    @continue
+                                  @endif
+                                  <li>{{ $substring }}</li>
+                                @endforeach
+                              </ul>
+                              <h4>Requirements:</h4>
+                              @php
+                                  $delimiter = '-';
+                                  $postData = $post['data'];
+                                  $string = "$postData->requirement";
+                                  $result = explode($delimiter, $string);
+                              @endphp
+                              <ul>
+                                @foreach ($result as $index => $substring)
+                                  @if ($index == 0)
+                                    @continue
+                                  @endif
+                                  <li>{{ $substring }}</li>
+                                @endforeach
+                              </ul>
+                              {{-- <p>{{ $post["data"]->requirement }}</p> --}}
+                              <p><strong>Email: </strong> {{ $post["data"]->contactEmail }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row pb-5">
+                          <div
+                            class="col-2 col-lg-1 d-flex justify-content-end"
+                          ></div>
+                          <div class="col-10 col-lg-11 pe-5">
+                            <div
+                              class="post-footer d-flex justify-content-between align-items-center border-top"
+                            >
+                              <div class="d-flex">
+                                <button class="btn border-0 btn me-3">
+                                  <i class="far fa-comment me-1"></i>Comment
+                                </button>
+                                <button
+                                  class="btn border-0 btn bookmark-btn"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-placement="top"
+                                  title="Bookmark"
+                                >
+                                  <i class="far fa-bookmark me-1"></i>
+                                  Bookmark
+                                </button>
+                              </div>
+                              <a href="#" style="text-decoration: none">
+                                <small class="text-muted">3 comments</small>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                                            {{-- //Loop through the users information  --}}
+                        {{-- @foreach()  --}}
+                          {{-- //match the userEmail with the CommentData userEmail--}}
+                          {{-- @if()   --}}
+           
+                      <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  CommenterName
+                                  {{-- //Display the Username of the matching userEmail --}}
+                                </strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                {{-- CommentDescription --}}
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  {{-- // UserName of currentUser goes here --}}
+                                  Current User Name
+                                  
+                                </strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                              {{-- @endif --}}
+                            {{-- @continue(true) --}}
+                          {{-- @endforeach --}}
+                    @continue(true)
+                    @endif
+                    @if($post["source"]=='award')
+                    <div class="mt-3">
                       <article class="postcard light blue">
                         <a class="postcard__img_link" href="#">
                           <img
                             class="postcard__img"
-                            src="{{asset('student/img/event1.jpg')}}"
-                            alt="League of Enghineers poster picture"
+                            src="{{asset('images/'.$post["data"]->awardImageURL)}}"
+                            alt="{{$post["data"]->awardTitle}} poster picture"
                           />
                         </a>
                         <div class="postcard__text t-dark">
                           <h1 class="postcard__title blue ms-2">
-                            <h3 href="#" class="ms-1">
-                              League of Engineers - Season 1
+                            <h3 href="#">
+                              {{$post["data"]->awardTitle}}
                             </h3>
                           </h1>
-                          <div class="postcard__subtitle small">
-                            <i class="fas fa-calendar-alt me-1"></i>March 16,
-                            2023 - March 18, 2023
-
-                            <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
-                            11:00 AM - 6:30 PM
-                            <i
-                              class="fa-solid fa-location-dot fa-sm ms-2 me-1"
-                            ></i>
-                            Offside - Home of Football
-                          </div>
+    
                           <div class="postcard__bar"></div>
                           <div class="postcard__preview-txt">
-                            Welcome to League of Engineers👷! Get ready for an
-                            action-packed tournament🏟️ filled with exciting
-                            matches and fierce competition as teams battle it
-                            out to claim the title of football champions. The
-                            tournament will take place from 16th March to 18th
-                            March at Offside from 🕚11 AM to 🕡6.30 PM. This
-                            tournament is open to all students of SETS,
-                            regardless of experience or skill level. It's a
-                            great opportunity to get active, meet new people,
-                            and have fun while showcasing your footballtalents.
-                            So what are you waiting for? Gather your friends,
-                            put together a team, register and come show us what
-                            you've got!
+                            {{$post["data"]->awardDescription}}
                           </div>
                         </div>
                       </article>
-                    </section>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end"></div>
-                  <div class="col-10 col-lg-11 pe-5">
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
-                      </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
+                      
+                      
                     </div>
-                  </div>
-                </div>
-              </div>
-              <!-- EVENT 2 -->
-              <div class="event mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="{{asset('student/img/IUBLogo.png')}}"
-                      alt="User Display Picture"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5 fs-5">
-                    <strong class="fs-5">IUB</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <section class="light mt-3">
-                      <article class="postcard light blue">
-                        <a class="postcard__img_link" href="#">
-                          <img
-                            class="postcard__img"
-                            src="{{asset('student/img/Career_Fair_2023.jpg')}}"
-                            alt="Career and Networking Day 2023 Poster"
-                          />
-                        </a>
-                        <div class="postcard__text t-dark">
-                          <h1 class="postcard__title blue ms-2">
-                            <h3 href="#" class="ms-1">
-                              Career and Networking Day 2023
-                            </h3>
-                          </h1>
-                          <div class="postcard__subtitle small">
-                            <i class="fas fa-calendar-alt me-1"></i>February 08,
-                            2023
-
-                            <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
-                            10:00 AM - 4:00 PM
-                            <i
-                              class="fa-solid fa-location-dot fa-sm ms-2 me-1"
-                            ></i>
-                            Independent University, Bangladesh
+                        {{-- //Loop through the users information  --}}
+                        {{-- @foreach()  --}}
+                          {{-- //match the userEmail with the CommentData userEmail--}}
+                          {{-- @if()   --}}
+           
+                      <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  CommenterName
+                                  {{-- //Display the Username of the matching userEmail --}}
+                                </strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                {{-- CommentDescription --}}
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
                           </div>
-                          <div class="postcard__bar"></div>
-                          <div class="postcard__preview-txt">
-                            Our annual Career Fair is back and bigger than ever!
-                            This event is a great opportunity for Alumni and
-                            current students to meet with top employers from
-                            various industries. Dress to impress and bring
-                            plenty of copies of your resume. Don't miss out on
-                            this chance to kick-start your career!
-                          </div>
-                        </div>
-                      </article>
-                    </section>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end"></div>
-                  <div class="col-10 col-lg-11 pe-5">
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
                       </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- JOB OFFER -->
-              <div class="job_post mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="{{asset('student/img/profile_img2.jpg')}}"
-                      alt="User profile picture"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5 fs-5">
                     <div>
-                      <h4>
-                        <strong class="fs-5">Injamam Ul Haque</strong>
-                        <i class="fa-solid fa-graduation-cap fa-sm"></i>
-                      </h4>
-                    </div>
-
-                    <div class="job-post">
-                      <div class="post_body">
-                        <div
-                          class="job-header d-flex justify-content-between mt-3"
-                        >
-                          <strong>Software Engineer</strong>
-                          <p>Full-time</p>
-                        </div>
-                        <p class="company">Acme Corp</p>
-                        <p class="location">San Francisco, CA</p>
-                        <p class="date">Posted 2 days ago</p>
-                        <hr />
-                        <h5>Job Description:</h5>
-                        <p>
-                          We are seeking a talented software engineer to join
-                          our team at Acme Corp. You will work on a variety of
-                          projects and collaborate with cross-functional teams
-                          to deliver high-quality software products.
-                        </p>
-                        <h5>Responsibilities:</h5>
-                        <ul>
-                          <li>Design and develop software applications</li>
-                          <li>
-                            Collaborate with cross-functional teams to identify
-                            and solve complex problems
-                          </li>
-                          <li>
-                            Write clean, maintainable, and well-documented code
-                          </li>
-                          <li>
-                            Conduct code reviews and provide constructive
-                            feedback to other team members
-                          </li>
-                        </ul>
-                        <h5>Requirements:</h5>
-                        <ul>
-                          <li>
-                            Bachelor's or Master's degree in Computer Science or
-                            related field
-                          </li>
-                          <li>
-                            Minimum of 3 years of experience in software
-                            engineering
-                          </li>
-                          <li>
-                            Proficient in at least one programming language such
-                            as Java, Python, or JavaScript
-                          </li>
-                          <li>
-                            Experience with web development frameworks such as
-                            React or Angular
-                          </li>
-                          <li>Strong problem-solving and analytical skills</li>
-                        </ul>
-                        <p><strong>Email: </strong> Injamam00155@gmail.com</p>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">
+                                  {{-- // UserName of currentUser goes here --}}
+                                  Current User Name
+                                  
+                                </strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="row pb-5">
-                    <div
-                      class="col-2 col-lg-1 d-flex justify-content-end"
-                    ></div>
-                    <div class="col-10 col-lg-11 pe-5">
-                      <div
-                        class="post-footer d-flex justify-content-between align-items-center border-top"
-                      >
-                        <div class="d-flex">
-                          <button class="btn border-0 btn me-3">
-                            <i class="far fa-comment me-1"></i>Comment
-                          </button>
-                          <button
-                            class="btn border-0 btn bookmark-btn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            title="Bookmark"
-                          >
-                            <i class="far fa-bookmark me-1"></i>
-                            Bookmark
-                          </button>
-                        </div>
-                        <a href="#" style="text-decoration: none">
-                          <small class="text-muted">3 comments</small>
-                        </a>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                              {{-- @endif --}}
+                            {{-- @continue(true) --}}
+                          {{-- @endforeach --}}
+                    @continue(true)
+                    @endif
+                @endforeach
               </div>
+
             </div>
           </div>
         </div>
@@ -586,6 +762,9 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
+            @if($upcoming == null)
+            <h3 class="upcoming">No Upcoming Events</h3>                  
+            @else
             <div class="mt-5">
               <h3 class="upcoming">Upcoming Events</h3>
               <div class="row g-4 mt-3">
@@ -593,26 +772,26 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="{{asset('student/img/TechFest2023.jpg')}}"
+                        src="{{asset('images/'.$upcoming->eventImageURL)}}"
                         class="card-img-top"
-                        alt="Tech Fest 2023 poster"
+                        alt="{{$upcoming->eventTitle}} poster"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
+                        <h5 class="card-title">{{$upcoming->eventTitle}}</h5>
                         <p class="card-text">
                           Event Date:
                           <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
+                            >{{$upcoming->eventStartDate}} - {{$upcoming->eventEndDate}}</span
                           >
                         </p>
                         <p class="card-text">
                           Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
+                          <span class="text-muted">{{$upcoming->eventStartTime}} - {{$upcoming->eventEndTime}}</span>
                         </p>
                         <p class="card-text">
                           Event Location:
                           <span class="text-muted"
-                            >Independent University, Bangladesh</span
+                            >{{$upcoming->eventLocation}}</span
                           >
                         </p>
                       </div>
@@ -621,9 +800,11 @@
                 </div>
               </div>
             </div>
+            @endif
+            
             <div class="p-3 d-flex justify-content-end me-5">
               <a
-                href="/currentStudent/events"
+                href="/alumni/events"
                 style="color: black"
                 class="btn btn-outline-primary me-5"
                 >View all events</a

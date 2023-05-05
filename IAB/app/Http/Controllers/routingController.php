@@ -46,10 +46,23 @@ class routingController extends Controller
 
     //admin routing functions
     public function adminDashboard() {
-        $pass=  [   
-
+        $pvc=new postViewController;
+        $data= $pvc->viewPosts();
+        $upcoming=$pvc->upcomingEvent();
+        $studentPosts=$pvc->getStudentsPosts();
+        // $studentComments=$pvc->getStudentsComments();
+        // $bookmarks=$pvc->getallBookmarks();
+        // $data = $pvc->viewEvents(); 
+        // dd($data);
+        // dd(session()->all());
+        $pass=  ['data' => $data,
+                'upcoming'=> $upcoming,
+                'studentPosts'=>$studentPosts,
+                // 'studentComments'=>$studentComments,
+                // 'bookmarks'=>$bookmarks,
                 ];
-    return view('admin/home', ['data' => $pass]);
+        // dd($pass);
+        return view('admin/home', $pass);
     }
     public function adminBookmarks() {
         $pass=  [   
@@ -94,11 +107,23 @@ class routingController extends Controller
     
     //currentStudent routing functions
     public function currentStudentDashboard() {
-
-        $pass=  [   
-
+        $pvc=new postViewController;
+        $data= $pvc->viewPosts();
+        $upcoming=$pvc->upcomingEvent();
+        $studentPosts=$pvc->getStudentsPosts();
+        // $studentComments=$pvc->getStudentsComments();
+        // $bookmarks=$pvc->getallBookmarks();
+        // $data = $pvc->viewEvents(); 
+        // dd($data);
+        // dd(session()->all());
+        $pass=  ['data' => $data,
+                'upcoming'=> $upcoming,
+                'studentPosts'=>$studentPosts,
+                // 'studentComments'=>$studentComments,
+                // 'bookmarks'=>$bookmarks,
                 ];
-        return view('student/home', ['data' => $pass]);
+        // dd($pass);
+        return view('student/home', $pass);
     }
 
     public function currentStudentBookmarks() {
@@ -164,7 +189,7 @@ class routingController extends Controller
                 // 'studentComments'=>$studentComments,
                 // 'bookmarks'=>$bookmarks,
                 ];
-        dd($pass);
+        // dd($pass);
         return view('alumni/home', $pass);
         // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
     }

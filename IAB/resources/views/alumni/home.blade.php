@@ -231,23 +231,10 @@
                           <div class="col-10 col-lg-11 pe-5">
                             <div>
                               <strong class="fs-5">
-                                
-                                {{-- //Loop through the users information  --}}
-                                  {{-- @foreach()  --}}
-                                {{-- //match the userEmail with the userData --}}
-                                    {{-- @if()   --}}
-                                {{-- //Display the Username of the matching userEmail --}}
                                 Post Creator Name
-                                {{-- @endif --}}
-                                {{-- @break --}}
-                                {{-- @endforeach --}}
                               </strong>
                             </div>
                             <p class="mt-3 fs-5 p-1 post_body">
-                              {{-- Hey everyone, I'm a current student majoring in computer
-                              science and I'm looking for advice on how to break into
-                              the tech industry. Any Alumni in the tech field who have
-                              tips or advice to share? Thanks in advance! --}}
                               {{$post["data"]->postDescription}}
                             </p>
                             <div
@@ -334,9 +321,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                         @continue(true)
                     @endif
 
@@ -396,10 +380,6 @@
                         </div>
                       </div>
                     </div>
-                                            {{-- //Loop through the users information  --}}
-                        {{-- @foreach()  --}}
-                          {{-- //match the userEmail with the CommentData userEmail--}}
-                          {{-- @if()   --}}
            
                       <div class="mt-1 comments-section d-none">
                       <div>

@@ -64,7 +64,7 @@ class postCreateController extends Controller
         $queryPost->postID = post::latest('postID')->first()->postID; 
         // dd($post);
         $queryPost->save();
-        return redirect()->route('alumni.dash');
+        return redirect()->back();
     }
 
     public function jobPostCreate(Request $request)
