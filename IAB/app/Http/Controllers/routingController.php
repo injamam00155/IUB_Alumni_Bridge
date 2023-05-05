@@ -24,96 +24,141 @@ class routingController extends Controller
 {
     //login, signup and forgotPassword routing functions
     public function index() {
-        return view('index');
+        $pass=  [   
+
+                ];
+        return view('index', ['data' => $pass]);
     }
 
     public function forgotPassword() {
-        return view('forgotPassword');
+        $pass=  [   
+
+                ];
+        return view('forgotPassword', ['data' => $pass]);
     }
 
     public function signup() {
-        return view('signup');
+        $pass=  [   
+
+                ];
+        return view('signup', ['data' => $pass]);
     }
 
     //admin routing functions
     public function adminDashboard() {
-        $posts = Post::all();
-        $data = [
-            'name' => 'John Doe',
-            'age' => 25,
-            'email' => 'johndoe@example.com'
-        ];
-        return view('admin/home', ['data' => $data]);
+        $pass=  [   
+
+                ];
+        return view('admin/home', ['data' => $pass]);
         }
         public function adminBookmarks() {
-            return view('admin/bookmarks');
+            $pass=  [   
+
+                    ];
+            return view('admin/bookmarks', ['data' => $pass]);
         }
         public function adminEvents() {
-            return view('admin/events');
+            $pass=  [   
+
+                    ];
+            return view('admin/events', ['data' => $pass]);
         }
         public function adminJobs() {
-            return view('admin/jobs');
+            $pass=  [   
+
+                    ];
+            return view('admin/jobs', ['data' => $pass]);
         }
         public function adminProfile() {
-            return view('admin/profile');
+            $pass=  [   
+
+                    ];
+            return view('admin/profile', ['data' => $pass]);
         }
         public function adminAwards() {
-            return view('admin/awards');
+            $pass=  [   
+
+                    ];
+            return view('admin/awards', ['data' => $pass]);
         }
     
     //currentStudent routing functions
     public function currentStudentDashboard() {
-        $posts = Post::all();
-        $data = [
-            'name' => 'John Doe',
-            'age' => 25,
-            'email' => 'johndoe@example.com'
-        ];
-        return view('student/home', ['data' => $data]);
+
+        $pass=  [   
+
+                ];
+        return view('student/home', ['data' => $pass]);
     }
 
     public function currentStudentBookmarks() {
-        return view('student/bookmarks');
+        $pass=  [   
+
+                ];
+        return view('student/bookmarks', ['data' => $pass]);
     }
     public function currentStudentEvents() {
-        return view('student/events');
+        $pass=  [   
+
+                ];
+        return view('student/events', ['data' => $pass]);
     }
     public function currentStudentJobs() {
-        return view('student/jobs');
+        $pass=  [   
+
+                ];
+        return view('student/jobs',['data' => $pass]);
     }
     public function currentStudentProfile() {
-        return view('student/profile');
+        $pass=  [   
+
+                ];
+        return view('student/profile',['data' => $pass]);
     }
     public function currentStudentAwards() {
-        return view('student/awards');
+        $pass=  [   
+
+                ];
+        return view('student/awards',['data' => $pass]);
     }
     
     //alumni routing functions
     public function alumniDashboard() {
-        $data= Post::all();
+        // $data= Post::all();
         // dd($data[3]->eventPost);
         // $data= EventPost::all();
         $pvc=new postViewController;
         $data= $pvc->viewPosts();
         $upcoming=$pvc->upcomingEvent();
-
+        $studentPosts=$pvc->getStudentsPosts();
+        $studentComments=$pvc->getStudentsComments();
+        $bookmarks=$pvc->getallBookmarks();
         // $data = $pvc->viewEvents(); 
         // dd($data);
         // dd(session()->all());
         $pass=  ['data' => $data,
                 'event'=> $upcoming,
+                'studentPosts',$studentPosts,
+                'studentComments',$studentComments,
+                'bookmarks',$bookmarks,
                 ];
         return view('alumni/home', $pass);
         // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
     }
     
     public function alumniBookmarks() {
-        return view('alumni/bookmarks');
+        $pass=  [   
+
+                ];
+        return view('alumni/bookmarks',['data' => $pass]);
     }
     public function alumniEvents() {
         $pvc = new postViewController;
         $data = $pvc->viewEvents(); 
         // dd($data);
+        $pass=  [   
+
+                ];
         return view('alumni/events', ['data' => $data]);
     }
 
@@ -121,12 +166,21 @@ class routingController extends Controller
         // $pvc = new postViewController;
         // $data = $pvc->viewJobs(); 
         // return view('alumni/jobs', ['data' => $data]);
+        $pass=  [   
+
+                ];
         return view('alumni/jobs');
     }
     public function alumniProfile() {
+        $pass=  [   
+
+                ];
         return view('alumni/profile');
     }
     public function alumniAwards() {
+        $pass=  [   
+
+                ];
         return view('alumni/awards');
     }
 }

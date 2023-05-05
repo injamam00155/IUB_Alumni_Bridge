@@ -25,7 +25,7 @@ class postViewController extends Controller
     public function viewPosts()
     {
             // $posts=Post::all();
-            $orderedPostIds = Post::orderBy('postID')->pluck('postID');
+            $orderedPostIds = Post::orderByDesc('postID')->pluck('postID');
             $mergedResults = [];
 
             foreach ($orderedPostIds as $postId) {
@@ -81,7 +81,24 @@ class postViewController extends Controller
         return $data;
     }
 
-    
+    public function getStudentsPosts(){
+        return Student::join('posts', 'students.id', '=', 'posts.student_id')
+        ->selectRaw('CONCAT(students.firstName, " ", students.lastName) as fullName, students.profilePictureURL, posts.postID')
+        ->get();
+    }
+
+    public function getStudentComments(){
+        return Comment::join('students', 'comments.userEmail', '=', 'students.userEmail')
+        ->select('comments.commentID', 'comments.description', 'students.firstName', 'students.lastName', 'students.profilePictureURL')
+        ->orderBy('comments.created_at', 'ASC')
+        ->get();
+    }
+
+    public function getAllBookmarks(){Bookmark::select('bookmarkID', 'userEmail', 'postID')
+        ->orderByDesc('created_at')
+        ->orderByDesc('updated_at')
+        ->get();
+    }
 
     // public function viewJobs() {
     //     $data= JobPost::orderByDesc('eventDate')->get();;
