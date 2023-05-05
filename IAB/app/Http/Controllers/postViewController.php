@@ -82,7 +82,7 @@ class postViewController extends Controller
     }
 
     public function getStudentsPosts(){
-        return Student::join('posts', 'students.id', '=', 'posts.student_id')
+        return Student::join('posts', 'students.userEmail', '=', 'posts.userEmail')
         ->selectRaw('CONCAT(students.firstName, " ", students.lastName) as fullName, students.profilePictureURL, posts.postID')
         ->get();
     }
