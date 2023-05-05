@@ -152,7 +152,7 @@ class routingController extends Controller
         $pvc=new postViewController;
         $data= $pvc->viewPosts();
         $upcoming=$pvc->upcomingEvent();
-        // $studentPosts=$pvc->getStudentsPosts();
+        $studentPosts=$pvc->getStudentsPosts();
         // $studentComments=$pvc->getStudentsComments();
         // $bookmarks=$pvc->getallBookmarks();
         // $data = $pvc->viewEvents(); 
@@ -160,11 +160,11 @@ class routingController extends Controller
         // dd(session()->all());
         $pass=  ['data' => $data,
                 'upcoming'=> $upcoming,
-                // 'studentPosts'=>$studentPosts,
+                'studentPosts'=>$studentPosts,
                 // 'studentComments'=>$studentComments,
                 // 'bookmarks'=>$bookmarks,
                 ];
-        // dd($pass);
+        dd($pass);
         return view('alumni/home', $pass);
         // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
     }
