@@ -95,11 +95,10 @@ class postCreateController extends Controller
             'updated_at' => now(),
         ]);
         
-        // if($request->hasFile('awardPosterImage')){
+        if($request->hasFile('awardPosterImage')){
             $image = $request->file('awardPosterImage');
             $imagePath = $image->getClientOriginalName();
-            // $awardPost->awardImageURL = asset($imagePath);
-            Storage::disk('public')->put('images', $image);
+            $image->move(public_path('images'), $imagePath);
         
             $postID = Post::latest('postID')->first()->postID;
 
@@ -112,75 +111,72 @@ class postCreateController extends Controller
                 'postID' => $postID,
 
             ]);
-        // }
+        }
         // dd($awardPost);
         return redirect()->route('admin.awards')->with('msg','Award Posted Successfully');
     }
 
-    // public function awardPostCreate(Request $request)
-    // {
-    //     $validatedData = $request->validate([
-    //         'awardTitle' => 'required|string|max:255',
-    //         'awardDate' => 'required|date|max:255',
-    //         'awardLocation' => 'required|string|max:255',
-    //         'awardDescription' => 'required|string',
-    //         'awardPosterImage' => 'required|string',
-    //     ]);
-
-    //     $post = new post;
-    //     $post->created_at = now();
-    //     $post->updated_at = now();
-    //     $post->save();
-
-    //     $awardPost = new awardPost;
-    //     $awardPost->awardTitle = $validatedData['awardTitle'];
-    //     $awardPost->awardDescription = $validatedData['awardDescription'];
-    //     $awardPost->awardDate	 = $validatedData['awardDate'];
-    //     $awardPost->awardImageURL = $validatedData['awardPosterImage'];
-    //     // $awarPost->jobDescription = $validatedData['awardLocation'];
-
-    //     $awardPost->postID = post::latest('postID')->first()->postID; 
-        
-    //     $awardPost->save();
-    //     // dd($post);
-    //     // dd($jobPost);
-    //     return redirect()->route('admin.awards')->with('msg','Award Posted Successfully');
-    // }
+    
 
     public function eventPostCreate(Request $request)
     {
         $validatedData = $request->validate([
             'eventTitle' => 'required|string|max:255',
-            'eventStartTime' => 'required|date|max:255',
-            'eventEndTime' => 'required|date|max:255',
-            'eventStartDate' => 'required|string|max:255',
-            'eventEndDate' => 'required|string',
+            'eventStartTime' => 'required',
+            'eventEndTime' => 'required',
+            'eventStartDate' => 'required|date|max:255',
+            'eventEndDate' => 'required|date|max:255',
             'eventLocation' => 'required|string',
             'eventDescription' => 'required|string',
-            'eventPosterImage' => 'required|string',
+            'eventPosterImage' => 'required',
         ]);
 
-        $post = new post;
-        $post->created_at = now();
-        $post->updated_at = now();
-        $post->save();
+        Post::create([
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        // $post = new post;
+        // $post->created_at = now();
+        // $post->updated_at = now();
+        // $post->save();
 
-        $eventPost = new awardPost;
-        $eventPost->eventTitle = $validatedData['eventTitle'];
-        $eventPost->eventDescription = $validatedData['awardDescription'];
-        $eventPost->eventStartDate	 = $validatedData['eventStartTime'];
-        $eventPost->eventEndDate	 = $validatedData['eventEndDate'];
-        $eventPost->eventStartTime	 = $validatedData['eventStartTime'];
-        $eventPost->eventEndTime	 = $validatedData['eventEndTime'];
-        $eventPost->eventImageURL = $validatedData['eventPosterImage'];
-        $eventPost->eventLocation = $validatedData['eventLocation'];
-
-        $eventPost->postID = post::latest('postID')->first()->postID; 
+        // if($request->hasFile('eventPosterImage')){
+            $image = $request->file('eventPosterImage');
+            $imagePath = $image->getClientOriginalName();
+            $image->move(public_path('images'), $imagePath);
         
-        $eventPost->save();
+            $postID = Post::latest('postID')->first()->postID;
+
+            EventPost::create([
+                'eventTitle' => $request->input('eventTitle'),
+                'eventDescription' => $request->input('eventDescription'),
+                'eventStartDate' => $request->input('eventStartDate'),
+                'eventEndDate' => $request->input('eventEndDate'),
+                'eventStartTime' => $request->input('eventStartTime'),
+                'eventEndTime' => $request->input('eventEndTime'),
+                'eventLocation' => $request->input('eventLocation'),
+                'eventImageURL' => $imagePath,
+                'postID' => $postID,
+
+            ]);
+
+            // $eventPost = new EventPost;
+            // $eventPost->eventTitle = $validatedData['eventTitle'];
+            // $eventPost->eventDescription = $validatedData['awardDescription'];
+            // $eventPost->eventStartDate	 = $validatedData['eventStartTime'];
+            // $eventPost->eventEndDate	 = $validatedData['eventEndDate'];
+            // $eventPost->eventStartTime	 = $validatedData['eventStartTime'];
+            // $eventPost->eventEndTime	 = $validatedData['eventEndTime'];
+            // $eventPost->eventImageURL = $validatedData[$imagePath];
+            // $eventPost->eventLocation = $validatedData['eventLocation'];
+
+            // $eventPost->postID = post::latest('postID')->first()->postID; 
+            
+            // $eventPost->save();
+        // }
         // dd($post);
         // dd($jobPost);
-        return redirect()->route('alumni.jobs')->with('msg','Job Posted Successfully');
+        return redirect()->route('admin.events')->with('msg','Job Posted Successfully');
     }
 
 

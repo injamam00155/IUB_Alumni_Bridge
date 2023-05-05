@@ -251,8 +251,8 @@
                     <a class="postcard__img_link" href="#">
                       <img
                         class="postcard__img"
-                        src="{{$awards->awardImageURL}}"
-                        alt="{{$awards->awardImageURL}}"
+                        src="{{asset('images/'.$awards->awardImageURL)}}"
+                        alt="{{$awards->awardTitle}} poster picture"
                       />
                     </a>
                     <div class="postcard__text t-dark">
