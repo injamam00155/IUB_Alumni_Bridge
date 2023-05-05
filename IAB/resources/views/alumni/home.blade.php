@@ -273,10 +273,7 @@
                             </div>
                           </div>
                         </div>
-                        {{-- //Loop through the users information  --}}
-                        {{-- @foreach()  --}}
-                          {{-- //match the userEmail with the CommentData userEmail--}}
-                          {{-- @if()   --}}
+                        
            
                       <div class="mt-1 comments-section d-none">
                       <div>
