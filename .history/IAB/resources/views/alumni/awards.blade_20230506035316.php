@@ -7,9 +7,9 @@
     <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
     <title>IUB Alumni Bridge</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href={{asset('home.css')}} />
     <!-- JS -->
-
+    
     <!-- BOOTSTRAP CS-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -30,6 +30,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div class="container-fluid">
       <div class="row">
@@ -40,72 +41,77 @@
           >
             <!-- LOGO -->
 
-            <a href="home.html" class="my-3 ms-4">
+            <a href="/alumni/dashboard" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('images\iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
             </a>
             <!-- NAV LINKS -->
-            <a href="home.html" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-house fs-4"></i>
-              <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Home</span>
+            <a href="/alumni/dashboard" class="btn my-3 nav_link" type="button">
+              <i class="fa-solid fa-house fs-5"></i>
+              <span class="fs-6 d-none d-xl-inline ms-2">Home</span>
             </a>
 
-            <a href="event.html" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/events" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
-            <a href="awards.html" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/awards" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-trophy fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Award</span>
             </a>
-            <a href="jobs.html" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
-            <a href="profile.html" class="btn my-3 nav_link" type="button">
+            <a href="/alumni/profile" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-user fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
             </a>
-            <a href="bookmarked.html" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-bookmark fs-5"></i>
-              <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
+            <a href="/alumni/bookmarks" class="btn my-3 nav_link" type="button">
+              <i class="fa-solid fa-bookmark fs-4"></i>
+              <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Bookmark</span>
             </a>
-            <a href="../index.html" class="btn my-3 nav_link" type="button">
+            <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Log out</span>
             </a>
 
             <a
-              href="profile.html"
+              href="/alumni/profile"
               class="btn profile_icon position-absolute"
               type="button"
             >
-              <img
-                class="img-fluid ms-2"
-                src="img/profile_img.jpg"
-                alt="profile img"
-                style="width: 40px; border-radius: 50%"
-              />
+            @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+                @break
+                @else 
+                <img
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </a>
           </div>
         </div>
         <!-- ---HOME FEED--- -->
         <div class="col-10 col-lg-8 col-xl-7 border-end">
           <div class="row align-items-center mt-3 bg-white sticky-top py-3">
-            <div class="col-5 col-lg-11">
-              <strong class="fs-4 p-2 ms-3">Home</strong>
-            </div>
-            <div class="col-5 d-lg-none">
-              <div class="mt-3">
-                <input
-                  type="text"
-                  class="form-control search_input bg-gray rounded-pill"
-                  placeholder=" Search"
-                />
-              </div>
+            <div class="col-10 col-lg-11">
+              <strong class="fs-4 p-2 ms-5">Bookmarks</strong>
             </div>
             <!-- NOTIFICATION -->
             <div class="col-2 col-lg-1">
@@ -126,13 +132,13 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/Akib Raihan .jpeg"
-                        alt="User Display Picture"
+                        src="img/profile_img.jpg"
+                        alt="User Image"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Akib</strong> commented on your post
+                        ><strong>Shabab</strong> commented on your post
                         <span class="text-muted ms-5">2m ago</span></span
                       >
                     </a>
@@ -169,38 +175,14 @@
                       >
                     </a>
                   </li>
-                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
                   <li>
                     <a class="dropdown-item" href="#">See all notifications</a>
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
-          <!-- What's on your mind section -->
-          <div class="row mt-4">
-            <div class="col-2 col-lg-1 d-flex justify-content-end">
-              <img
-                src="img/profile_img.jpg"
-                alt="profile img"
-                class="img-fluid ms-2"
-                style="width: 50px; height: 50px; border-radius: 50%"
-              />
-            </div>
-            <div class="col-10 col-lg-11 pe-5">
-              <textarea
-                class="form-control bg-gray p-3"
-                placeholder="Ask a question and start a discussion..."
-                style="border-radius: 20px"
-              ></textarea>
-              <button
-                id="post-btn"
-                type="button"
-                class="btn my-2"
-                style="background-color: #015ea0; color: #fff"
-              >
-                Post
-              </button>
             </div>
           </div>
           <!-- POST section -->
@@ -211,7 +193,7 @@
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
-                      src="img/Sarah_Student.jpg"
+                      src="{{asset('alumni/img/Sarah_Student.jpg')}}"
                       alt="user Display Picture"
                       class="img-fluid ms-2"
                       style="width: 50px; height: 50px; border-radius: 50%"
@@ -231,7 +213,7 @@
                       class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
                     >
                       <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
+                        <button class="btn border-0 btn me-3 comment-btn">
                           <i class="far fa-comment me-1"></i>Comment
                         </button>
                         <button
@@ -248,190 +230,69 @@
                         <small class="text-muted">3 comments</small>
                       </a>
                     </div>
+                    {{-- COMMENT SECTION START --}}
+                    <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="{{asset('alumni/img/Sarah_Student.jpg')}}"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Anika</strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Sarah Binte Mahbub</strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                      {{-- COMMENT SECTION END --}}
                   </div>
                 </div>
               </div>
-              <!-- EVENT 1 -->
-              <div class="event mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="img/IUBLogo.png"
-                      alt="User Display Picture"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5 fs-5">
-                    <strong class="fs-5">IUB</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <section class="light mt-3">
-                      <article class="postcard light blue">
-                        <a class="postcard__img_link" href="#">
-                          <img
-                            class="postcard__img"
-                            src="img/event1.jpg"
-                            alt="League of Enghineers poster picture"
-                          />
-                        </a>
-                        <div class="postcard__text t-dark">
-                          <h1 class="postcard__title blue ms-2">
-                            <h3 href="#" class="ms-1">
-                              League of Engineers - Season 1
-                            </h3>
-                          </h1>
-                          <div class="postcard__subtitle small">
-                            <i class="fas fa-calendar-alt me-1"></i>March 16,
-                            2023 - March 18, 2023
 
-                            <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
-                            11:00 AM - 6:30 PM
-                            <i
-                              class="fa-solid fa-location-dot fa-sm ms-2 me-1"
-                            ></i>
-                            Offside - Home of Football
-                          </div>
-                          <div class="postcard__bar"></div>
-                          <div class="postcard__preview-txt">
-                            Welcome to League of Engineers👷! Get ready for an
-                            action-packed tournament🏟️ filled with exciting
-                            matches and fierce competition as teams battle it
-                            out to claim the title of football champions. The
-                            tournament will take place from 16th March to 18th
-                            March at Offside from 🕚11 AM to 🕡6.30 PM. This
-                            tournament is open to all students of SETS,
-                            regardless of experience or skill level. It's a
-                            great opportunity to get active, meet new people,
-                            and have fun while showcasing your footballtalents.
-                            So what are you waiting for? Gather your friends,
-                            put together a team, register and come show us what
-                            you've got!
-                          </div>
-                        </div>
-                      </article>
-                    </section>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end"></div>
-                  <div class="col-10 col-lg-11 pe-5">
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
-                      </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- EVENT 2 -->
-              <div class="event mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="img/IUBLogo.png"
-                      alt="User Display Picture"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5 fs-5">
-                    <strong class="fs-5">IUB</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <section class="light mt-3">
-                      <article class="postcard light blue">
-                        <a class="postcard__img_link" href="#">
-                          <img
-                            class="postcard__img"
-                            src="img/Career_Fair_2023.jpg"
-                            alt="Career and Networking Day 2023 Poster"
-                          />
-                        </a>
-                        <div class="postcard__text t-dark">
-                          <h1 class="postcard__title blue ms-2">
-                            <h3 href="#" class="ms-1">
-                              Career and Networking Day 2023
-                            </h3>
-                          </h1>
-                          <div class="postcard__subtitle small">
-                            <i class="fas fa-calendar-alt me-1"></i>February 08,
-                            2023
-
-                            <i class="fa-solid fa-clock fa-sm ms-2 me-1"></i>
-                            10:00 AM - 4:00 PM
-                            <i
-                              class="fa-solid fa-location-dot fa-sm ms-2 me-1"
-                            ></i>
-                            Independent University, Bangladesh
-                          </div>
-                          <div class="postcard__bar"></div>
-                          <div class="postcard__preview-txt">
-                            Our annual Career Fair is back and bigger than ever!
-                            This event is a great opportunity for Alumni and
-                            current students to meet with top employers from
-                            various industries. Dress to impress and bring
-                            plenty of copies of your resume. Don't miss out on
-                            this chance to kick-start your career!
-                          </div>
-                        </div>
-                      </article>
-                    </section>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end"></div>
-                  <div class="col-10 col-lg-11 pe-5">
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
-                      </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <!-- JOB OFFER -->
               <div class="job_post mt-5">
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
-                      src="img/profile_img2.jpg"
+                      src="{{asset('alumni/img/profile_img2.jpg')}}"
                       alt="User profile picture"
                       class="img-fluid ms-2"
                       style="width: 50px; height: 50px; border-radius: 50%"
@@ -502,34 +363,80 @@
                         <p><strong>Email: </strong> Injamam00155@gmail.com</p>
                       </div>
                     </div>
-                  </div>
-                  <div class="row pb-5">
                     <div
-                      class="col-2 col-lg-1 d-flex justify-content-end"
-                    ></div>
-                    <div class="col-10 col-lg-11 pe-5">
-                      <div
-                        class="post-footer d-flex justify-content-between align-items-center border-top"
-                      >
-                        <div class="d-flex">
-                          <button class="btn border-0 btn me-3">
-                            <i class="far fa-comment me-1"></i>Comment
-                          </button>
-                          <button
-                            class="btn border-0 btn bookmark-btn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            title="Bookmark"
-                          >
-                            <i class="far fa-bookmark me-1"></i>
-                            Bookmark
-                          </button>
-                        </div>
-                        <a href="#" style="text-decoration: none">
-                          <small class="text-muted">3 comments</small>
-                        </a>
+                      class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
+                    >
+                      <div class="d-flex">
+                        <button class="btn border-0 btn me-3 comment-btn">
+                          <i class="far fa-comment me-1"></i>Comment
+                        </button>
+                        <button
+                          class="btn border-0 btn bookmark-btn"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Bookmark"
+                        >
+                          <i class="far fa-bookmark me-1"></i>
+                          Bookmark
+                        </button>
                       </div>
+                      <a href="#" style="text-decoration: none">
+                        <small class="text-muted">3 comments</small>
+                      </a>
                     </div>
+                    {{-- COMMENT SECTION START --}}
+                    <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Anika</strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Sarah Binte Mahbub</strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                      {{-- COMMENT SECTION END --}}
                   </div>
                 </div>
               </div>
@@ -550,6 +457,9 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
+            @if($upcoming == null)
+            <h3 class="upcoming">No Upcoming Events</h3>                  
+            @else
             <div class="mt-5">
               <h3 class="upcoming">Upcoming Events</h3>
               <div class="row g-4 mt-3">
@@ -557,26 +467,26 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="img/TechFest2023.jpg"
+                        src="{{asset('images/'.$upcoming->eventImageURL)}}"
                         class="card-img-top"
-                        alt="Tech Fest 2023 poster"
+                        alt="{{$upcoming->eventTitle}} poster"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
+                        <h5 class="card-title">{{$upcoming->eventTitle}}</h5>
                         <p class="card-text">
                           Event Date:
                           <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
+                            >{{$upcoming->eventStartDate}} - {{$upcoming->eventEndDate}}</span
                           >
                         </p>
                         <p class="card-text">
                           Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
+                          <span class="text-muted">{{$upcoming->eventStartTime}} - {{$upcoming->eventEndTime}}</span>
                         </p>
                         <p class="card-text">
                           Event Location:
                           <span class="text-muted"
-                            >Independent University, Bangladesh</span
+                            >{{$upcoming->eventLocation}}</span
                           >
                         </p>
                       </div>
@@ -585,9 +495,10 @@
                 </div>
               </div>
             </div>
+            @endif
             <div class="p-3 d-flex justify-content-end me-5">
               <a
-                href="event.html"
+                href="/alumni/events"
                 style="color: black"
                 class="btn btn-outline-primary me-5"
                 >View all events</a
@@ -599,11 +510,12 @@
     </div>
 
     <!-- BOOTSTRAP JS -->
-    <script src="app.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src={{asset('js/app.js')}}></script>  
   </body>
 </html>

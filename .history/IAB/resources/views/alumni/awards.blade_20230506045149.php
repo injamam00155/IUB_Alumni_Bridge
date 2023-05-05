@@ -7,9 +7,9 @@
     <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
     <title>Awards</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="events.css" />
+    <link rel="stylesheet" href={{asset('events.css')}} />
     <!-- JS -->
-    <script src="app.js"></script>
+    
     <!-- BOOTSTRAP CS-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -41,55 +41,69 @@
           >
             <!-- LOGO -->
 
-            <a href="home.html" class="my-3 ms-4">
+            <a href="/currentStudent/dashboard" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('images\iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
             </a>
             <!-- NAV LINKS -->
-            <a href="home.html" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/dashboard" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-house fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Home</span>
             </a>
 
-            <a href="event.html" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/events" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-calendar-check fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
-            <a href="awards.html" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/awards" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-trophy fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Award</span>
             </a>
-            <a href="jobs.html" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
-            <a href="profile.html" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/profile" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-user fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
             </a>
-            <a href="bookmarked.html" class="btn my-3 nav_link" type="button">
+            <a href="/currentStudent/bookmarks" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-bookmark fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
-            <a href="../index.html" class="btn my-3 nav_link" type="button">
+            <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Log out</span>
             </a>
 
             <a
-              href="profile.html"
+              href="/currentStudent/profile"
               class="btn profile_icon position-absolute"
               type="button"
             >
-              <img
-                class="img-fluid ms-2"
-                src="img/profile_img.jpg"
-                alt="profile img"
-                style="width: 40px; border-radius: 50%"
-              />
+            @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+                @break
+                @else 
+                <img
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </a>
           </div>
         </div>
@@ -118,13 +132,13 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/Akib Raihan .jpeg"
+                        src="img/profile_img.jpg"
                         alt="User Image"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Akib</strong> commented on your post
+                        ><strong>Shabab</strong> commented on your post
                         <span class="text-muted ms-5">2m ago</span></span
                       >
                     </a>
@@ -171,163 +185,36 @@
               </div>
             </div>
           </div>
-          <!-- What's on your mind section -->
-          <!-- <div class="row mt-4">
-            <div class="col-2 col-lg-1 d-flex justify-content-end">
-              <img
-                src="img/profile_img.jpg"
-                alt="profile img"
-                class="img-fluid ms-2"
-                style="width: 50px; height: 50px; border-radius: 50%"
-              />
-            </div>
-            <div class="col-10 col-lg-11 pe-5">
-              <form>
-                <div class="form-group">
-                  <label for="eventTitle">Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventTitle"
-                    placeholder="Enter award title"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventTime">Time</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventTime"
-                    placeholder="Enter award time"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventDate">Date</label>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="eventDate"
-                    placeholder="Enter award date"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventLocation">Location</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventLocation"
-                    placeholder="Enter award location"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventDescription">Description</label>
-                  <textarea
-                    class="form-control"
-                    id="eventDescription"
-                    placeholder="Enter award description"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="posterImage">Poster Image</label>
-                  <input
-                    type="file"
-                    class="form-control-file"
-                    id="posterImage"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </div> -->
+          
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
               <!-- AWARDS LIST -->
               <section class="light mt-5">
                 <div class="mt-3">
+                  @foreach($data as $awards)
                   <article class="postcard light blue">
                     <a class="postcard__img_link" href="#">
                       <img
                         class="postcard__img"
-                        src="img/technocrats.jpg"
-                        alt="Technocrats Winner Post"
+                        src="{{asset('images/'.$awards->awardImageURL)}}"
+                        alt="{{$awards->awardTitle}} poster picture"
                       />
                     </a>
                     <div class="postcard__text t-dark">
                       <h1 class="postcard__title blue ms-2">
                         <h3 href="#">
-                          Champion of National Innovation Competition
+                          {{$awards->awardTitle}}
                         </h3>
                       </h1>
 
                       <div class="postcard__bar"></div>
                       <div class="postcard__preview-txt">
-                        On 15th March 2023, the IUB CSE department participated
-                        in the Technocrats V.1 National Innovation Competition,
-                        hosted by IUBAT. Students from various Colleges,
-                        Polytechnics and Universities came together to showcase
-                        their innovative ideas and compete against each other.
-                        This year total 117 teams participated in different
-                        segments of this event.
+                        {{$awards->awardDescription}}
                       </div>
                     </div>
                   </article>
-                  <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="img/programming contest.jpg"
-                        alt="National Programming Contest Post"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#">
-                          25th place at National Photography Competition
-                        </h3>
-                      </h1>
-
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        IUB achieved 25th place in the National Girls'
-                        Programming Contest! Congratulations to Fatema Tuj
-                        Johora, Zaara Rahman and Tausia Tahsin!
-                      </div>
-                    </div>
-                  </article>
-                  <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="img/Gold medal.jpg"
-                        alt="Inter University Gold Medal at Table Tennis"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#">
-                          Gold in Table Tennis at Bangabandhu Inter University
-                          Sports Championship
-                        </h3>
-                      </h1>
-
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        IUB students have won gold in the mixed doubles table
-                        tennis event beating Jagannath University in straight
-                        sets in the ongoing Bangabandhu Inter-University Sports
-                        Championship.
-                        <br />
-                        The IUB mixed doubles team comprised Sharmin Islam
-                        Shroddha, student of Computer Science and Engineering,
-                        and Md. Rifat Mahmud Sabbir, student of Human Resources
-                        Management. The final match was held at the Ashulia
-                        campus of Daffodil International University on Saturday,
-                        September 17, 2022.
-                      </div>
-                    </div>
-                  </article>
+                  @endforeach
                 </div>
               </section>
             </div>
@@ -347,6 +234,9 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
+            @if($upcoming == null)
+            <h3 class="upcoming">No Upcoming Events</h3>                  
+            @else
             <div class="mt-5">
               <h3 class="upcoming">Upcoming Events</h3>
               <div class="row g-4 mt-3">
@@ -354,26 +244,26 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="img/TechFest2023.jpg"
+                        src="{{asset('images/'.$upcoming->eventImageURL)}}"
                         class="card-img-top"
-                        alt="Tech Fest 2023 poster"
+                        alt="{{$upcoming->eventTitle}} poster"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
+                        <h5 class="card-title">{{$upcoming->eventTitle}}</h5>
                         <p class="card-text">
                           Event Date:
                           <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
+                            >{{$upcoming->eventStartDate}} - {{$upcoming->eventEndDate}}</span
                           >
                         </p>
                         <p class="card-text">
                           Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
+                          <span class="text-muted">{{$upcoming->eventStartTime}} - {{$upcoming->eventEndTime}}</span>
                         </p>
                         <p class="card-text">
                           Event Location:
                           <span class="text-muted"
-                            >Independent University, Bangladesh</span
+                            >{{$upcoming->eventLocation}}</span
                           >
                         </p>
                       </div>
@@ -381,14 +271,15 @@
                   </a>
                 </div>
               </div>
-              <div class="p-3 d-flex justify-content-end me-5">
-                <a
-                  href="event.html"
-                  style="color: black"
-                  class="btn btn-outline-primary me-5"
-                  >View all events</a
-                >
-              </div>
+            </div>
+            @endif
+            <div class="p-3 d-flex justify-content-end me-5">
+              <a
+                href="/currentStudent/events"
+                style="color: black"
+                class="btn btn-outline-primary me-5"
+                >View all events</a
+              >
             </div>
           </div>
         </div>
@@ -401,5 +292,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src={{asset('js/app.js')}}></script> 
   </body>
 </html>

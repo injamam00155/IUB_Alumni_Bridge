@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
-    <title>IUB Alumni Bridge</title>
+    <title>Awards</title>
     <!-- CSS -->
-    <link rel="stylesheet" href={{asset('home.css')}} />
+    <link rel="stylesheet" href={{asset('events.css')}} />
     <!-- JS -->
     
     <!-- BOOTSTRAP CS-->
@@ -59,8 +59,8 @@
               <span class="fs-6 d-none d-xl-inline ms-2">Events</span>
             </a>
             <a href="/alumni/awards" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-trophy fs-5"></i>
-              <span class="fs-6 d-none d-xl-inline ms-2">Award</span>
+              <i class="fa-solid fa-trophy fs-4"></i>
+              <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Award</span>
             </a>
             <a href="/alumni/jobs" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-briefcase fs-5"></i>
@@ -71,8 +71,8 @@
               <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
             </a>
             <a href="/alumni/bookmarks" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-bookmark fs-4"></i>
-              <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Bookmark</span>
+              <i class="fa-solid fa-bookmark fs-5"></i>
+              <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
             </a>
             <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
@@ -111,7 +111,7 @@
         <div class="col-10 col-lg-8 col-xl-7 border-end">
           <div class="row align-items-center mt-3 bg-white sticky-top py-3">
             <div class="col-10 col-lg-11">
-              <strong class="fs-4 p-2 ms-5">Bookmarks</strong>
+              <strong class="fs-4 p-2 ms-5">Awards</strong>
             </div>
             <!-- NOTIFICATION -->
             <div class="col-2 col-lg-1">
@@ -185,261 +185,38 @@
               </div>
             </div>
           </div>
+          
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
-              <!-- POST/QUERIES -->
-              <div class="post mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="{{asset('alumni/img/Sarah_Student.jpg')}}"
-                      alt="user Display Picture"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5">
-                    <div>
-                      <strong class="fs-5">Sarah Binte Mahbub</strong>
-                    </div>
-                    <p class="mt-3 fs-5 p-1 post_body">
-                      Hey everyone, I'm a current student majoring in computer
-                      science and I'm looking for advice on how to break into
-                      the tech industry. Any Alumni in the tech field who have
-                      tips or advice to share? Thanks in advance!
-                    </p>
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3 comment-btn">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
-                      </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
-                    </div>
-                    {{-- COMMENT SECTION START --}}
-                    <div class="mt-1 comments-section d-none">
-                      <div>
-                        <div class="row p-3" style="background-color: #F0F0F0">
-                            <div class="col-2 col-lg-1 d-flex justify-content-end">
-                              <img
-                                src="{{asset('alumni/img/Sarah_Student.jpg')}}"
-                                alt="user Display Picture"
-                                class="img-fluid ms-2"
-                                style="width: 30px; height: 30px; border-radius: 50%"
-                              />
-                            </div>
-                            <div class="col-10 col-lg-11 pe-5">
-                              <div>
-                                <strong class="fs-6">Anika</strong>
-                              </div>
-                              <p class="fs-6 p-2 post_body">
-                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
-                              </p> 
-                            </div>
-                          </div>
-                      </div>
-                    <div>
-                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
-                            <div class="col-2 col-lg-1 d-flex justify-content-end">
-                              <img
-                                src="img/Sarah_Student.jpg"
-                                alt="user Display Picture"
-                                class="img-fluid ms-2"
-                                style="width: 30px; height: 30px; border-radius: 50%"
-                              />
-                            </div>
-                            <div class="col-10 col-lg-11 pe-5">
-                              <div>
-                                <strong class="fs-6">Sarah Binte Mahbub</strong>
-                              </div>
-                              <form action="">
-                                  <div class="input-group mb-2">
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      id="postComment"
-                                      name="postComment"
-                                      placeholder="Add your comment"
-                                    />
-                                  </div>
-                                  <button type="submit" class="btn btn-primary">Comment</button>
-                              </form>
-                            </div>
-                          </div>
-                      </div>
-                      </div>
-                      {{-- COMMENT SECTION END --}}
-                  </div>
-                </div>
-              </div>
+              <!-- AWARDS LIST -->
+              <section class="light mt-5">
+                <div class="mt-3">
+                  @foreach($data as $awards)
+                  <article class="postcard light blue">
+                    <a class="postcard__img_link" href="#">
+                      <img
+                        class="postcard__img"
+                        src="{{asset('images/'.$awards->awardImageURL)}}"
+                        alt="{{$awards->awardTitle}} poster picture"
+                      />
+                    </a>
+                    <div class="postcard__text t-dark">
+                      <h1 class="postcard__title blue ms-2">
+                        <h3 href="#">
+                          {{$awards->awardTitle}}
+                        </h3>
+                      </h1>
 
-              <!-- JOB OFFER -->
-              <div class="job_post mt-5">
-                <div class="row">
-                  <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="{{asset('alumni/img/profile_img2.jpg')}}"
-                      alt="User profile picture"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
-                  </div>
-                  <div class="col-10 col-lg-11 pe-5 fs-5">
-                    <div>
-                      <h4>
-                        <strong class="fs-5">Injamam Ul Haque</strong>
-                        <i class="fa-solid fa-graduation-cap fa-sm"></i>
-                      </h4>
-                    </div>
-
-                    <div class="job-post">
-                      <div class="post_body">
-                        <div
-                          class="job-header d-flex justify-content-between mt-3"
-                        >
-                          <strong>Software Engineer</strong>
-                          <p>Full-time</p>
-                        </div>
-                        <p class="company">Acme Corp</p>
-                        <p class="location">San Francisco, CA</p>
-                        <p class="date">Posted 2 days ago</p>
-                        <hr />
-                        <h5>Job Description:</h5>
-                        <p>
-                          We are seeking a talented software engineer to join
-                          our team at Acme Corp. You will work on a variety of
-                          projects and collaborate with cross-functional teams
-                          to deliver high-quality software products.
-                        </p>
-                        <h5>Responsibilities:</h5>
-                        <ul>
-                          <li>Design and develop software applications</li>
-                          <li>
-                            Collaborate with cross-functional teams to identify
-                            and solve complex problems
-                          </li>
-                          <li>
-                            Write clean, maintainable, and well-documented code
-                          </li>
-                          <li>
-                            Conduct code reviews and provide constructive
-                            feedback to other team members
-                          </li>
-                        </ul>
-                        <h5>Requirements:</h5>
-                        <ul>
-                          <li>
-                            Bachelor's or Master's degree in Computer Science or
-                            related field
-                          </li>
-                          <li>
-                            Minimum of 3 years of experience in software
-                            engineering
-                          </li>
-                          <li>
-                            Proficient in at least one programming language such
-                            as Java, Python, or JavaScript
-                          </li>
-                          <li>
-                            Experience with web development frameworks such as
-                            React or Angular
-                          </li>
-                          <li>Strong problem-solving and analytical skills</li>
-                        </ul>
-                        <p><strong>Email: </strong> Injamam00155@gmail.com</p>
+                      <div class="postcard__bar"></div>
+                      <div class="postcard__preview-txt">
+                        {{$awards->awardDescription}}
                       </div>
                     </div>
-                    <div
-                      class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
-                    >
-                      <div class="d-flex">
-                        <button class="btn border-0 btn me-3 comment-btn">
-                          <i class="far fa-comment me-1"></i>Comment
-                        </button>
-                        <button
-                          class="btn border-0 btn bookmark-btn"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Bookmark"
-                        >
-                          <i class="far fa-bookmark me-1"></i>
-                          Bookmark
-                        </button>
-                      </div>
-                      <a href="#" style="text-decoration: none">
-                        <small class="text-muted">3 comments</small>
-                      </a>
-                    </div>
-                    {{-- COMMENT SECTION START --}}
-                    <div class="mt-1 comments-section d-none">
-                      <div>
-                        <div class="row p-3" style="background-color: #F0F0F0">
-                            <div class="col-2 col-lg-1 d-flex justify-content-end">
-                              <img
-                                src="img/Sarah_Student.jpg"
-                                alt="user Display Picture"
-                                class="img-fluid ms-2"
-                                style="width: 30px; height: 30px; border-radius: 50%"
-                              />
-                            </div>
-                            <div class="col-10 col-lg-11 pe-5">
-                              <div>
-                                <strong class="fs-6">Anika</strong>
-                              </div>
-                              <p class="fs-6 p-2 post_body">
-                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
-                              </p> 
-                            </div>
-                          </div>
-                      </div>
-                    <div>
-                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
-                            <div class="col-2 col-lg-1 d-flex justify-content-end">
-                              <img
-                                src="img/Sarah_Student.jpg"
-                                alt="user Display Picture"
-                                class="img-fluid ms-2"
-                                style="width: 30px; height: 30px; border-radius: 50%"
-                              />
-                            </div>
-                            <div class="col-10 col-lg-11 pe-5">
-                              <div>
-                                <strong class="fs-6">Sarah Binte Mahbub</strong>
-                              </div>
-                              <form action="">
-                                  <div class="input-group mb-2">
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      id="postComment"
-                                      name="postComment"
-                                      placeholder="Add your comment"
-                                    />
-                                  </div>
-                                  <button type="submit" class="btn btn-primary">Comment</button>
-                              </form>
-                            </div>
-                          </div>
-                      </div>
-                      </div>
-                      {{-- COMMENT SECTION END --}}
-                  </div>
+                  </article>
+                  @endforeach
                 </div>
-              </div>
+              </section>
             </div>
           </div>
         </div>
@@ -510,12 +287,11 @@
     </div>
 
     <!-- BOOTSTRAP JS -->
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src={{asset('js/app.js')}}></script>  
+    <script src={{asset('js/app.js')}}></script> 
   </body>
 </html>
