@@ -180,7 +180,6 @@
               </div>
             </div>
           </div>
-          <!-- What's on your mind section -->
           
           <!-- POST section -->
           <div class="row">

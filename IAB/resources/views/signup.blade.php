@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="signup.css" />
     <link
       rel="icon"
-      href="alumni/img/iubalumnibridgelogo.png"
+      href="{{asset('images/iubalumnibridgelogo.png')}}"
       type="image/x-icon"
     />
     <title>Sign Up</title>
@@ -41,7 +41,7 @@
             <div class="text-center mb-4 logo">
               <img
                 class="text-center"
-                src="alumni/img/iubalumnibridgelogo.png"
+                src="{{asset('images/iubalumnibridgelogo.png')}}"
                 alt="logo"
               />
             </div>

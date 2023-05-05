@@ -195,7 +195,7 @@
                   <div class="row">
                     <div class="col-md-4">
                       <div class="profile-img">
-                        <img src="img/profile_img2.jpg" alt="" />
+                        <img src="img/profile_img.jpg" alt="Rashid Shabab" />
                         <div class="file btn btn-lg btn-primary">
                           Change Photo
                           <input type="file" name="file" />
@@ -204,7 +204,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="profile-head">
-                        <h5>Injamam Ul Haque</h5>
+                        <h5>Rashid Shabab</h5>
 
                         <h6>back-end Developer</h6>
                         <div class="mb-2">
@@ -216,10 +216,10 @@
                             <a href="#" class="btn rounded-pill border border-secondary me-2"
                               ><i class="fa-brands fa-xl fa-linkedin"></i
                             > LinkedIn</a>
-                            <a href="#" class="btn rounded-pill border border-secondary me-2"
+                            <a href="https://www.facebook.com/profile.php?id=100007791317965" class="btn rounded-pill border border-secondary me-2"
                               ><i class="fa-brands fa-xl fa-facebook"></i
                             > Facebook</a>
-                            <a href="#" class="btn rounded-pill border border-secondary me-2"
+                            <a href="https://github.com/r-Shabab" class="btn rounded-pill border border-secondary me-2"
                               ><i class="fa-brands fa-xl fa-github"></i
                             > Github</a>
                           </div>
@@ -267,7 +267,7 @@
                               <label>Name</label>
                             </div>
                             <div class="col-md-6">
-                              <p>Injamam Ul Haque</p>
+                              <p>Rashid Shabab</p>
                             </div>
                           </div>
                           <div class="row">
@@ -275,7 +275,7 @@
                               <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                              <p>2021397@iub.edu.bd</p>
+                              <p>1910282@iub.edu.bd</p>
                             </div>
                           </div>
                           <div class="row">

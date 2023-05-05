@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="forgotPassword.css" />
-    <link rel="icon" href="img/iubalumnibridgelogo.png" type="image/x-icon" />
+    <link rel="icon" href="{{asset('images/iubalumnibridgelogo.png')}}" type="image/x-icon" />
     <title>Forgot Password</title>
   </head>
 
@@ -23,7 +23,7 @@
             <div class="text-center mb-4 logo">
               <img
                 class="text-center"
-                src="alumni/img/iubalumnibridgelogo.png"
+                src="{{asset('images/iubalumnibridgelogo.png')}}"
                 alt="logo"
               />
               <br />

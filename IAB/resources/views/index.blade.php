@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('index.css')}}" />
     <link
       rel="icon"
-      href="{{asset('alumni/img/iubalumnibridgelogo.png')}}"
+      href="{{asset('images/iubalumnibridgelogo.png')}}"
       type="image/x-icon"
     />
     <title>IUB Alumni Bridge</title>
@@ -48,7 +48,7 @@
           <div class="text-center logo">
             <img
               class="text-center"
-              src="alumni/img/iubalumnibridgelogo.png"
+              src="{{asset('images/iubalumnibridgelogo.png')}}"
               alt="logo"
             />
           </div>

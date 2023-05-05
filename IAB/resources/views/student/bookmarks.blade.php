@@ -8,7 +8,8 @@
     <title>IUB Alumni Bridge</title>
     <!-- CSS -->
     <link rel="stylesheet" href={{asset('home.css')}} />
-
+    <!-- JS -->
+    
     <!-- BOOTSTRAP CS-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -42,7 +43,7 @@
 
             <a href="/currentStudent/dashboard" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('images\iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
@@ -83,12 +84,26 @@
               class="btn profile_icon position-absolute"
               type="button"
             >
-              <img
-                class="img-fluid ms-2"
-                src="img/profile_img.jpg"
-                alt="profile img"
-                style="width: 40px; border-radius: 50%"
-              />
+            @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+                @break
+                @else 
+                <img
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </a>
           </div>
         </div>
@@ -117,13 +132,13 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/Akib Raihan .jpeg"
+                        src="img/profile_img.jpg"
                         alt="User Image"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Akib</strong> commented on your post
+                        ><strong>Shabab</strong> commented on your post
                         <span class="text-muted ms-5">2m ago</span></span
                       >
                     </a>
@@ -178,7 +193,7 @@
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
-                      src="img/Sarah_Student.jpg"
+                      src="{{asset('alumni/img/Sarah_Student.jpg')}}"
                       alt="user Display Picture"
                       class="img-fluid ms-2"
                       style="width: 50px; height: 50px; border-radius: 50%"
@@ -198,7 +213,7 @@
                       class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
                     >
                       <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
+                        <button class="btn border-0 btn me-3 comment-btn">
                           <i class="far fa-comment me-1"></i>Comment
                         </button>
                         <button
@@ -215,6 +230,59 @@
                         <small class="text-muted">3 comments</small>
                       </a>
                     </div>
+                    {{-- COMMENT SECTION START --}}
+                    <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="{{asset('alumni/img/Sarah_Student.jpg')}}"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Anika</strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Sarah Binte Mahbub</strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                      {{-- COMMENT SECTION END --}}
                   </div>
                 </div>
               </div>
@@ -224,7 +292,7 @@
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
                     <img
-                      src="img/profile_img2.jpg"
+                      src="{{asset('alumni/img/profile_img2.jpg')}}"
                       alt="User profile picture"
                       class="img-fluid ms-2"
                       style="width: 50px; height: 50px; border-radius: 50%"
@@ -299,7 +367,7 @@
                       class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
                     >
                       <div class="d-flex">
-                        <button class="btn border-0 btn me-3">
+                        <button class="btn border-0 btn me-3 comment-btn">
                           <i class="far fa-comment me-1"></i>Comment
                         </button>
                         <button
@@ -316,6 +384,59 @@
                         <small class="text-muted">3 comments</small>
                       </a>
                     </div>
+                    {{-- COMMENT SECTION START --}}
+                    <div class="mt-1 comments-section d-none">
+                      <div>
+                        <div class="row p-3" style="background-color: #F0F0F0">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Anika</strong>
+                              </div>
+                              <p class="fs-6 p-2 post_body">
+                                Networking, gaining practical experience through internships or personal projects, and staying up-to-date with the latest technologies can all help you break into the tech industry. Good luck!
+                              </p> 
+                            </div>
+                          </div>
+                      </div>
+                    <div>
+                      <div class="row p-3"  style="background-color: #F0F0F0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                            <div class="col-2 col-lg-1 d-flex justify-content-end">
+                              <img
+                                src="img/Sarah_Student.jpg"
+                                alt="user Display Picture"
+                                class="img-fluid ms-2"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                            </div>
+                            <div class="col-10 col-lg-11 pe-5">
+                              <div>
+                                <strong class="fs-6">Sarah Binte Mahbub</strong>
+                              </div>
+                              <form action="">
+                                  <div class="input-group mb-2">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="postComment"
+                                      name="postComment"
+                                      placeholder="Add your comment"
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Comment</button>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                      {{-- COMMENT SECTION END --}}
                   </div>
                 </div>
               </div>
@@ -336,6 +457,9 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
+            @if($upcoming == null)
+            <h3 class="upcoming">No Upcoming Events</h3>                  
+            @else
             <div class="mt-5">
               <h3 class="upcoming">Upcoming Events</h3>
               <div class="row g-4 mt-3">
@@ -343,26 +467,26 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="img/TechFest2023.jpg"
+                        src="{{asset('images/'.$upcoming->eventImageURL)}}"
                         class="card-img-top"
-                        alt="Tech Fest 2023 poster"
+                        alt="{{$upcoming->eventTitle}} poster"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
+                        <h5 class="card-title">{{$upcoming->eventTitle}}</h5>
                         <p class="card-text">
                           Event Date:
                           <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
+                            >{{$upcoming->eventStartDate}} - {{$upcoming->eventEndDate}}</span
                           >
                         </p>
                         <p class="card-text">
                           Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
+                          <span class="text-muted">{{$upcoming->eventStartTime}} - {{$upcoming->eventEndTime}}</span>
                         </p>
                         <p class="card-text">
                           Event Location:
                           <span class="text-muted"
-                            >Independent University, Bangladesh</span
+                            >{{$upcoming->eventLocation}}</span
                           >
                         </p>
                       </div>
@@ -371,6 +495,7 @@
                 </div>
               </div>
             </div>
+            @endif
             <div class="p-3 d-flex justify-content-end me-5">
               <a
                 href="/currentStudent/events"
@@ -391,6 +516,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src={{asset('js/app.js')}}></script> 
+    <script src={{asset('js/app.js')}}></script>  
   </body>
 </html>

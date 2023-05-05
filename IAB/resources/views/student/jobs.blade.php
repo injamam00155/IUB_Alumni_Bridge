@@ -8,7 +8,6 @@
     <title>Jobs</title>
     <!-- CSS -->
     <link rel="stylesheet" href={{asset('home.css')}} />
-
     <!-- BOOTSTRAP CS-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -28,9 +27,22 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Poppins:wght@400;500;600&family=Trispace&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+      </script>
   </head>
 
   <body>
+    @if(session('msg'))
+    <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
     <div class="container-fluid">
       <div class="row">
         <!-- ---NAVBAR--- -->
@@ -42,7 +54,7 @@
 
             <a href="/currentStudent/dashboard" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('images\iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
@@ -83,12 +95,26 @@
               class="btn profile_icon position-absolute"
               type="button"
             >
-              <img
-                class="img-fluid ms-2"
-                src="img/profile_img.jpg"
-                alt="profile img"
-                style="width: 40px; border-radius: 50%"
-              />
+            @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+                @break
+                @else 
+                <img
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </a>
           </div>
         </div>
@@ -117,13 +143,13 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/Akib Raihan .jpeg"
+                        src="img/profile_img.jpg"
                         alt="User Image"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Akib</strong> commented on your post
+                        ><strong>Shabab</strong> commented on your post
                         <span class="text-muted ms-5">2m ago</span></span
                       >
                     </a>
@@ -170,89 +196,7 @@
               </div>
             </div>
           </div>
-          <!-- What's on your mind section -->
-          <!-- <div class="row mt-4">
-            <div class="col-2 col-lg-1 d-flex justify-content-end">
-              <img
-                src="img/profile_img.jpg"
-                alt="profile img"
-                class="img-fluid ms-2"
-                style="width: 50px; height: 50px; border-radius: 50%"
-              />
-            </div>
-            <div class="col-10 col-lg-11 pe-5">
-              <form>
-                <div class="form-group">
-                  <label for="jobTitle">Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="jobTitle"
-                    placeholder="Enter job title"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="jobCompany">Company</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="jobCompany"
-                    placeholder="Enter company nam"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="jobLocation">Location</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="jobLocation"
-                    placeholder="Enter job location"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="jobDescription">Description</label>
-                  <textarea
-                    class="form-control"
-                    id="jobDescription"
-                    placeholder="Enter job description"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="eventResponsibility">Responsibility</label>
-                  <textarea
-                    class="form-control"
-                    id="eventResponsibility"
-                    placeholder="Enter job responsibility"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="eventRequiremnt">Requirement</label>
-                  <textarea
-                    class="form-control"
-                    id="eventRequiremnt"
-                    placeholder="Enter jon requirement"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="contactMail">Contact</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="contactMail"
-                    placeholder="Enter contact mail"
-                  />
-                </div>
-
-                <button type="submit" class="btn btn-primary mt-2">
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div> -->
+          
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
@@ -262,17 +206,28 @@
               <div class="job_post mt-5">
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="img/profile_img2.jpg"
-                      alt="profile img"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
+                    @foreach($studentPosts as $studentPost)
+                        @if($studentPost->postID==$job->postID)
+                            <img
+                            src="{{asset('images/'.$studentPost->profilePictureURL)}}"
+                            alt="user Display Picture"
+                            class="img-fluid ms-2"
+                            style="width: 50px; height: 50px; border-radius: 50%"
+                            />                                        
+                        @break
+                        @endif
+                      @endforeach
                   </div>
                   <div class="col-10 col-lg-11 pe-5">
                     <div>
                       <h4>
-                        Injamam Ul Haque<i
+                        @foreach($studentPosts as $studentPost)
+                          @if($studentPost->postID==$job->postID)
+                              {{$studentPost->fullName}}
+                            @break
+                          @endif
+                        @endforeach
+                        <i
                           class="fa-solid fa-graduation-cap fa-sm ms-2"
                         ></i>
                       </h4>

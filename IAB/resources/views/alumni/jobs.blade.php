@@ -303,17 +303,28 @@
               <div class="job_post mt-5">
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="img/profile_img2.jpg"
-                      alt="profile img"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
+                    @foreach($studentPosts as $studentPost)
+                        @if($studentPost->postID==$job->postID)
+                            <img
+                            src="{{asset('images/'.$studentPost->profilePictureURL)}}"
+                            alt="user Display Picture"
+                            class="img-fluid ms-2"
+                            style="width: 50px; height: 50px; border-radius: 50%"
+                            />                                        
+                        @break
+                        @endif
+                      @endforeach
                   </div>
                   <div class="col-10 col-lg-11 pe-5">
                     <div>
                       <h4>
-                        Injamam Ul Haque<i
+                        @foreach($studentPosts as $studentPost)
+                          @if($studentPost->postID==$job->postID)
+                              {{$studentPost->fullName}}
+                            @break
+                          @endif
+                        @endforeach
+                        <i
                           class="fa-solid fa-graduation-cap fa-sm ms-2"
                         ></i>
                       </h4>

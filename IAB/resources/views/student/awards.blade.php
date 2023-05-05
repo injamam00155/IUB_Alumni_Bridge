@@ -8,7 +8,8 @@
     <title>Awards</title>
     <!-- CSS -->
     <link rel="stylesheet" href={{asset('events.css')}} />
-   
+    <!-- JS -->
+    
     <!-- BOOTSTRAP CS-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -42,7 +43,7 @@
 
             <a href="/currentStudent/dashboard" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('images\iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
@@ -83,12 +84,26 @@
               class="btn profile_icon position-absolute"
               type="button"
             >
-              <img
-                class="img-fluid ms-2"
-                src="img/profile_img.jpg"
-                alt="profile img"
-                style="width: 40px; border-radius: 50%"
-              />
+            @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+                @break
+                @else 
+                <img
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </a>
           </div>
         </div>
@@ -117,13 +132,13 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/Akib Raihan .jpeg"
+                        src="img/profile_img.jpg"
                         alt="User Image"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
                       />
                       <span class="notification-text"
-                        ><strong>Akib</strong> commented on your post
+                        ><strong>Shabab</strong> commented on your post
                         <span class="text-muted ms-5">2m ago</span></span
                       >
                     </a>
@@ -170,75 +185,7 @@
               </div>
             </div>
           </div>
-          <!-- What's on your mind section -->
-          <!-- <div class="row mt-4">
-            <div class="col-2 col-lg-1 d-flex justify-content-end">
-              <img
-                src="img/profile_img.jpg"
-                alt="profile img"
-                class="img-fluid ms-2"
-                style="width: 50px; height: 50px; border-radius: 50%"
-              />
-            </div>
-            <div class="col-10 col-lg-11 pe-5">
-              <form>
-                <div class="form-group">
-                  <label for="eventTitle">Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventTitle"
-                    placeholder="Enter award title"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventTime">Time</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventTime"
-                    placeholder="Enter award time"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventDate">Date</label>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="eventDate"
-                    placeholder="Enter award date"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventLocation">Location</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="eventLocation"
-                    placeholder="Enter award location"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="eventDescription">Description</label>
-                  <textarea
-                    class="form-control"
-                    id="eventDescription"
-                    placeholder="Enter award description"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="posterImage">Poster Image</label>
-                  <input
-                    type="file"
-                    class="form-control-file"
-                    id="posterImage"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </div> -->
+          
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
