@@ -159,45 +159,22 @@ class postCreateController extends Controller
             'updated_at' => now(),
 
         ]);
-        // $post = new post;
-        // $post->created_at = now();
-        // $post->updated_at = now();
-        // $post->save();
-
-        // if($request->hasFile('eventPosterImage')){
-            $image = $request->file('eventPosterImage');
-            $imagePath = $image->getClientOriginalName();
-            $image->move(public_path('images'), $imagePath);
-        
-            $postID = Post::latest('postID')->first()->postID;
-
-            EventPost::create([
-                'eventTitle' => $request->input('eventTitle'),
-                'eventDescription' => $request->input('eventDescription'),
-                'eventStartDate' => $request->input('eventStartDate'),
-                'eventEndDate' => $request->input('eventEndDate'),
-                'eventStartTime' => $request->input('eventStartTime'),
-                'eventEndTime' => $request->input('eventEndTime'),
-                'eventLocation' => $request->input('eventLocation'),
-                'eventImageURL' => $imagePath,
-                'postID' => $postID,
-
-            ]);
-
-            // $eventPost = new EventPost;
-            // $eventPost->eventTitle = $validatedData['eventTitle'];
-            // $eventPost->eventDescription = $validatedData['awardDescription'];
-            // $eventPost->eventStartDate	 = $validatedData['eventStartTime'];
-            // $eventPost->eventEndDate	 = $validatedData['eventEndDate'];
-            // $eventPost->eventStartTime	 = $validatedData['eventStartTime'];
-            // $eventPost->eventEndTime	 = $validatedData['eventEndTime'];
-            // $eventPost->eventImageURL = $validatedData[$imagePath];
-            // $eventPost->eventLocation = $validatedData['eventLocation'];
-
-            // $eventPost->postID = post::latest('postID')->first()->postID; 
-            
-            // $eventPost->save();
-        // }
+        $image = $request->file('eventPosterImage');
+        $imagePath = $image->getClientOriginalName();
+        $image->move(public_path('images'), $imagePath);
+    
+        $postID = Post::latest('postID')->first()->postID;
+        EventPost::create([
+            'eventTitle' => $request->input('eventTitle'),
+            'eventDescription' => $request->input('eventDescription'),
+            'eventStartDate' => $request->input('eventStartDate'),
+            'eventEndDate' => $request->input('eventEndDate'),
+            'eventStartTime' => $request->input('eventStartTime'),
+            'eventEndTime' => $request->input('eventEndTime'),
+            'eventLocation' => $request->input('eventLocation'),
+            'eventImageURL' => $imagePath,
+            'postID' => $postID,
+        ]);
         // dd($post);
         // dd($jobPost);
         return redirect()->route('admin.events')->with('msg','Event Posted Successfully');

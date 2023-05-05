@@ -20,33 +20,6 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 
-// class loginController extends Controller
-// {
-// function loginCheck(Request $request)
-// {
-//     $validatedData = $request->validate([
-//         'inputEmail' => 'required|email',
-//         'inputPassword' => 'required',
-//     ]);
-
-//     $user = User::where('userEmail', $validatedData['inputEmail'])
-//         ->where('password', $validatedData['inputPassword'])
-//         ->first();
-
-//     if ($user) {
-//         if ($user->isAdmin()) {
-//             return redirect()->route('admin.dash')->with('failMsg', 'fUCK YOU');
-//         } elseif ($user->isCurrentStudent()) {
-//             return redirect()->route('currentStudent.dash')->with('failMsg', 'fUCK YOU');
-//         } elseif ($user->isAlumni()) {
-//             return redirect()->route('alumni.dash')->with('failMsg', 'fUCK YOU');
-//         }
-//     }
-
-//     return redirect()->route('login')->with('msg', 'Invalid email or password');
-// }
-// }
-
 class loginController extends Controller
 {
     public function loginCheck(Request $request)
@@ -61,36 +34,15 @@ class loginController extends Controller
             ->where('password', $validatedData['inputPassword'])
             ->first();
 
-        // if ($user) {
-        //     if ($user->isAdmin()) {
-        //         return redirect()->route('admin.dash');
-        //     } elseif ($user->isCurrentStudent()) {
-
-        //         // $postViewController = new postViewController();        
-        //         // Call the viewPosts method
-        //         // $posts = $postViewController->viewPost();
-        //         // return view('currentStudent.dash');
-        //         // , ['posts' => $posts]);
-        //         return redirect()->route('currentStudent.dash');
-        //     } elseif ($user->isAlumni()) {
-        //         return redirect()->route('alumni.dash');
-        //     }
-        // }
-
     
         if ($user) {
             $userEmail=$validatedData['inputEmail'];
-            // $postViewController = new postViewController();
-             // $posts = $postViewController->viewPosts();
              session(['userEmail' => $userEmail]);
             if ($user->isAdmin()) {
-                // return view('admin/home', compact('posts'));
                 return redirect()->route('admin.dash');
             } elseif ($user->isCurrentStudent()) {
-                // return view('student/home', ['data' => $data]);
                 return redirect()->route('currentStudent.dash');
             } elseif ($user->isAlumni()) {
-                // return view('alumni/home', compact('posts'));
                 return redirect()->route('alumni.dash');
             }
         }

@@ -43,7 +43,7 @@
 
             <a href="/alumni/dashboard" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('images\iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
@@ -84,12 +84,26 @@
               class="btn profile_icon position-absolute"
               type="button"
             >
-              <img
-                class="img-fluid ms-2"
-                src="img/profile_img2.jpg"
-                alt="profile img"
-                style="width: 40px; border-radius: 50%"
-              />
+            @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+                @break
+                @else 
+                <img
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </a>
           </div>
         </div>
@@ -443,6 +457,9 @@
               />
             </div>
             <!-- UPCOMING EVENTS -->
+            @if($upcoming == null)
+            <h3 class="upcoming">No Upcoming Events</h3>                  
+            @else
             <div class="mt-5">
               <h3 class="upcoming">Upcoming Events</h3>
               <div class="row g-4 mt-3">
@@ -450,26 +467,26 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="img/TechFest2023.jpg"
+                        src="{{asset('images/'.$upcoming->eventImageURL)}}"
                         class="card-img-top"
-                        alt="Tech Fest 2023 poster"
+                        alt="{{$upcoming->eventTitle}} poster"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
+                        <h5 class="card-title">{{$upcoming->eventTitle}}</h5>
                         <p class="card-text">
                           Event Date:
                           <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
+                            >{{$upcoming->eventStartDate}} - {{$upcoming->eventEndDate}}</span
                           >
                         </p>
                         <p class="card-text">
                           Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
+                          <span class="text-muted">{{$upcoming->eventStartTime}} - {{$upcoming->eventEndTime}}</span>
                         </p>
                         <p class="card-text">
                           Event Location:
                           <span class="text-muted"
-                            >Independent University, Bangladesh</span
+                            >{{$upcoming->eventLocation}}</span
                           >
                         </p>
                       </div>
@@ -478,6 +495,7 @@
                 </div>
               </div>
             </div>
+            @endif
             <div class="p-3 d-flex justify-content-end me-5">
               <a
                 href="/alumni/events"

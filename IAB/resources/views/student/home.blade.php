@@ -84,8 +84,8 @@
               type="button"
             >
               <img
-                class="img-fluid ms-2"
                 src="img/profile_img2.jpg"
+                class="img-fluid ms-2"
                 alt="profile img"
                 style="width: 40px; border-radius: 50%"
               />

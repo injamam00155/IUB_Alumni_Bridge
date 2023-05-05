@@ -24,7 +24,7 @@ class postViewController extends Controller
 
     public function viewPosts()
     {
-            // $posts=Post::all();
+
             $orderedPostIds = Post::orderByDesc('postID')->pluck('postID');
             $mergedResults = [];
 
@@ -67,7 +67,6 @@ class postViewController extends Controller
                 }
             }
         return $mergedResults;
-        // return $posts;
     }
 
     public function getAllStudents() {

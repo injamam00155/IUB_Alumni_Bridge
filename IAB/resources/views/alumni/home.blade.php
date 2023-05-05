@@ -40,9 +40,9 @@
           >
             <!-- LOGO -->
 
-            <a href="home.html" class="my-3 ms-4">
+            <a href="/alumni/dashboard" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('images\iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
@@ -83,12 +83,26 @@
               class="btn profile_icon position-absolute"
               type="button"
             >
-              <img
-                class="img-fluid ms-2"
-                src="img/profile_img2.jpg"
-                alt="profile img"
-                style="width: 40px; border-radius: 50%"
-              />
+            @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+                @break
+                @else 
+                <img
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </a>
           </div>
         </div>
@@ -156,11 +170,12 @@
                   <li class="my-3">
                     <a class="dropdown-item" href="#">
                       <img
-                        src="img/profile_img3.jpg"
-                        alt="User Image"
+                        {{-- src="{{asset('images\IUB ALUMNI BRIDGE.png')}}" --}}
+                        src="img/iubalumnibridgelogo.png"
+                        alt="User Display Picture"
                         class="img-fluid me-2"
                         style="width: 40px; border-radius: 50%"
-                      />
+                      >
                       <span class="notification-text"
                         ><strong>Mushfiqur</strong> commented on your post<span
                           class="text-muted ms-5"
@@ -182,36 +197,26 @@
           <!-- What's on your mind section -->
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
-              @foreach($allStudent as $student) 
-              @if($student->userEmail==session('userEmail'))
-              {{-- <img
-                  src="{{asset('images/' . ($student->profilePictureURL ? $student->profilePictureURL : 'defaultDisplayPicture.jpg'))}}"
-                  alt="user Display Picture"
-                  class="img-fluid ms-2"
-                  style="width: 50px; height: 50px; border-radius: 50%"
-              /> --}}
-              @endif
-              @if($student->userEmail==session('userEmail'))
+              @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    alt="user Display Picture"
+                    class="img-fluid ms-2"
+                    style="width: 50px; height: 50px; border-radius: 50%"
+                />
+                @break
+                @else 
                 <img
-                {{-- {{asset('images/'.$upcoming->eventImageURL)}} --}}
-                  src="{{asset('images/'.$student->profilePictureURL)}}"
-                  alt="user Display Picture"
-                  class="img-fluid ms-2"
-                  style="width: 50px; height: 50px; border-radius: 50%"
-              />
-              @break
-              @else 
-              <img
-                  src="{{asset('images/defaultDisplayPicture.jpg')}}"
-                  {{-- src="{{asset('images/'.$student->profilePictureURL)}}" --}}
-                  alt="user Display Picture"
-                  class="img-fluid ms-2"
-                  style="width: 50px; height: 50px; border-radius: 50%"
-              />
-
-              @endif
-              @break
-          @endforeach
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    alt="user Display Picture"
+                    class="img-fluid ms-2"
+                    style="width: 50px; height: 50px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </div>
             <div class="col-10 col-lg-11 pe-5">
                 <form action="{{route('create.queryPost')}}" method='POST'>
@@ -314,7 +319,6 @@
                               <div>
                                 <strong class="fs-6">
                                   CommenterName
-                                  {{-- //Display the Username of the matching userEmail --}}
                                 </strong>
                               </div>
                               <p class="fs-6 p-2 post_body">
@@ -337,7 +341,6 @@
                             <div class="col-10 col-lg-11 pe-5">
                               <div>
                                 <strong class="fs-6">
-                                  {{-- // UserName of currentUser goes here --}}
                                   Current User Name
                                   
                                 </strong>
@@ -433,7 +436,6 @@
                               <div>
                                 <strong class="fs-6">
                                   CommenterName
-                                  {{-- //Display the Username of the matching userEmail --}}
                                 </strong>
                               </div>
                               <p class="fs-6 p-2 post_body">
@@ -456,7 +458,6 @@
                             <div class="col-10 col-lg-11 pe-5">
                               <div>
                                 <strong class="fs-6">
-                                  {{-- // UserName of currentUser goes here --}}
                                   Current User Name
                                   
                                 </strong>
@@ -479,9 +480,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                       @continue(true)
                     @endif
                     
@@ -564,7 +562,6 @@
                                   <li>{{ $substring }}</li>
                                 @endforeach
                               </ul>
-                              {{-- <p>{{ $post["data"]->requirement }}</p> --}}
                               <p><strong>Email: </strong> {{ $post["data"]->contactEmail }}</p>
                             </div>
                           </div>
@@ -599,10 +596,6 @@
                         </div>
                       </div>
                     </div>
-                                            {{-- //Loop through the users information  --}}
-                        {{-- @foreach()  --}}
-                          {{-- //match the userEmail with the CommentData userEmail--}}
-                          {{-- @if()   --}}
            
                       <div class="mt-1 comments-section d-none">
                       <div>
@@ -663,9 +656,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                     @continue(true)
                     @endif
                     @if($post["source"]=='award')
@@ -694,10 +684,6 @@
                       
                       
                     </div>
-                        {{-- //Loop through the users information  --}}
-                        {{-- @foreach()  --}}
-                          {{-- //match the userEmail with the CommentData userEmail--}}
-                          {{-- @if()   --}}
            
                       <div class="mt-1 comments-section d-none">
                       <div>
@@ -714,7 +700,6 @@
                               <div>
                                 <strong class="fs-6">
                                   CommenterName
-                                  {{-- //Display the Username of the matching userEmail --}}
                                 </strong>
                               </div>
                               <p class="fs-6 p-2 post_body">
@@ -737,7 +722,6 @@
                             <div class="col-10 col-lg-11 pe-5">
                               <div>
                                 <strong class="fs-6">
-                                  {{-- // UserName of currentUser goes here --}}
                                   Current User Name
                                   
                                 </strong>
@@ -758,9 +742,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                     @continue(true)
                     @endif
                 @endforeach
