@@ -77,14 +77,6 @@
               <i class="fa-solid fa-briefcase fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Jobs</span>
             </a>
-            <!-- <a href="profile.html" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-user fs-5"></i>
-              <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
-            </a> -->
-            <a href="/admin/bookmarks" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-bookmark fs-5"></i>
-              <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
-            </a>
             <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Log out</span>

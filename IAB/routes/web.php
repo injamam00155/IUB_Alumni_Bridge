@@ -33,10 +33,8 @@ Route::get('/alumni/profile', [routingController::class, 'alumniProfile'])->name
 //admin routing
 Route::get('/admin/dashboard', [routingController::class, 'adminDashboard'])->name('admin.dash');
 Route::get('/admin/awards', [routingController::class, 'adminAwards'])->name('admin.awards');
-Route::get('/admin/bookmarks', [routingController::class, 'adminBookmarks'])->name('admin.bookmarks');
 Route::get('/admin/events', [routingController::class, 'adminEvents'])->name('admin.events');
 Route::get('/admin/jobs', [routingController::class, 'adminJobs'])->name('admin.jobs');
-Route::get('/admin/profile', [routingController::class, 'adminProfile'])->name('admin.profile');
 
 //currentStudent routing
 Route::get('/currentStudent/dashboard', [routingController::class, 'currentStudentDashboard'])->name('currentStudent.dash');

@@ -8,7 +8,6 @@
     <title>Jobs</title>
     <!-- CSS -->
     <link rel="stylesheet" href={{asset('home.css')}} />
-   
     <!-- BOOTSTRAP CS-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -28,9 +27,22 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Poppins:wght@400;500;600&family=Trispace&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Function to hide the div after 5 seconds
+      function hideDiv() {
+        var div = document.getElementById("alert-div");
+        div.style.display = "none";
+      }
+      window.onload = function() {
+        setTimeout(hideDiv, 4000);
+      };
+      </script>
   </head>
 
   <body>
+    @if(session('msg'))
+    <div class="alert alert-success" id="alert-div" role="alert">{{session('msg')}}</div>
+    @endif
     <div class="container-fluid">
       <div class="row">
         <!-- ---NAVBAR--- -->
@@ -42,7 +54,7 @@
 
             <a href="/admin/dashboard" class="my-3 ms-4">
               <img
-                src="img/iubalumnibridgelogo.png"
+                src="{{asset('images\iubalumnibridgelogo.png')}}"
                 alt="logo"
                 class="img-responsive mt-3 logo"
               />
@@ -65,30 +77,36 @@
               <i class="fa-solid fa-briefcase fs-4"></i>
               <span class="fs-5 fw-bold d-none d-xl-inline ms-2">Jobs</span>
             </a>
-            <!-- <a href="profile.html" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-user fs-5"></i>
-              <span class="fs-6 d-none d-xl-inline ms-2">Profile</span>
-            </a> -->
-            <a href="/admin/bookmarks" class="btn my-3 nav_link" type="button">
-              <i class="fa-solid fa-bookmark fs-5"></i>
-              <span class="fs-6 d-none d-xl-inline ms-2">Bookmark</span>
-            </a>
             <a href="/" class="btn my-3 nav_link" type="button">
               <i class="fa-solid fa-right-from-bracket fs-5"></i>
               <span class="fs-6 d-none d-xl-inline ms-2">Log out</span>
             </a>
 
             <a
-              href="#"
+              href="/admin/profile"
               class="btn profile_icon position-absolute"
               type="button"
             >
-              <img
-                class="img-fluid ms-2"
-                src="img/IUBLogo.png"
-                alt="profile img"
-                style="width: 40px; border-radius: 50%"
-              />
+            @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+                @break
+                @else 
+                <img
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 40px; border-radius: 50%"
+                />
+              
+                @endif
+                @break
+              @endforeach
             </a>
           </div>
         </div>
@@ -96,7 +114,7 @@
         <div class="col-10 col-lg-8 col-xl-7 border-end">
           <div class="row align-items-center mt-3 bg-white sticky-top py-3">
             <div class="col-10 col-lg-11">
-              <strong class="fs-4 p-2 ms-3">Jobs</strong>
+              <strong class="fs-4 p-2 ms-5">Jobs</strong>
             </div>
             <!-- NOTIFICATION -->
             <div class="col-2 col-lg-1">
@@ -170,89 +188,7 @@
               </div>
             </div>
           </div>
-          <!-- What's on your mind section -->
-          <!-- <div class="row mt-4">
-            <div class="col-2 col-lg-1 d-flex justify-content-end">
-              <img
-                src="img/profile_img.jpg"
-                alt="profile img"
-                class="img-fluid ms-2"
-                style="width: 50px; height: 50px; border-radius: 50%"
-              />
-            </div>
-            <div class="col-10 col-lg-11 pe-5">
-              <form>
-                <div class="form-group">
-                  <label for="jobTitle">Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="jobTitle"
-                    placeholder="Enter job title"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="jobCompany">Company</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="jobCompany"
-                    placeholder="Enter company nam"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="jobLocation">Location</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="jobLocation"
-                    placeholder="Enter job location"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="jobDescription">Description</label>
-                  <textarea
-                    class="form-control"
-                    id="jobDescription"
-                    placeholder="Enter job description"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="eventResponsibility">Responsibility</label>
-                  <textarea
-                    class="form-control"
-                    id="eventResponsibility"
-                    placeholder="Enter job responsibility"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="eventRequiremnt">Requirement</label>
-                  <textarea
-                    class="form-control"
-                    id="eventRequiremnt"
-                    placeholder="Enter jon requirement"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="contactMail">Contact</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="contactMail"
-                    placeholder="Enter contact mail"
-                  />
-                </div>
-
-                <button type="submit" class="btn btn-primary mt-2">
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div> -->
+          
           <!-- POST section -->
           <div class="row">
             <div class="col-12">
@@ -262,17 +198,28 @@
               <div class="job_post mt-5">
                 <div class="row">
                   <div class="col-2 col-lg-1 d-flex justify-content-end">
-                    <img
-                      src="img/profile_img2.jpg"
-                      alt="profile img"
-                      class="img-fluid ms-2"
-                      style="width: 50px; height: 50px; border-radius: 50%"
-                    />
+                    @foreach($studentPosts as $studentPost)
+                        @if($studentPost->postID==$job->postID)
+                            <img
+                            src="{{asset('images/'.$studentPost->profilePictureURL)}}"
+                            alt="user Display Picture"
+                            class="img-fluid ms-2"
+                            style="width: 50px; height: 50px; border-radius: 50%"
+                            />                                        
+                        @break
+                        @endif
+                      @endforeach
                   </div>
                   <div class="col-10 col-lg-11 pe-5">
                     <div>
                       <h4>
-                        Injamam Ul Haque<i
+                        @foreach($studentPosts as $studentPost)
+                          @if($studentPost->postID==$job->postID)
+                              {{$studentPost->fullName}}
+                            @break
+                          @endif
+                        @endforeach
+                        <i
                           class="fa-solid fa-graduation-cap fa-sm ms-2"
                         ></i>
                       </h4>
