@@ -130,17 +130,17 @@ class routingController extends Controller
         $pvc=new postViewController;
         $data= $pvc->viewPosts();
         $upcoming=$pvc->upcomingEvent();
-        $studentPosts=$pvc->getStudentsPosts();
-        $studentComments=$pvc->getStudentsComments();
-        $bookmarks=$pvc->getallBookmarks();
+        // $studentPosts=$pvc->getStudentsPosts();
+        // $studentComments=$pvc->getStudentsComments();
+        // $bookmarks=$pvc->getallBookmarks();
         // $data = $pvc->viewEvents(); 
         // dd($data);
         // dd(session()->all());
         $pass=  ['data' => $data,
                 'event'=> $upcoming,
-                'studentPosts'=>$studentPosts,
-                'studentComments'=>$studentComments,
-                'bookmarks'=>$bookmarks,
+                // 'studentPosts'=>$studentPosts,
+                // 'studentComments'=>$studentComments,
+                // 'bookmarks'=>$bookmarks,
                 ];
         return view('alumni/home', $pass);
         // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
@@ -179,7 +179,15 @@ class routingController extends Controller
         return view('alumni/profile',$pass);
     }
     public function alumniAwards() {
-        return view('alumni/awards');
+        $pvc=new postViewController;
+        $data= $pvc->viewAwards();
+        $upcoming=$pvc->upcomingEvent();
+        $pass=  [
+            'data' => $data,
+            'event'=> $upcoming,
+            ];
+        return view('alumni/awards',$pass);
+        // return view('alumni/awards');
     }
 }
 

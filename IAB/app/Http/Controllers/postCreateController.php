@@ -20,6 +20,7 @@ use App\Models\Bookmark;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class postCreateController extends Controller
 {
@@ -76,6 +77,8 @@ class postCreateController extends Controller
         return redirect()->route('alumni.jobs')->with('msg','Job Posted Successfully');
     }
 
+
+
     public function awardPostCreate(Request $request)
     {
         $validatedData = $request->validate([
@@ -83,28 +86,66 @@ class postCreateController extends Controller
             'awardDate' => 'required|date|max:255',
             'awardLocation' => 'required|string|max:255',
             'awardDescription' => 'required|string',
-            'awardPosterImage' => 'required|string',
+            'awardPosterImage' => 'required',
         ]);
-
-        $post = new post;
-        $post->created_at = now();
-        $post->updated_at = now();
-        $post->save();
-
-        $awardPost = new awardPost;
-        $awardPost->awardTitle = $validatedData['awardTitle'];
-        $awardPost->awardDescription = $validatedData['awardDescription'];
-        $awardPost->awardDate	 = $validatedData['awardDate'];
-        $awardPost->awardImageURL = $validatedData['awardPosterImage'];
-        // $awarPost->jobDescription = $validatedData['awardLocation'];
-
-        $awardPost->postID = post::latest('postID')->first()->postID; 
+        // dd($validatedData);
         
-        $awardPost->save();
-        // dd($post);
-        // dd($jobPost);
-        return redirect()->route('alumni.jobs')->with('msg','Job Posted Successfully');
+        Post::create([
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        
+        // if($request->hasFile('awardPosterImage')){
+            $image = $request->file('awardPosterImage');
+            $imagePath = $image->getClientOriginalName();
+            // $awardPost->awardImageURL = asset($imagePath);
+            Storage::disk('public')->put('images', $image);
+        
+            $postID = Post::latest('postID')->first()->postID;
+
+
+            AwardPost::create([
+                'awardTitle' => $request->input('awardTitle'),
+                'awardDescription' => $request->input('awardDescription'),
+                'awardDate' => $request->input('awardDate'),
+                'awardImageURL' => $imagePath,
+                'postID' => $postID,
+
+            ]);
+        // }
+        // dd($awardPost);
+        return redirect()->route('admin.awards')->with('msg','Award Posted Successfully');
     }
+
+    // public function awardPostCreate(Request $request)
+    // {
+    //     $validatedData = $request->validate([
+    //         'awardTitle' => 'required|string|max:255',
+    //         'awardDate' => 'required|date|max:255',
+    //         'awardLocation' => 'required|string|max:255',
+    //         'awardDescription' => 'required|string',
+    //         'awardPosterImage' => 'required|string',
+    //     ]);
+
+    //     $post = new post;
+    //     $post->created_at = now();
+    //     $post->updated_at = now();
+    //     $post->save();
+
+    //     $awardPost = new awardPost;
+    //     $awardPost->awardTitle = $validatedData['awardTitle'];
+    //     $awardPost->awardDescription = $validatedData['awardDescription'];
+    //     $awardPost->awardDate	 = $validatedData['awardDate'];
+    //     $awardPost->awardImageURL = $validatedData['awardPosterImage'];
+    //     // $awarPost->jobDescription = $validatedData['awardLocation'];
+
+    //     $awardPost->postID = post::latest('postID')->first()->postID; 
+        
+    //     $awardPost->save();
+    //     // dd($post);
+    //     // dd($jobPost);
+    //     return redirect()->route('admin.awards')->with('msg','Award Posted Successfully');
+    // }
 
     public function eventPostCreate(Request $request)
     {

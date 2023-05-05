@@ -252,7 +252,7 @@
                       <img
                         class="postcard__img"
                         src="{{$awards->awardImageURL}}"
-                        alt="Technocrats Winner Post"
+                        alt="{{$awards->awardImageURL}}"
                       />
                     </a>
                     <div class="postcard__text t-dark">

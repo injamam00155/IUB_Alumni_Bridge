@@ -262,7 +262,7 @@
                   />
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+              </form action="{{route('create.eventPost')}}" method="post">
             </div>
           </div>
           <!-- POST section -->

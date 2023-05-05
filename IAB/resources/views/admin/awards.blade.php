@@ -181,7 +181,7 @@
               />
             </div>
             <div class="col-10 col-lg-11 pe-5">
-              <form>
+              <form action="{{route('create.awardPost')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-2">
                   <label for="awardTitle">Title</label>
