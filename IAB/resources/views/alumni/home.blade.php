@@ -183,29 +183,33 @@
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
             @foreach($allStudent as $student) 
-                {{-- @if($student->userEmail==session('userEmail'))
-                <img
-                    src="{{asset('images/' . ($student->profilePictureURL ? $student->profilePictureURL : 'defaultProfilePicture.jpg'))}}"
+                @if($student->userEmail==session('userEmail'))
+                {{-- <img
+                    src="{{asset('images/' . ($student->profilePictureURL ? $student->profilePictureURL : 'defaultDisplayPicture.jpg'))}}"
                     alt="user Display Picture"
                     class="img-fluid ms-2"
                     style="width: 50px; height: 50px; border-radius: 50%"
-                />
-                @endif --}}
+                /> --}}
+                @endif
                 @if($student->userEmail==session('userEmail'))
                   <img
-                    src="{{asset('images/defaultProfilePicture.jpg')}}"
+                  {{-- {{asset('images/'.$upcoming->eventImageURL)}} --}}
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
                     alt="user Display Picture"
                     class="img-fluid ms-2"
                     style="width: 50px; height: 50px; border-radius: 50%"
                 />
                 @else 
                 <img
-                    src="{{asset('images/' . $student->profilePictureURL)}}"
+                    src="{{asset('images/defaultDisplayPicture.jpg')}}"
+                    {{-- src="{{asset('images/'.$student->profilePictureURL)}}" --}}
                     alt="user Display Picture"
                     class="img-fluid ms-2"
                     style="width: 50px; height: 50px; border-radius: 50%"
                 />
+
                 @endif
+                @break
 
             @endforeach
             </div>
