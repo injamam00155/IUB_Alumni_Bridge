@@ -199,6 +199,7 @@
                   class="img-fluid ms-2"
                   style="width: 50px; height: 50px; border-radius: 50%"
               />
+              @break
               @else 
               <img
                   src="{{asset('images/defaultDisplayPicture.jpg')}}"
@@ -210,7 +211,6 @@
 
               @endif
               @break
-
           @endforeach
             </div>
             <div class="col-10 col-lg-11 pe-5">
@@ -243,31 +243,38 @@
               <div class="post mt-5">
                 @foreach($data as $post)
                     @if($post["source"]=='query')
-                        <div class="row">
-                          <div class="col-2 col-lg-1 d-flex justify-content-end">
+                    <div class="row">
+                      <div class="col-2 col-lg-1 d-flex justify-content-end">
+                      
+                      @foreach($studentPosts as $studentPost)
+                        @if($studentPost->postID==$post["data"]->postID)
                             <img
-                              src="img/Sarah_Student.jpg"
-                              alt="user Display Picture"
-                              class="img-fluid ms-2"
-                              style="width: 50px; height: 50px; border-radius: 50%"
-                            />
-                          </div>
-                          <div class="col-10 col-lg-11 pe-5">
-                            <div>
-                              <strong class="fs-5">
-                                @foreach($studentPosts as $studentPost)
+                            src="{{asset('images/'.$studentPost->profilePictureURL)}}"
+                            alt="user Display Picture"
+                            class="img-fluid ms-2"
+                            style="width: 50px; height: 50px; border-radius: 50%"
+                            />                                        
+                        @break
+                        @endif
+                      @endforeach
+
+                      </div>
+                      <div class="col-10 col-lg-11 pe-5">
+                        <div>
+                          <strong class="fs-5">
+                                  @foreach($studentPosts as $studentPost)
                                     @if($studentPost->postID==$post["data"]->postID)
                                         {{$studentPost->fullName}}
                                       @break
-                                    @endif
-                                @endforeach
-
-                              </strong>
-                            </div>
-                            <p class="mt-3 fs-5 p-1 post_body">
-                              {{$post["data"]->postDescription}}
-                            </p>
-                            <div
+                                      @endif
+                                  @endforeach
+                                      
+                                    </strong>
+                                  </div>
+                                  <p class="mt-3 fs-5 p-1 post_body">
+                                    {{$post["data"]->postDescription}}
+                                  </p>
+                                  <div
                               class="post-footer d-flex justify-content-between align-items-center mt-3 border-top"
                             >
                               <div class="d-flex">
@@ -482,12 +489,17 @@
                     <div class="job_post mt-5">
                       <div class="row">
                         <div class="col-2 col-lg-1 d-flex justify-content-end">
-                          <img
-                            src="img/profile_img2.jpg"
-                            alt="User profile picture"
+                      @foreach($studentPosts as $studentPost)
+                        @if($studentPost->postID==$post["data"]->postID)
+                            <img
+                            src="{{asset('images/'.$studentPost->profilePictureURL)}}"
+                            alt="user Display Picture"
                             class="img-fluid ms-2"
                             style="width: 50px; height: 50px; border-radius: 50%"
-                          />
+                            />                                        
+                        @break
+                        @endif
+                      @endforeach
                         </div>
                         <div class="col-10 col-lg-11 pe-5 fs-5">
                           <div>
