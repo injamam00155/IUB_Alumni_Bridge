@@ -138,9 +138,9 @@ class routingController extends Controller
         // dd(session()->all());
         $pass=  ['data' => $data,
                 'event'=> $upcoming,
-                'studentPosts',$studentPosts,
-                'studentComments',$studentComments,
-                'bookmarks',$bookmarks,
+                'studentPosts'=>$studentPosts,
+                'studentComments'=>$studentComments,
+                'bookmarks'=>$bookmarks,
                 ];
         return view('alumni/home', $pass);
         // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);

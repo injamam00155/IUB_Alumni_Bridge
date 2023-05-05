@@ -76,6 +76,71 @@ class postCreateController extends Controller
         return redirect()->route('alumni.jobs')->with('msg','Job Posted Successfully');
     }
 
+    public function awardPostCreate(Request $request)
+    {
+        $validatedData = $request->validate([
+            'awardTitle' => 'required|string|max:255',
+            'awardDate' => 'required|date|max:255',
+            'awardLocation' => 'required|string|max:255',
+            'awardDescription' => 'required|string',
+            'awardPosterImage' => 'required|string',
+        ]);
+
+        $post = new post;
+        $post->created_at = now();
+        $post->updated_at = now();
+        $post->save();
+
+        $awardPost = new awardPost;
+        $awardPost->awardTitle = $validatedData['awardTitle'];
+        $awardPost->awardDescription = $validatedData['awardDescription'];
+        $awardPost->awardDate	 = $validatedData['awardDate'];
+        $awardPost->awardImageURL = $validatedData['awardPosterImage'];
+        // $awarPost->jobDescription = $validatedData['awardLocation'];
+
+        $awardPost->postID = post::latest('postID')->first()->postID; 
+        
+        $awardPost->save();
+        // dd($post);
+        // dd($jobPost);
+        return redirect()->route('alumni.jobs')->with('msg','Job Posted Successfully');
+    }
+
+    public function eventPostCreate(Request $request)
+    {
+        $validatedData = $request->validate([
+            'eventTitle' => 'required|string|max:255',
+            'eventStartTime' => 'required|date|max:255',
+            'eventEndTime' => 'required|date|max:255',
+            'eventStartDate' => 'required|string|max:255',
+            'eventEndDate' => 'required|string',
+            'eventLocation' => 'required|string',
+            'eventDescription' => 'required|string',
+            'eventPosterImage' => 'required|string',
+        ]);
+
+        $post = new post;
+        $post->created_at = now();
+        $post->updated_at = now();
+        $post->save();
+
+        $eventPost = new awardPost;
+        $eventPost->eventTitle = $validatedData['eventTitle'];
+        $eventPost->eventDescription = $validatedData['awardDescription'];
+        $eventPost->eventStartDate	 = $validatedData['eventStartTime'];
+        $eventPost->eventEndDate	 = $validatedData['eventEndDate'];
+        $eventPost->eventStartTime	 = $validatedData['eventStartTime'];
+        $eventPost->eventEndTime	 = $validatedData['eventEndTime'];
+        $eventPost->eventImageURL = $validatedData['eventPosterImage'];
+        $eventPost->eventLocation = $validatedData['eventLocation'];
+
+        $eventPost->postID = post::latest('postID')->first()->postID; 
+        
+        $eventPost->save();
+        // dd($post);
+        // dd($jobPost);
+        return redirect()->route('alumni.jobs')->with('msg','Job Posted Successfully');
+    }
 
 
 }
