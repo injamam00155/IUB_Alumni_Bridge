@@ -199,12 +199,17 @@
           <!-- What's on your mind section -->
           <div class="row mt-4">
             <div class="col-2 col-lg-1 d-flex justify-content-end">
-              <img
-                src="img/profile_img2.jpg"
-                alt="profile img"
-                class="img-fluid ms-2"
-                style="width: 50px; height: 50px; border-radius: 50%"
-              />
+              @foreach($allStudent as $student)
+                @if($student->userEmail==session('userEmail'))
+                  <img
+                    src="{{asset('images/'.$student->profilePictureURL)}}"
+                    class="img-fluid ms-2"
+                    alt="profile img"
+                    style="width: 50px; height: 50px; border-radius: 50%"
+                />
+                @break
+                @endif
+              @endforeach
             </div>
             <div class="col-10 col-lg-11 pe-5">
               <form action="{{route('create.jobPost')}}" method="post">

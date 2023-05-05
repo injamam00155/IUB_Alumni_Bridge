@@ -206,6 +206,7 @@
                     placeholder="Enter event start time"
                   /> --}}
                   <input type="time" name="eventStartTime" id="eventStartTime" class="form-control">
+                  @error('eventStartTime') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="eventEndTime">Event End Time</label>
@@ -228,6 +229,7 @@
                     name="eventStartDate"
                     placeholder="Enter event start date"
                   />
+                  @error('eventStartDate') <span style="color: red;">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group mb-2">
                   <label for="eventEndDate">Event End Date</label>
