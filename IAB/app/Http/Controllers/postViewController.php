@@ -69,13 +69,17 @@ class postViewController extends Controller
         return $mergedResults;
         // return $posts;
     }
+
+    public function getAllStudents() {
+        return Student::all();
+    }
+
     public function viewEvents() {
         $data= EventPost::orderByDesc('eventStartDate')->get();
         return $data;
     }
 
     public function upcomingEvent() {
-        
         $data = EventPost::where('eventStartDate', '>=', now()->toDateString())
             ->orderBy('eventStartDate', 'asc')->first();
         // dd($data);

@@ -46,23 +46,10 @@ class routingController extends Controller
 
     //admin routing functions
     public function adminDashboard() {
-        $pvc=new postViewController;
-        $data= $pvc->viewPosts();
-        $upcoming=$pvc->upcomingEvent();
-        $studentPosts=$pvc->getStudentsPosts();
-        // $studentComments=$pvc->getStudentsComments();
-        // $bookmarks=$pvc->getallBookmarks();
-        // $data = $pvc->viewEvents(); 
-        // dd($data);
-        // dd(session()->all());
-        $pass=  ['data' => $data,
-                'upcoming'=> $upcoming,
-                'studentPosts'=>$studentPosts,
-                // 'studentComments'=>$studentComments,
-                // 'bookmarks'=>$bookmarks,
+        $pass=  [   
+
                 ];
-        // dd($pass);
-        return view('admin/home', $pass);
+    return view('admin/home', ['data' => $pass]);
     }
     public function adminBookmarks() {
         $pass=  [   
@@ -107,23 +94,11 @@ class routingController extends Controller
     
     //currentStudent routing functions
     public function currentStudentDashboard() {
-        $pvc=new postViewController;
-        $data= $pvc->viewPosts();
-        $upcoming=$pvc->upcomingEvent();
-        $studentPosts=$pvc->getStudentsPosts();
-        // $studentComments=$pvc->getStudentsComments();
-        // $bookmarks=$pvc->getallBookmarks();
-        // $data = $pvc->viewEvents(); 
-        // dd($data);
-        // dd(session()->all());
-        $pass=  ['data' => $data,
-                'upcoming'=> $upcoming,
-                'studentPosts'=>$studentPosts,
-                // 'studentComments'=>$studentComments,
-                // 'bookmarks'=>$bookmarks,
+
+        $pass=  [   
+
                 ];
-        // dd($pass);
-        return view('student/home', $pass);
+        return view('student/home', ['data' => $pass]);
     }
 
     public function currentStudentBookmarks() {
@@ -178,6 +153,7 @@ class routingController extends Controller
         $data= $pvc->viewPosts();
         $upcoming=$pvc->upcomingEvent();
         $studentPosts=$pvc->getStudentsPosts();
+        $allStudent=$pvc->getAllStudents();
         // $studentComments=$pvc->getStudentsComments();
         // $bookmarks=$pvc->getallBookmarks();
         // $data = $pvc->viewEvents(); 
@@ -186,10 +162,12 @@ class routingController extends Controller
         $pass=  ['data' => $data,
                 'upcoming'=> $upcoming,
                 'studentPosts'=>$studentPosts,
+                'allStudent'=>$allStudent,
                 // 'studentComments'=>$studentComments,
                 // 'bookmarks'=>$bookmarks,
                 ];
-        // dd($pass);
+                // dd(session()->all());
+                // dd($pass);
         return view('alumni/home', $pass);
         // return view('alumni/home', ['data' => $data,'upcoming'=> $upcoming ]);
     }
