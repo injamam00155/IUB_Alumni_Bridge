@@ -251,7 +251,14 @@
                           <div class="col-10 col-lg-11 pe-5">
                             <div>
                               <strong class="fs-5">
-                                Post Creator Name
+
+                                @foreach($studentPosts as $studentPost)
+                                    @if($studentPost->postID)
+                                        {{$studentPost->fullName}}
+                                      @break
+                                    @endif
+                                @endforeach
+
                               </strong>
                             </div>
                             <p class="mt-3 fs-5 p-1 post_body">
@@ -483,15 +490,13 @@
                           <div>
                             <h4>
                               <strong class="fs-5">
-                                                                {{-- //Loop through the users information  --}}
-                                  {{-- @foreach()  --}}
-                                {{-- //match the userEmail with the userData --}}
-                                    {{-- @if()   --}}
-                                {{-- //Display the Username of the matching userEmail --}}
-                                Post Creator Name
-                                {{-- @endif --}}
-                                {{-- @break --}}
-                                {{-- @endforeach --}}
+                                @foreach($studentPosts as $studentPost)
+                                    @if($studentPost->postID)
+                                        {{$studentPost->fullName}}
+                                      @break
+                                    @endif
+                                @endforeach
+
                               </strong>
                               <i class="fa-solid fa-graduation-cap fa-sm"></i>
                             </h4>
