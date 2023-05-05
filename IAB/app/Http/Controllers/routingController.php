@@ -46,10 +46,31 @@ class routingController extends Controller
 
     //admin routing functions
     public function adminDashboard() {
-        $pass=  [   
-
+        // $data= Post::all();
+        // dd($data[3]->eventPost);
+        // $data= EventPost::all();
+        $pvc=new postViewController;
+        $data= $pvc->viewPosts();
+        $upcoming=$pvc->upcomingEvent();
+        $studentPosts=$pvc->getStudentsPosts();
+        $allStudent=$pvc->getAllStudents();
+        // $studentComments=$pvc->getStudentsComments();
+        // $bookmarks=$pvc->getallBookmarks();
+        // $data = $pvc->viewEvents(); 
+        // dd($data);
+        // dd(session()->all());
+        $pass=  ['data' => $data,
+                'upcoming'=> $upcoming,
+                'studentPosts'=>$studentPosts,
+                'allStudent'=>$allStudent,
+                // 'studentComments'=>$studentComments,
+                // 'bookmarks'=>$bookmarks,
                 ];
-    return view('admin/home', ['data' => $pass]);
+                // dd(session()->all());
+                // dd($pass);
+        // return view('alumni/home', $pass);
+        // return view('student/home', $pass);
+        return view('admin/home', $pass);
     }
     public function adminBookmarks() {
         $pass=  [   
@@ -94,11 +115,30 @@ class routingController extends Controller
     
     //currentStudent routing functions
     public function currentStudentDashboard() {
-
-        $pass=  [   
-
+        // $data= Post::all();
+        // dd($data[3]->eventPost);
+        // $data= EventPost::all();
+        $pvc=new postViewController;
+        $data= $pvc->viewPosts();
+        $upcoming=$pvc->upcomingEvent();
+        $studentPosts=$pvc->getStudentsPosts();
+        $allStudent=$pvc->getAllStudents();
+        // $studentComments=$pvc->getStudentsComments();
+        // $bookmarks=$pvc->getallBookmarks();
+        // $data = $pvc->viewEvents(); 
+        // dd($data);
+        // dd(session()->all());
+        $pass=  ['data' => $data,
+                'upcoming'=> $upcoming,
+                'studentPosts'=>$studentPosts,
+                'allStudent'=>$allStudent,
+                // 'studentComments'=>$studentComments,
+                // 'bookmarks'=>$bookmarks,
                 ];
-        return view('student/home', ['data' => $pass]);
+                // dd(session()->all());
+                // dd($pass);
+        // return view('alumni/home', $pass);
+        return view('student/home', $pass);
     }
 
     public function currentStudentBookmarks() {
