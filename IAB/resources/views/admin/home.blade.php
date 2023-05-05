@@ -671,9 +671,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                     @continue(true)
                     @endif
                 @endforeach

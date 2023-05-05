@@ -231,23 +231,10 @@
                           <div class="col-10 col-lg-11 pe-5">
                             <div>
                               <strong class="fs-5">
-                                
-                                {{-- //Loop through the users information  --}}
-                                  {{-- @foreach()  --}}
-                                {{-- //match the userEmail with the userData --}}
-                                    {{-- @if()   --}}
-                                {{-- //Display the Username of the matching userEmail --}}
                                 Post Creator Name
-                                {{-- @endif --}}
-                                {{-- @break --}}
-                                {{-- @endforeach --}}
                               </strong>
                             </div>
                             <p class="mt-3 fs-5 p-1 post_body">
-                              {{-- Hey everyone, I'm a current student majoring in computer
-                              science and I'm looking for advice on how to break into
-                              the tech industry. Any Alumni in the tech field who have
-                              tips or advice to share? Thanks in advance! --}}
                               {{$post["data"]->postDescription}}
                             </p>
                             <div
@@ -334,9 +321,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                         @continue(true)
                     @endif
 
@@ -396,10 +380,6 @@
                         </div>
                       </div>
                     </div>
-                                            {{-- //Loop through the users information  --}}
-                        {{-- @foreach()  --}}
-                          {{-- //match the userEmail with the CommentData userEmail--}}
-                          {{-- @if()   --}}
            
                       <div class="mt-1 comments-section d-none">
                       <div>
@@ -462,9 +442,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                       @continue(true)
                     @endif
                     
@@ -483,15 +460,7 @@
                           <div>
                             <h4>
                               <strong class="fs-5">
-                                                                {{-- //Loop through the users information  --}}
-                                  {{-- @foreach()  --}}
-                                {{-- //match the userEmail with the userData --}}
-                                    {{-- @if()   --}}
-                                {{-- //Display the Username of the matching userEmail --}}
                                 Post Creator Name
-                                {{-- @endif --}}
-                                {{-- @break --}}
-                                {{-- @endforeach --}}
                               </strong>
                               <i class="fa-solid fa-graduation-cap fa-sm"></i>
                             </h4>
@@ -543,7 +512,6 @@
                                   <li>{{ $substring }}</li>
                                 @endforeach
                               </ul>
-                              {{-- <p>{{ $post["data"]->requirement }}</p> --}}
                               <p><strong>Email: </strong> {{ $post["data"]->contactEmail }}</p>
                             </div>
                           </div>
@@ -578,10 +546,6 @@
                         </div>
                       </div>
                     </div>
-                                            {{-- //Loop through the users information  --}}
-                        {{-- @foreach()  --}}
-                          {{-- //match the userEmail with the CommentData userEmail--}}
-                          {{-- @if()   --}}
            
                       <div class="mt-1 comments-section d-none">
                       <div>
@@ -598,7 +562,6 @@
                               <div>
                                 <strong class="fs-6">
                                   CommenterName
-                                  {{-- //Display the Username of the matching userEmail --}}
                                 </strong>
                               </div>
                               <p class="fs-6 p-2 post_body">
@@ -621,7 +584,6 @@
                             <div class="col-10 col-lg-11 pe-5">
                               <div>
                                 <strong class="fs-6">
-                                  {{-- // UserName of currentUser goes here --}}
                                   Current User Name
                                   
                                 </strong>
@@ -642,9 +604,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                     @continue(true)
                     @endif
                     @if($post["source"]=='award')
@@ -673,10 +632,6 @@
                       
                       
                     </div>
-                        {{-- //Loop through the users information  --}}
-                        {{-- @foreach()  --}}
-                          {{-- //match the userEmail with the CommentData userEmail--}}
-                          {{-- @if()   --}}
            
                       <div class="mt-1 comments-section d-none">
                       <div>
@@ -737,9 +692,6 @@
                           </div>
                       </div>
                       </div>
-                              {{-- @endif --}}
-                            {{-- @continue(true) --}}
-                          {{-- @endforeach --}}
                     @continue(true)
                     @endif
                 @endforeach
