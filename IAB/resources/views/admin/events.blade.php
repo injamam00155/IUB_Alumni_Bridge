@@ -179,17 +179,19 @@
             </div>
             <div class="col-10 col-lg-11 pe-5">
               <form>
+                @csrf
                 <div class="form-group mb-2">
                   <label for="eventTitle">Title</label>
                   <input
                     type="text"
                     class="form-control"
                     id="eventTitle"
+                    name="eventTitle"
                     placeholder="Enter event title"
                   />
                 </div>
                 <div class="form-group mb-2">
-                  <label for="StartEventTime">Event Start Time</label>
+                  <label for="eventStartTime">Event Start Time</label>
                   {{-- <input
                     type="time"
                     class="form-control"
@@ -197,10 +199,10 @@
                     name="StartEventTime"
                     placeholder="Enter event start time"
                   /> --}}
-                  <input type="time" name="event_start" id="event_start" class="form-control">
+                  <input type="time" name="eventStartTime" id="eventStartTime" class="form-control">
                 </div>
                 <div class="form-group mb-2">
-                  <label for="endEventTime">Event End Time</label>
+                  <label for="eventEndTime">Event End Time</label>
                   {{-- <input
                     type="text"
                     class="form-control"
@@ -208,25 +210,25 @@
                     name="endEventTime"
                     placeholder="Enter event end time"
                   /> --}}
-                  <input type="time" name="event_start" id="event_start" class="form-control">
+                  <input type="time" name="eventEndTime" id="eventEndTime" class="form-control">
                 </div>
                 <div class="form-group mb-2">
-                  <label for="startEventDate">Event Start Date</label>
+                  <label for="eventStartDate">Event Start Date</label>
                   <input
                     type="date"
                     class="form-control"
-                    id="startEventDate"
-                    name="startEventDate"
+                    id="eventStartDate"
+                    name="eventStartDate"
                     placeholder="Enter event start date"
                   />
                 </div>
                 <div class="form-group mb-2">
-                  <label for="endEventDate">Event End Date</label>
+                  <label for="eventEndDate">Event End Date</label>
                   <input
                     type="date"
                     class="form-control"
-                    id="endEventDate"
-                    name="endEventDate"
+                    id="eventEndDate"
+                    name="eventEndDate"
                     placeholder="Enter event end date"
                   />
                 </div>
@@ -236,6 +238,7 @@
                     type="text"
                     class="form-control"
                     id="eventLocation"
+                    name="eventLocation"
                     placeholder="Enter event location"
                   />
                 </div>
@@ -250,12 +253,12 @@
                   ></textarea>
                 </div>
                 <div class="form-group mb-2">
-                  <label for="EventPosterImage">Poster Image</label>
+                  <label for="eventPosterImage">Poster Image</label>
                   <input
                     type="file"
                     class="form-control-file"
-                    id="EventPosterImage"
-                    name="EventPosterImage"
+                    id="eventPosterImage"
+                    name="eventPosterImage"
                   />
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
