@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('postID');
+            $table->string('userEmail');
             // $table->dateTime('postDateTime');
             // Add any other columns you need for the posts table
             $table->timestamps();
+
+            $table->foreign('userEmail')->references('userEmail')->on('students')->onUpdate('CASCADE')->onDelete('cascade');
         });
     }
 

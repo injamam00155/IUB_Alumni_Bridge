@@ -21,13 +21,13 @@ return new class extends Migration
             $table->text('responsibility');
             $table->text('requirement');
             $table->string('contactEmail');
-            $table->string('userEmail');
+            // $table->string('userEmail');
             // Add any other columns you need for the jobs table
             // $table->timestamps();
 
             // Add foreign key constraint to link with posts table
             $table->foreign('postID')->references('postID')->on('posts')->onUpdate('CASCADE')->onUpdate('CASCADE')->onDelete('cascade');
-            $table->foreign('userEmail')->references('userEmail')->on('alumni')->onUpdate('CASCADE')->onUpdate('CASCADE')->onDelete('cascade');
+            // $table->foreign('userEmail')->references('userEmail')->on('alumni')->onUpdate('CASCADE')->onUpdate('CASCADE')->onDelete('cascade');
         });
     }
 
