@@ -221,8 +221,8 @@
                   name="postQuery"
                   placeholder="Ask a question and start a discussion..."
                   style="border-radius: 20px"
-                  >
-                </textarea>
+                  ></textarea>
+                
                 
                 <button
                   id="post-btn"
