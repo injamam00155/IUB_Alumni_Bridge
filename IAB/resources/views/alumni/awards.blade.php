@@ -246,88 +246,29 @@
               <!-- AWARDS LIST -->
               <section class="light mt-5">
                 <div class="mt-3">
+                  @foreach($data as $awards)
                   <article class="postcard light blue">
                     <a class="postcard__img_link" href="#">
                       <img
                         class="postcard__img"
-                        src="img/technocrats.jpg"
+                        src="{{$awards->awardImageURL}}"
                         alt="Technocrats Winner Post"
                       />
                     </a>
                     <div class="postcard__text t-dark">
                       <h1 class="postcard__title blue ms-2">
                         <h3 href="#">
-                          Champion of National Innovation Competition
+                          {{$awards->awardTitle}}
                         </h3>
                       </h1>
 
                       <div class="postcard__bar"></div>
                       <div class="postcard__preview-txt">
-                        On 15th March 2023, the IUB CSE department participated
-                        in the Technocrats V.1 National Innovation Competition,
-                        hosted by IUBAT. Students from various Colleges,
-                        Polytechnics and Universities came together to showcase
-                        their innovative ideas and compete against each other.
-                        This year total 117 teams participated in different
-                        segments of this event.
+                        {{$awards->awardDescription}}
                       </div>
                     </div>
                   </article>
-                  <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="img/programming contest.jpg"
-                        alt="National Programming Contest Post"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#">
-                          25th place at National Photography Competition
-                        </h3>
-                      </h1>
-
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        IUB achieved 25th place in the National Girls'
-                        Programming Contest! Congratulations to Fatema Tuj
-                        Johora, Zaara Rahman and Tausia Tahsin!
-                      </div>
-                    </div>
-                  </article>
-                  <article class="postcard light blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src="img/Gold medal.jpg"
-                        alt="Inter University Gold Medal at Table Tennis"
-                      />
-                    </a>
-                    <div class="postcard__text t-dark">
-                      <h1 class="postcard__title blue ms-2">
-                        <h3 href="#">
-                          Gold in Table Tennis at Bangabandhu Inter University
-                          Sports Championship
-                        </h3>
-                      </h1>
-
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">
-                        IUB students have won gold in the mixed doubles table
-                        tennis event beating Jagannath University in straight
-                        sets in the ongoing Bangabandhu Inter-University Sports
-                        Championship.
-                        <br />
-                        The IUB mixed doubles team comprised Sharmin Islam
-                        Shroddha, student of Computer Science and Engineering,
-                        and Md. Rifat Mahmud Sabbir, student of Human Resources
-                        Management. The final match was held at the Ashulia
-                        campus of Daffodil International University on Saturday,
-                        September 17, 2022.
-                      </div>
-                    </div>
-                  </article>
+                  @endforeach
                 </div>
               </section>
             </div>
@@ -354,26 +295,26 @@
                   <a href="event-details.html" style="text-decoration: none">
                     <div class="card h-100 w-75 border-0">
                       <img
-                        src="img/TechFest2023.jpg"
+                        src="{{$event->eventImageURL}}"
                         class="card-img-top"
-                        alt="Tech Fest 2023 poster"
+                        alt="{{$event->eventTitle}} poster"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">Tech Fest Spring 2023</h5>
+                        <h5 class="card-title">{{$event->eventTitle}}</h5>
                         <p class="card-text">
                           Event Date:
                           <span class="text-muted"
-                            >April 05, 2023 - April 06, 2023</span
+                            >{{$event->eventStartDate}} - {{$event->eventEndDate}}</span
                           >
                         </p>
                         <p class="card-text">
                           Event Time:
-                          <span class="text-muted">10:00 AM - 3:00 PM</span>
+                          <span class="text-muted">{{$event->eventStartTime}} - {{$event->eventEndTime}}</span>
                         </p>
                         <p class="card-text">
                           Event Location:
                           <span class="text-muted"
-                            >Independent University, Bangladesh</span
+                            >{{$event->eventLocation}}</span
                           >
                         </p>
                       </div>
@@ -381,14 +322,14 @@
                   </a>
                 </div>
               </div>
-              <div class="p-3 d-flex justify-content-end me-5">
-                <a
-                  href="/alumni/events"
-                  style="color: black"
-                  class="btn btn-outline-primary me-5"
-                  >View all events</a
-                >
-              </div>
+            </div>
+            <div class="p-3 d-flex justify-content-end me-5">
+              <a
+                href="/alumni/events"
+                style="color: black"
+                class="btn btn-outline-primary me-5"
+                >View all events</a
+              >
             </div>
           </div>
         </div>

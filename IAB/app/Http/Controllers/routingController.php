@@ -131,7 +131,13 @@ class routingController extends Controller
         return view('alumni/profile');
     }
     public function alumniAwards() {
-        return view('alumni/awards');
+        $pvc=new postViewController;
+        $data= $pvc->viewAwards();
+        $upcoming=$pvc->upcomingEvent();
+        $information=  ['data' => $data,
+                'event'=> $upcoming,
+                ];
+        return view('alumni/awards', $information);
     }
 }
 

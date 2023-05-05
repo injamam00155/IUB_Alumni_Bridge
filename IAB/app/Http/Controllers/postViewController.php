@@ -87,6 +87,10 @@ class postViewController extends Controller
         $data= JobPost::orderByDesc('postID')->get();
         return $data;
     }
+    public function viewAwards() {
+        $data= AwardPost::orderByDesc('postID')->get();
+        return $data;
+    }
 
 //     public function viewQueries()
 //     {
