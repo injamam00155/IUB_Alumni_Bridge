@@ -12,6 +12,7 @@ use App\Models\QueryPost;
 use App\Models\Comment;
 use App\Models\Bookmark;
 
+use App\Http\Controllers\signupController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\routingController;
 use App\Http\Controllers\postCreateController;
